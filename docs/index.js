@@ -1,5 +1,3 @@
-var tl = setInterval(() => hljs.highlightAll(), 100);
-
 window.onpopstate = function (evt) {
 
     hljs.highlightAll();
@@ -34,10 +32,11 @@ window.addEventListener("scroll", () => {
 
         if (main.style.height != fixedHeight) {
             main.style.height = fixedHeight;
+            hljs.highlightAll();
         }
 
     }
-})
+});
 
 hljs.registerLanguage("krunkscript", function () {
     return {
