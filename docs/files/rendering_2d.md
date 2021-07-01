@@ -17,15 +17,15 @@ Krunker automatically updates every frame. To smoothly render objects put all yo
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
-// built-in render action
+```krunkscript
+# built-in render action
 action render(num delta) {
 
-    // clear overlay canvas (optional)
-    GAME.OVERLAY.clear(); // do once before rendering
+    # clear overlay canvas (optional)
+    GAME.OVERLAY.clear(); # do once before rendering
 
-    // render after logic is processed
-    GAME.OVERLAY.drawRect(0, 0, 0, 1, 1, 1, 0, "#ff0000"); // red rectangle
+    # render after logic is processed
+    GAME.OVERLAY.drawRect(0, 0, 0, 20, 15, 0, "#ff0000", 1); # red rectangle
 }
 ```
 
@@ -41,15 +41,15 @@ ___
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
+```krunkscript
 GAME.OVERLAY.drawRect(
-    x, // num x position on canvas
-    y, // num y position on canvas
-    w, // num width
-    h, // num height
-    r, // num rotation (radians)
-    color, // str color
-    opac // num opacity
+    x, # num x position on canvas
+    y, # num y position on canvas
+    w, # num width
+    h, # num height
+    r, # num rotation (degrees)
+    color, # str color
+    opac # num opacity
 );
 ```
 
@@ -59,15 +59,15 @@ ___
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
+```krunkscript
 GAME.OVERLAY.drawCircle(
-    x, // num x position on canvas
-    y, // num y position on canvas
-    w, // num width
-	h, // num height
-	r, // num rotation
-    color, // str color
-    opac // num opacity
+    x, # num x position on canvas
+    y, # num y position on canvas
+    w, # num width
+    h, # num height
+    r, # num rotation (degrees)
+    color, # str color
+    opac # num opacity
 );
 ```
 
@@ -77,15 +77,15 @@ ___
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
+```krunkscript
 GAME.OVERLAY.drawLine(
-    x1, // num x start position on canvas
-    y1, // num y start position on canvas
-    x2, // num x end position on canvas
-    y2, // num y end position on canvas
-    t, // num thickness
-    color, // str color
-    opac // num opacity
+    x1, # num x start position on canvas
+    y1, # num y start position on canvas
+    x2, # num x end position on canvas
+    y2, # num y end position on canvas
+    t, # num thickness
+    color, # str color
+    opac # num opacity
 );
 ```
 
@@ -103,15 +103,15 @@ ___
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
+```krunkscript
 GAME.OVERLAY.drawImage(
-    aid, // str asset id of image
-    x, // num x position on canvas
-    y, // num y position on canvas
-    w, // num width
-    h, // num height
-    r, // num rotation (radians)
-    opac // num opacity
+    aid, # str asset id of image
+    x, # num x position on canvas
+    y, # num y position on canvas
+    w, # num width
+    h, # num height
+    r, # num rotation (degrees)
+    opac # num opacity
 );
 ```
 
@@ -121,18 +121,23 @@ ___
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
+```krunkscript
 GAME.OVERLAY.drawText(
-    txt, // str text value
-    x, // num x position on canvas
-    y, // num y position on canvas
-    r, // num rotation (radians)
-    s, // num font size
-    algn, // str alignment ("left", "center", "right")
-    color, // str color
-    opac // num opacity
+    txt, # str text value
+    x, # num x position on canvas
+    y, # num y position on canvas
+    r, # num rotation (degrees)
+    s, # num font size
+    algn, # str alignment ("left", "center", "right")
+    color, # str color
+    opac # num opacity
 );
 
+# get canvas text width
+num textWidth = GAME.OVERLAY.measureText(
+    24, # num fontsize
+    "Testing" # string text
+);
 ```
 
 <br><br/>

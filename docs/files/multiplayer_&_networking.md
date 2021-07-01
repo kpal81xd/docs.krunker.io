@@ -1,6 +1,8 @@
 ## Introduction
 
-This section describes the different components of a networked game. Each client is connected to the server. The server receives information and then sends it to clients when needed. This allows you to see other players moving around for example.
+This section describes the different components of a networked game.\
+Each client is connected to the server. The server receives information and then sends it to clients when needed.\
+This allows you to see other players moving around for example.
 
 <br><br/>
 
@@ -10,11 +12,11 @@ To send information from the client to the server you can use:
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
-// send network message to server
+```krunkscript
+# send network message to server
 GAME.NETWORK.send(
-    "test", // str message key
-    {num a: 1} // obj data to send
+    "test", # str message key
+    {num a: 1} # obj data to send
 );
 ```
 
@@ -22,20 +24,18 @@ The server has multiple ways to send data to clients:
 
 <p class="hidep"><strong class="server-side">server-side</strong></p>
 
-```csharp
-// send network message to specific client
+```krunkscript
+# send network message to specific client
 GAME.NETWORK.send(
-    "test", // str message key
-    {num a: 1}, // obj data to send
-    player.id // num player id to send data to
+    "test", # str message key
+    {num a: 1}, # obj data to send
+    player.id # num player id to send data to
 );
 
-___
-
-// send network message to all clients
+# send network message to all clients
 GAME.NETWORK.broadcast(
-    "test", // str message key
-    {num a: 1} // obj data to send
+    "test", # str message key
+    {num a: 1} # obj data to send
 );
 ```
 
@@ -51,14 +51,14 @@ ___
 
 <p class="hidep"><strong class="server-side">server-side</strong></p>
 
-```csharp
-action onNetworkMessage(obj player, num id, obj data) {
-    // player is the player that the message came from
-    // id is the the unique id of the network message
-    // data contains custom data from the client
+```krunkscript
+action onNetworkMessage(num id, obj data, num sid) {
+    # id is the the unique id of the network message
+    # data contains custom data from the client
+	# sid is the unique ID of the player that the message came from
     if (id == "test") {
-        // do something with data
-    }
+        # do something with data
+    };
 }
 ```
 
@@ -68,13 +68,13 @@ ___
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
+```krunkscript
 action onNetworkMessage(num id, obj data) {
-    // id is the the unique id of the network message
-    // data contains custom data from the server
+    # id is the the unique id of the network message
+    # data contains custom data from the server
     if (id == "test") {
-        // do something with data
-    }
+        # do something with data
+    };
 }
 ```
 
@@ -85,7 +85,7 @@ action onNetworkMessage(num id, obj data) {
 When synchronizing an objects position/data in a multiplayer environment, it is important that the server has the authority.
 
 If for example, you would like to have a cube that moves around for all players, you can do the following:
-```csharp
+```krunkscript
 
 ```
 
@@ -95,17 +95,17 @@ If for example, you would like to have a cube that moves around for all players,
 
 It is important to consider networking performance when sending data. The more frequently you send data, the higher the impact on performance will be. You also need to make sure you send as little data as possible to convery information:
 
-```csharp
-// TOO MUCH DATA
+```krunkscript
+# TOO MUCH DATA
 GAME.NETWORK.send("myNetworkMessage", {
     valueName: "test",
     longNumber: 1020.925827
 });
 
-// you can convey the same information with this
+# you can convey the same information with this
 GAME.NETWORK.send("1", {
     t: "test",
-    n: MATH.round(1020.925827) // round value
+    n: MATH.round(1020.925827) # round value
 });
 ```
 **In short:** less data sent less frequently is better for your performance.

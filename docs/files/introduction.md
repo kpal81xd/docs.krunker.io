@@ -27,11 +27,13 @@ Krunker offers a solid lightweight foundation to build your experiences on\
 and additionally handles a lot of the mundane aspects of game creation:
 
 * Server Hosting
+* Global Server Hosting
 * Networking & Multiplayer
 * Ad Setup & Approval
 * Login & Account Systems
 * Mobile Publishing & Cross Platform Support
 * No Upfront Costs for Creating & Publishing
+* Unique Revenue model that ears you money per play
 
 <br><br/>
 

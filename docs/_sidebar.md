@@ -18,3 +18,4 @@
 * [Publish your Game](./files/publish_your_game.md)
 * [Promotion](./files/promotion.md)
 * [Additional Learning](./files/additional_learning.md)
+* [Coming Soon](./files/coming_soon.md)

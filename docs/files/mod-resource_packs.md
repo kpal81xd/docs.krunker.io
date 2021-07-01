@@ -8,13 +8,13 @@ You are able to load/unload modpacks using KrunkScript:
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
-// load modpack by url
+```krunkscript
+# load modpack by url
 GAME.MODS.load(
-    url, // str mod URL
+    url # str mod URL
 );
 
-// reset/unload mods
+# reset/unload mods
 GAME.MODS.reset();
 ```
 
@@ -29,7 +29,7 @@ The default [mod.zip](https://krunker.io/modzip) has the following structure:
  * **sound**: allows for replacing of default sounds assets (.mp3 only).
  * **scripts**: contains scripts such as [settings.txt](./files/mod-resource_packs?id=settings-override) which allows you to override default settings (example in mod.zip).
  * **css**: allows for overriding of default CSS & fonts.
- * **css-im**g: use this if you want to load any images via CSS.
+ * **css-img**: use this if you want to load any images via CSS.
  * **shaders**: apply custom post processing shaders (example in mod.zip).
 
 <br><br/>
@@ -61,8 +61,8 @@ Here is a small example of how you would override default Krunker elements:
 
 Allows you to temporarily override user settings to accomodate specific game requirements: fov, disabling skins, saturation etc
 
-```csharp
-// some example settings
+```krunkscript
+# some example settings
 #settingname,value
 shaderRendering,false
 resolution,0.6
@@ -79,14 +79,14 @@ ___
 Alternatively you can use KrunkScript to set Settings:
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
-// update setting
+```krunkscript
+# update setting
 GAME.SETTINGS.set(
-    key, // str setting key
-    val, // str value of setting
+    key, # str setting key
+    val, # str value of setting
 );
 
-// example
+# example
 GAME.SETTINGS.set("resolution", '0.6');
 ```
 

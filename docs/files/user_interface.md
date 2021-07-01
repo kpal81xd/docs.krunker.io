@@ -4,18 +4,21 @@ If you don't want to use Krunker's default UI elements, you can add your own usi
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
-// add new div
-obj testDIV = GAME.UI.addDIV(
-    id, // str ID of div
-    vis, // bool default visiblity
-    css, // str default CSS/styling
+```krunkscript
+# add new div
+str divID = GAME.UI.addDIV(
+    id, # str ID of div
+    vis, # bool default visiblity
+    css, # str default CSS/styling
+	parentID, # str parent DIV id (optional)
 );
-testDIV.id; // hold property
 
-// you can also remove a div:
+# parent ID allows you to add a div to another div.
+# specify menu, game or any other DIV id to determine where to add it
+
+# you can also remove a div:
 GAME.UI.removeDIV(
-    id // str ID of div
+    divID # str ID of div
 );
 ```
 
@@ -27,18 +30,18 @@ You can update the styling and positioning of UI elements with KrunkScript:
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
-// update div CSS property
+```krunkscript
+# update div CSS property
 GAME.UI.updateDIV(
-    id, // str ID of div
-    prop, // str property name
-    val // value to set to
+    id, # str ID of div
+    prop, # str property name
+    val # value to set to
 );
 
-// example of updating a div's width
+# example of updating a div's width
 GAME.UI.updateDIV("healthBar", "width", "10px");
 
-// list of properties you can change:
+# list of properties you can change:
 - width, height
 - left, right, top, bottom,
 - background-color
@@ -54,12 +57,12 @@ You can assign click events to UI elements to call custom actions when a player 
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
-// built-in click listener
+```krunkscript
+# built-in click listener
 public action onDIVClicked(str id) {
     if (id == "customDIVID") {
-        // do something
-    }
+        # do something
+    };
 }
 ```
 
@@ -71,11 +74,11 @@ You can update the inner content of a UI element using KrunkScript:
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
-// update div text by id
+```krunkscript
+# update div text by id
 GAME.UI.updateDIVText(
-    id, // str ID of div
-    text, // str text value to update to
+    id, # str ID of div
+    text, # str text value to update to
 );
 ```
 
@@ -83,7 +86,7 @@ GAME.UI.updateDIVText(
 
 ## Custom CSS
 
-TO BE FILLED IN
+You can fully customize your games CSS using a [Resource Pack](./files/mod-resource_packs?id=custom-css)
 
 <br><br/>
 
@@ -113,6 +116,20 @@ OR
 Alternatively you can assign the Mobile Only property to the Element in the editor:
 ```css
 ```
+
+**Mobile Specific Elements**: Some elements are specific to mobile and can be edited and repositioned with CSS. Here is a list of the Mobile specific elements available by default:
+
+```css
+#mobileJoystick {}
+#mobileJump {}
+#mobileCrouch {
+    display: none; // HIDE ELEMENT
+	# custom css
+}
+#mobileEsc {}
+```
+
+The usage of these elements is entirely optional. You can create your own elements and assign custom behaviour to them using scripting or the editor UI.
 
 <br><br/>
 

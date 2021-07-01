@@ -219,6 +219,7 @@ ___
 <br><br/>
 
 ## Triggers & Scripts
+<div class="disBar">Currentyl Disabled</div>
 
 Triggers and [Scripts](./files/scripting?id=introduction) can interact with eachother. For example you can call custom actions from a Trigger Event.
 
@@ -226,17 +227,17 @@ ___
 
 Using Triggers to execute custom script action:
 
-```js
+```krunkscript
 Execute Action (ID: 58):(
-    name, // action name
-    player // player passed in automatically
+    name, # action name
+    player # player passed in automatically
 )
 ```
 
 In order to call a custom action from a Trigger Object, make sure you declare it as a public action:
-```js
+```krunkscript
 public action test(player) {
-    // do something
+    # do something
 }
 ```
 
@@ -244,10 +245,10 @@ ___
 
 **Using KrunkScript** to exectute a Trigger Action:
 
-```js
+```krunkscript
 GAME.TRIGGERS.execute(
-    ID, // num action ID,
-    args // other arguments depends on action
+    ID, # num action ID,
+    args # other arguments depends on action
 );
 ```
 

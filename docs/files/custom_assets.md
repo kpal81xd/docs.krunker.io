@@ -32,18 +32,18 @@ When uploading any custom assets or using them in your game, make sure that you 
 You can upload custom 3D Models to use in your scene. Currently only .obj and .gtlf are supported. You can load a 3D asset into your scene using KrunkScript:
 
 
-```csharp
-// add object
+```krunkscript
+# add object
 obj cube = GAME.SCENE.addAsset(
-    x, // num x position
-    y, // num x position
-    z, // num x position
-    scl, // num scale
-    aid, // str assetID
-    colr, // str color (optional)
+    x, # num x position
+    y, # num x position
+    z, # num x position
+    scl, # num scale
+    aid, # str assetID
+    colr, # str color (optional)
 );
 
-// update texture
+# update texture
 cube.setTexture("assetID");
 ```
 
@@ -53,11 +53,27 @@ cube.setTexture("assetID");
 
 Textures & Images can be used to render an image on a 3D asset or on the [Overlay Canvas](./files/rendering_2d?id=overlay-canvas). Currently only .png images are supported.
 
+--- 
+
+You can update an objects texture using KrunkScript:
+
+```krunkscript
+# add object
+obj cube = GAME.SCENE.addCube("", "#fff", 0, 0, 0, 10, 10, 10);
+
+# update texture
+cube.texture = "assetID"; # new asset id
+```
+
 <br><br/>
 
 ## Animations
 
 Animations can be used to add life to your scene. To use animations on models, please use the .gltf format. For an asset to use animations it must have clips attached to the model. When attempting to play an animation, make sure youre using the correct name of the clip. You have a few options for playing animations on an asset:
+
+---
+
+<div class="disBar">Currently Disabled</div>
 
 ___
 
@@ -65,18 +81,18 @@ ___
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
-// play a clip (asset, clipName, repetitions)
+```krunkscript
+# play a clip (asset, clipName, repetitions)
 GAME.ANIM.playClip(
-    asset, // obj
-    clipName, // str
-    reps // num
+    asset, # obj
+    clipName, # str
+    reps # num
 );
 
-// stop a clip (asset, clipName)
+# stop a clip (asset, clipName)
 GAME.ANIM.stopClip(
-    asset, // obj
-    clipName // str
+    asset, # obj
+    clipName # str
 );
 ```
 
@@ -114,22 +130,22 @@ ___
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
-// play sound in 2D space (sound id, volume, looping)
+```krunkscript
+# play sound in 2D space (sound id, volume, looping)
 GAME.SOUND.play2D(
-    id, // num
-    vol, // num
-    loop // bool
+    id, # num
+    vol, # num
+    loop # bool
 );
 
-// play sound in 3D space (sound id, volume, looping, position)
+# play sound in 3D space (sound id, volume, looping, position)
 GAME.SOUND.play3D(
-    id, // num
-    vol, // num
-    loop, // bool
-    x, // num
-    y, // num
-    z // num
+    id, # num
+    vol, # num
+    loop, # bool
+    x, # num
+    y, # num
+    z # num
 );
 ```
 
@@ -155,12 +171,12 @@ If you want to play sounds/audio through the server and all clients, please refe
 
 A script is used to calculate and apply logic to your game.
 
-```csharp
+```krunkscript
 num test = 10;
-function calc(num val) {
+num action calc(num val) {
     return test * val;
 }
-GAME.log(calc(5)); // logs 50
+GAME.log(calc(5)); # logs 50
 ```
 
 To learn more about scripts, refer to the [Scripting](./files/scripting) section of the documentation.

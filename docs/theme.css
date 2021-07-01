@@ -1097,11 +1097,17 @@ code .token {
     top: 20px;
 }
 
-pre[data-lang="csharp"]::after {
-	content: "KrunkScript"
-}
-
 .hidep {
 	margin: 0 !important;
 	height: 0 !important;
+}
+
+.disBar {
+	margin-top: 25px;
+	background-color: #da4646;
+	color: #fff;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	font-weight: 700;
 }

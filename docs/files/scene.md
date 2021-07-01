@@ -29,17 +29,16 @@ ___
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
+```krunkscript
 GAME.SCENE.setFog(
-    "#fff", // str color
-    100 // num fog distance
+    "#fff", # str color
+    100 # num fog distance
 );
 ```
 
 ___
 
 **Terrain:** Limited seed based terrain implementation.
-
 ___
 
 **Ocean:** Reflective & customizable ocean component
@@ -65,14 +64,14 @@ ___
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
+```krunkscript
 obj lamp = GAME.SCENE.addPointLight(
-    "#fff", // str color
-    0, // num x position
-    0, // num y position
-    0, // num z position
-    50, // num range
-    0.1 // num falloff
+    "#fff", # str color
+    0, # num x position
+    0, # num y position
+    0, # num z position
+    50, # num range
+    0.1 # num falloff
 );
 ```
 
@@ -87,12 +86,12 @@ ___
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
+```krunkscript
 obj sun = GAME.SCENE.addDirLight(
-    "#fff", // str color
-    0, // num x direction
-    0, // num y direction
-    0, // num z direction
+    "#fff", # str color
+    0, # num x direction
+    0, # num y direction
+    0, # num z direction
 );
 ```
 
@@ -107,14 +106,20 @@ ___
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
+```krunkscript
 obj flashlight = GAME.SCENE.addSpotLight(
-    "#fff", // str color
-    0, // num x position
-    0, // num y position
-    0, // num z position
-    50, // num range
-    0.1 // num falloff
+    "#fff", # str color
+    0,   # num x position
+    20,  # num y position
+    0,   # num z position
+	0,   # num x target pos
+	0,   # num y target pos
+	0,   # num z target pos
+    50,  # num range
+    0.1, # num decay
+	1,   # intensity
+	0,   # angle
+	0,   # penumbra
 );
 ```
 
@@ -129,15 +134,15 @@ ___
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
+```krunkscript
 obj window = GAME.SCENE.addRectLight(
-    "#fff", // str color
-    0, // num x position
-    0, // num y position
-    0, // num z position
-    1, // num width
-    1, // num height
-    1, // num length
+    "#fff", # str color
+    0, # num x position
+    0, # num y position
+    0, # num z position
+    1, # num width
+    1, # num height
+    1, # num length
 );
 ```
 
@@ -187,17 +192,17 @@ ___
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
-// add via KrunkScript
+```krunkscript
+# add via KrunkScript
 obj cube = GAME.SCENE.addCube(
-    src, // str texture asset id
-    colr, // str color
-    x, // num x position
-    y, // num y position
-    z, // num z position
-    w, // num width
-    h, // num height
-    l // num length
+    src, # str texture asset id
+    colr, # str color
+    x, # num x position
+    y, # num y position
+    z, # num z position
+    w, # num width
+    h, # num height
+    l # num length
 );
 ```
 
@@ -207,31 +212,31 @@ ___
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
-// add via KrunkScript
+```krunkscript
+# add via KrunkScript
 obj plane = GAME.SCENE.addPlane(
-    src, // str texture asset id
-    colr, // str color
-    x, // num x position
-    y, // num y position
-    z, // num z position
-    w, // num width
-    l // num length
+    src, # str texture asset id
+    colr, # str color
+    x, # num x position
+    y, # num y position
+    z, # num z position
+    w, # num width
+    l # num length
 );
 ```
 **Spheres:** 3D Sphere (Texture, Color, Scale, Position)
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
-// add via KrunkScript
+```krunkscript
+# add via KrunkScript
 obj sphere = GAME.SCENE.addSphere(
-    src, // str texture asset id
-    colr, // str color
-    x, // num x position
-    y, // num y position
-    z, // num z position
-    s, // num scale
+    src, # str texture asset id
+    colr, # str color
+    x, # num x position
+    y, # num y position
+    z, # num z position
+    s, # num scale
 );
 ```
 
@@ -241,15 +246,15 @@ ___
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
-// add via KrunkScript
+```krunkscript
+# add via KrunkScript
 obj sprite = GAME.SCENE.addSprite(
-    src, // str texture asset id
-    colr, // str color
-    x, // num x position
-    y, // num y position
-    z, // num z position
-    s, // num scale
+    src, # str texture asset id
+    colr, # str color
+    x, # num x position
+    y, # num y position
+    z, # num z position
+    s, # num scale
 );
 ```
 
@@ -271,12 +276,12 @@ You can also import custom assets to your game, if the default objects don't ful
 
 You can remove any 3D object from your scene using KrunkScript:
 
-```csharp
-// add object
+```krunkscript
+# add object
 obj cube = GAME.SCENE.addCube("", "#fff", 0, 0, 0, 10, 10, 10);
 
-// remove object when needed
-GAME.SCENE.remove(cube.sid); // by unique object sid
+# remove object when needed
+GAME.SCENE.remove(cube.sid); # by unique object sid
 ```
 
 <br><br/>
@@ -292,30 +297,30 @@ ___
 
 **Using KrunkScript:** (This works on all object types)
 
-```csharp
-// create cube object
+```krunkscript
+# create cube object
 obj cube = GAME.SCENE.addCube(
-    "", // no texture
-    "#fff", // white color
-    0, // x
-    0, // y
-    0, // z
-    10, // width
-    10, // height
-    10 // length
+    "", # no texture
+    "#fff", # white color
+    0, # x
+    0, # y
+    0, # z
+    10, # width
+    10, # height
+    10 # length
 );
 
-// moving objects
-cube.x = cube.x + 1; // move cube on x-axis
-GAME.SCENE.movObj(cube, 0, 1, 0); // move cube via action
+# moving objects
+cube.x = cube.x + 1; # move cube on x-axis
+GAME.SCENE.movObj(cube, 0, 1, 0); # move cube via action
 
-// scale objects
-cube.scale.x = 5; // scale cube on x-axis
-GAME.SCENE.scaleObj(cube, 5, 1, 1); // scale cube via action
+# scale objects
+cube.scale.x = 5; # scale cube on x-axis
+GAME.SCENE.scaleObj(cube, 5, 1, 1); # scale cube via action
 
-// rotate objects
-cube.rot.x = MATH.PI; // rotate cube on x-axis
-GAME.SCENE.rotObj(cube, 0, 0, MATH.PI); // rotate cube via action
+# rotate objects
+cube.rot.x = MATH.PI; # rotate cube on x-axis
+GAME.SCENE.rotObj(cube, 0, 0, MATH.PI); # rotate cube via action
 ```
 
 If you want to move an object across the server and all clients, please refer to the [Multiplayer & Networking](./files/multiplayer_&_networking) section.
@@ -328,10 +333,10 @@ Any 3D Object can be hidden using KrunkScript:
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
-// hide cube object
+```krunkscript
+# hide cube object
 obj cube = GAME.SCENE.addCube("", "#fff", 0, 0, 0, 10, 10, 10);
-cube.visible = false; // hide cube
+cube.visible = false; # hide cube
 ```
 
 <br><br/>

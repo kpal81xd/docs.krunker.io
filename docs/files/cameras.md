@@ -10,7 +10,7 @@ By default, the player camera will be attached to your player object. In order t
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
+```krunkscript
 GAME.CAMERA.detach();
 ```
 
@@ -18,26 +18,26 @@ Once the camera is detached, you can also rotate or position it:
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
-// move camera
+```krunkscript
+# move camera
 GAME.CAMERA.move(
-    x, // num x position
-    y, // num y position
-    z //  num z position
+    x, # num x position
+    y, # num y position
+    z #  num z position
 );
 
-// rotate camera
+# rotate camera
 GAME.CAMERA.rotate(
-    x, // num x rotation
-    y, // num y rotation
-    z //  num z rotation
+    x, # num x rotation
+    y, # num y rotation
+    z #  num z rotation
 );
 
-// camera look at point
+# camera look at point
 GAME.CAMERA.lookAt(
-    x, // num x position
-    y, // num y position
-    z //  num z position
+    x, # num x position
+    y, # num y position
+    z #  num z position
 );
 ```
 
@@ -49,9 +49,9 @@ Certain camera properties that can be changed in KrunkScript:
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
-```csharp
-// change fov
-GAME.CAMERA.setFOV(90); // num 10-170
+```krunkscript
+# change fov
+GAME.CAMERA.fov(90); # num 10-170
 ```
 
 <br><br/>

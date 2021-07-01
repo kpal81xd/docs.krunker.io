@@ -17,7 +17,7 @@ If you need some inspiration, check out our list of Examples or see if you can f
 Once you have an idea of how you want your game to work and look, you can start working on it.\
 To get started, open the Krunker Editor. From there you will be greeted with the following popup:
 
-```csharp
+```krunkscript
 
 ```
 

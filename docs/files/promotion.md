@@ -41,7 +41,6 @@ We also have an official Discord Server, where we can advertise your game to ove
 Once you've assigned a [Custom URL](./files/publish_your_game?id=custom-url) to your game, you can submit it to online gaming portals for extra exposure:
 
  * [Crazygames.com](https://www.Crazygames.com/)
- * [Miniclip.com](https://www.miniclip.com/games)
  * [Kongregate.com](https://www.kongregate.com/)
 
 <br><br/>
