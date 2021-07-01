@@ -1,3 +1,3 @@
-# Welcome to the KrunkScript Documentation
+# Welcome to the Krunker Documentation
 
 ---
