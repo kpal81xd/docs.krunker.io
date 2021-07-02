@@ -319,7 +319,7 @@ cube.scale.x = 5; # scale cube on x-axis
 GAME.SCENE.scaleObj(cube, 5, 1, 1); # scale cube via action
 
 # rotate objects
-cube.rot.x = MATH.PI; # rotate cube on x-axis
+cube.rotation.x = MATH.PI; # rotate cube on x-axis
 GAME.SCENE.rotObj(cube, 0, 0, MATH.PI); # rotate cube via action
 ```
 
