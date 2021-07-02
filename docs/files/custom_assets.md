@@ -142,10 +142,11 @@ GAME.SOUND.play2D(
 GAME.SOUND.play3D(
     id, # num
     vol, # num
-    loop, # bool
     x, # num
     y, # num
-    z # num
+    z, # num
+    rate, # num
+    loop # bool
 );
 ```
 
