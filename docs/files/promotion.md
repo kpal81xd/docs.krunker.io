@@ -10,6 +10,8 @@ If you qualify for funding, we will reach out to you. Genereally we look for:
  * Unique gameplay & mechanics
  * Thinking outside the box
 
+If you are working on a unique project in Krunker, let us know at **krunker@yendis.ch** and we can explore funding options.
+
 <br><br/>
 
 ## Community
@@ -32,7 +34,7 @@ We will also advertise certain handpicked games on our social channels frequentl
 
 ___
 
-We also have an official Discord Server, where we can advertise your game to over 300,000 potential users.
+We also have an official [Discord Server](https://discord.com/invite/Dw8F62u), where we can advertise your game to over *300,000 potential users*.
 
 <br><br/>
 
@@ -57,6 +59,11 @@ Promoting your game through traditional marketing channels can be very effective
 ## In-Game
 
 You can also buy direct ad space in-game using KR (Krunker Currency).
+
+```
+```
+
+* This feature is a work in progress and will be expanded upon in the near future.
 
 <br><br/>
 

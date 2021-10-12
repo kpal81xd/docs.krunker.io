@@ -1,6 +1,7 @@
 ## Introduction
 
-Resource Packs and Mods are used to replace or change the default components of krunker such as: Textures, Sounds, Models and the interface. If you are making a game entirely from scratch, only the Custom CSS section is relevant for you.
+Resource Packs and Mods are used to replace or change the default components of krunker such as: Textures, Sounds, Models and the interface.\
+If you are making a game entirely from scratch, only the Custom CSS section is relevant for you.
 
 ___
 
@@ -59,7 +60,7 @@ Here is a small example of how you would override default Krunker elements:
 
 ## Settings Override
 
-Allows you to temporarily override user settings to accomodate specific game requirements: fov, disabling skins, saturation etc
+Allows you to temporarily override user settings to accomodate specific game requirements: **fov, disabling skins, saturation, etc.**
 
 ```krunkscript
 # some example settings
@@ -72,11 +73,13 @@ highResShad,false
 postProcessing,true
 bloom,false
 ```
+
 To view a full list of changable settings, click [here](https://krunker.io/docs/settings.txt). These settings are reset once a player leaves your game.
 
 ___
 
 Alternatively you can use KrunkScript to set Settings:
+
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
 ```krunkscript

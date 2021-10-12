@@ -7,8 +7,8 @@ In order to qualify for payouts you must be an approved [Krunker Partner](./file
 
 ## Gameplays
 
-Everytime someone plays your game, you get paid. This revenue share is calculated\
-based on ad impressions on your game:
+Everytime someone plays your game, you get paid.\
+This revenue share is calculated based on ad impressions on your game:
 
 ![Revenue gameplays](./img/revenue/1.png)
 
@@ -22,13 +22,14 @@ Using KrunkScript you can choose to display a video-ad on the players screen. He
 
  * **Reward for watching:** Coins, Items, Stage Skip etc
  * **Between game rounds:** Play an ad when the round ends.
- * **On death:** When a player dies, you can play an ad if enough time has passed since the last ad.\
+ * **On death:** When a player dies, you can play an ad if enough time has passed since the last ad.
 
 It is important that you make the ads as non-intrusive as possible. If uses are complaining about the presence of ads, you are doing it wrong.
 
 ___
 
-Example Script:
+**Example Script:**
+
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
 ```krunkscript
@@ -40,7 +41,9 @@ GAME.ADS.playVideo(); # can only be called every 5 mins
 
 ## Referral Link
 
-A referral link allows us to track how a new player comes to krunker. When a player signs up with your referral link, you get paid every time they play any krunker game. To fully take advantage of this system, make sure to include your referral code when sharing your games URL: [https://krunker.io/?play=AIM_Room&ref=CODEHERE](https://krunker.io/?play=AIM_Room&ref=CODEHERE)
+A referral link allows us to track how a new player comes to krunker.\
+When a player signs up with your referral link, you get paid every time they play any krunker game.\
+To fully take advantage of this system, make sure to include your referral code when sharing your games URL: [https://krunker.io/?play=AIM_Room&ref=CODEHERE](https://krunker.io/?play=AIM_Room&ref=CODEHERE)
 
 ![Referral images](./img/revenue/2.png)
 
@@ -63,7 +66,7 @@ Krunker Partners are able to earn money from Krunker in several ways depending o
  * **Gameplay Revenue share**: Partner Level 2
 
 If you are not a Partner yet, navigate to the Profile » Partner tab in-game. \
-Partner Level 2 is achieved by reaching 100,000 plays in the last 30 days.
+**Partner Level 2** is achieved by reaching *100,000 plays* in the *last 30 days*.
 
 <br><br/>
 
@@ -79,3 +82,9 @@ Player retention is very important if you want to create a consistent revenue st
 
 <br><br/>
 
+## Krunkies
+
+Krunkies are Krunkers default currency that can be earned from playing or through purchases.\
+You can award KR to players or charge KR for certain features.
+
+<br><br/>

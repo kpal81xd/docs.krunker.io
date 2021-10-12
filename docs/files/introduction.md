@@ -1,9 +1,12 @@
 ## What is Krunker?
 
-Krunker is an Online Platform designed to allow creators to easily create and publish Cross-Platform games/experiences\
-without having to worry about hosting, monetization or the other drawbacks that arise from using traditional game creation tools.
+Krunker is an Online Platform designed to allow creators to easily create and publish\
+Cross-Platform games/experiences without having to worry about hosting,\
+monetization or the other drawbacks that arise from using traditional game creation tools. 
 
-Krunker also offers a uninque and engaging core experience to draw in new users.
+Krunker also offers a unique and engaging core experience to draw in new users.
+
+![PreviewSmall](./img/education/teacher_1.gif)
 
 <br><br/>
 
@@ -19,6 +22,8 @@ Publishing to Web & Mobile can also be done with a few clicks!
 4. Add [Game Logic](./files/game_logic)
 5. [Publish your Game](./files/publish_your_game) to Multiple Platforms
 
+![PreviewSmall](./img/education/student_0.gif)
+
 <br><br/>
 
 ## Benefits
@@ -33,7 +38,7 @@ and additionally handles a lot of the mundane aspects of game creation:
 * Login & Account Systems
 * Mobile Publishing & Cross Platform Support
 * No Upfront Costs for Creating & Publishing
-* Unique Revenue model that ears you money per play
+* Unique Revenue model that earns you money per play
 
 <br><br/>
 

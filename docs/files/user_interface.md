@@ -41,7 +41,7 @@ GAME.UI.updateDIV(
 # example of updating a div's width
 GAME.UI.updateDIV("healthBar", "width", "10px");
 
-# list of properties you can change:
+# example of properties you can change (can change majority of known CSS properties):
 - width, height
 - left, right, top, bottom,
 - background-color
@@ -58,7 +58,7 @@ You can assign click events to UI elements to call custom actions when a player 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
 ```krunkscript
-# built-in click listener
+# built-in click hook/listener
 public action onDIVClicked(str id) {
     if (id == "customDIVID") {
         # do something

@@ -1,6 +1,6 @@
-window.onpopstate = function (evt) {
+var checkHighlights = setInterval(() => document.querySelectorAll("code.lang-krunkscript:not(.hljs)").length > 0 && hljs.highlightAll(), 50)
 
-    hljs.highlightAll();
+window.onpopstate = function (evt) {
 
     let sidebar = document.getElementsByClassName("sidebar")[0],
         categories = [...document.querySelectorAll("li > p")],
@@ -30,11 +30,9 @@ window.addEventListener("scroll", () => {
         let h = h2s[h2s.length - 1],
             fixedHeight = main.clientHeight + (screen.availHeight - (main.scrollHeight - h.offsetTop + h.clientHeight + main.offsetTop + 10)) + "px";
 
-        if (main.style.height != fixedHeight) {
+        if (main.style.height < fixedHeight) {
             main.style.height = fixedHeight;
-            hljs.highlightAll();
         }
-
     }
 });
 

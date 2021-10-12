@@ -7,13 +7,28 @@ For rendering 3D Objects, please refer to the [3D Objects](./files/scene?id=addi
 
 ## Overlay Canvas
 
-The overlay canvas allows you to render 2D Elements on the screen. This is useful for [creating UI](./files/user_interface?id=adding-an-element-div) elements or rendering game objects for a 2D Game.
+The overlay canvas allows you to render 2D Elements on the screen. This is useful for creating [UI Elements](./files/user_interface?id=adding-an-element-div) or rendering game objects for a 2D Game.
+
+---
+
+KrunkScript offers a few built-in utilities for the Overlay object:
+
+<p class="hidep"><strong class="client-side">client-side</strong></p>
+
+```krunkscript
+GAME.OVERLAY.getSize(); # get overlay dimensions
+GAME.OVERLAY.offset(10, 0); # translate entire rendering context
+GAME.OVERLAY.scale(0.1); # scale entire rendering context
+GAME.OVERLAY.measureText(10, "Test"); # measure text with based on font size
+GAME.OVERLAY.clear(); # clear canvas
+```
 
 <br><br/>
 
 ## Render Loop
 
-Krunker automatically updates every frame. To smoothly render objects put all your rendering logic inside the render action on the client:
+Krunker automatically updates every frame.\
+To smoothly render objects put all your rendering logic inside the render action on the client:
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
@@ -25,7 +40,7 @@ action render(num delta) {
     GAME.OVERLAY.clear(); # do once before rendering
 
     # render after logic is processed
-    GAME.OVERLAY.drawRect(0, 0, 0, 20, 15, 0, "#ff0000", 1); # red rectangle
+    GAME.OVERLAY.drawRect(0, 0, 20, 15, 0, "#ff0000", 1); # red rectangle
 }
 ```
 
@@ -49,7 +64,8 @@ GAME.OVERLAY.drawRect(
     h, # num height
     r, # num rotation (degrees)
     color, # str color
-    opac # num opacity
+    opac, # num opacity
+    center # bool center on position (optional)
 );
 ```
 
@@ -67,7 +83,8 @@ GAME.OVERLAY.drawCircle(
     h, # num height
     r, # num rotation (degrees)
     color, # str color
-    opac # num opacity
+    opac, # num opacity
+    center # bool center on position (optional)
 );
 ```
 
@@ -88,8 +105,6 @@ GAME.OVERLAY.drawLine(
     opac # num opacity
 );
 ```
-
-___
 
 <br><br/>
 
@@ -141,4 +156,3 @@ num textWidth = GAME.OVERLAY.measureText(
 ```
 
 <br><br/>
-

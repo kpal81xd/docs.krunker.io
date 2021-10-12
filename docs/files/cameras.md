@@ -6,12 +6,16 @@ By default Krunker adds a camera object to your scene. Cameras are responsible f
 
 ## Updating Cameras
 
-By default, the player camera will be attached to your player object. In order to move it around or lock it in position, you have to detach it from the player object:
+By default, the player camera will be attached to your player object.\
+In order to move it around or lock it in position, you have to detach it from the player object:
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
 ```krunkscript
 GAME.CAMERA.detach();
+
+# you can re-attach it using:
+GAME.CAMERA.attach();
 ```
 
 Once the camera is detached, you can also rotate or position it:
@@ -23,21 +27,21 @@ Once the camera is detached, you can also rotate or position it:
 GAME.CAMERA.move(
     x, # num x position
     y, # num y position
-    z #  num z position
+    z  # num z position
 );
 
 # rotate camera
 GAME.CAMERA.rotate(
     x, # num x rotation
     y, # num y rotation
-    z #  num z rotation
+    z  # num z rotation
 );
 
 # camera look at point
 GAME.CAMERA.lookAt(
     x, # num x position
     y, # num y position
-    z #  num z position
+    z  # num z position
 );
 ```
 
@@ -52,6 +56,13 @@ Certain camera properties that can be changed in KrunkScript:
 ```krunkscript
 # change fov
 GAME.CAMERA.fov(90); # num 10-170
+
+# position & rotation
+# detach the camera before you move it here
+GAME.CAMERA.position.x = 10;
+num xP = (num) GAME.CAMERA.position.x;
+GAME.CAMERA.rotation.y = Math.PI;
+num yR = (num) GAME.CAMERA.rotation.y;
 ```
 
 <br><br/>

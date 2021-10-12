@@ -13,11 +13,15 @@ You can check if a certain keyboard key is pressed by using KrunkScript:
 ```krunkscript
 # must be inside update loop
 action update(num delta) {
-    if (GAME.INPUTS.keyDown("W")) {
+
+	# uses javascript keycodes
+    if (GAME.INPUTS.keyDown(67)) {
         # do something
     };
 };
 ```
+
+If you want to learn which keycodes match which key, go [here](https://keycode.info/).
 
 <br><br/>
 
@@ -33,8 +37,8 @@ obj posNormal = GAME.INPUTS.mousePos();
 # do something with it
 
 # draw red circle at mouse position on overlay
-obj posOver = GAME.INPUTS.mousePosOverlay();
-GAME.OVERLAY.drawCircle(pos.x, pos.y, 10, 10, 0, "#ff0000");
+obj pos = GAME.INPUTS.mousePosOverlay();
+GAME.OVERLAY.drawCircle((num) pos.x, (num) pos.y, 10, 10, 0, "#ff0000");
 ```
 
 <br><br/>
@@ -42,6 +46,8 @@ GAME.OVERLAY.drawCircle(pos.x, pos.y, 10, 10, 0, "#ff0000");
 ## Mouse Movement
 
 You can also get the amount the mouse has moved by this frame using KrunkScript:
+
+<p class="hidep"><strong class="client-side">client-side</strong></p>
 
 ```krunkscript
 # get mouse movement vector
@@ -54,6 +60,8 @@ obj pos = GAME.INPUTS.mouseMovement();
 
 You unlock the mouse to allow players to interact with custom UI by using KrunkScript:
 
+<p class="hidep"><strong class="client-side">client-side</strong></p>
+
 ```krunkscript
 # unlock mouse
 GAME.INPUTS.unlockMouse();
@@ -64,6 +72,8 @@ To relock the mouse, players can just click off of the custom divs.
 ---
 
 You can also permanently unlock your mouse if your game requires it:
+
+<p class="hidep"><strong class="client-side">client-side</strong></p>
 
 ```krunkscript
 # unlock mouse at all times
@@ -80,13 +90,18 @@ The client.krnk script also has a few pre-built actions that listen for inputs e
 
 ```krunkscript
 # mouse click listener
-action onMouseClick(num x, num y) {
+public action onMouseClick(num button, num x, num y) {
 	# called every mouse click
+	# button left, middle click etc
+	# do something with x & y coordinates
+}
+public action onMouseUp(num button, num x, num y) {
+	# button left, middle click etc
 	# do something with x & y coordinates
 }
 
 # key press listener
-action onKeyPress(str key) {
+public action onKeyPress(str key, num code) {
     # check for key value:
     if (key == "w") {
         # pressed W
@@ -94,7 +109,7 @@ action onKeyPress(str key) {
 }
 
 # key up listener
-action onKeyUp(str key) {
+public action onKeyUp(str key, num code) {
     # check for key value:
     if (key == "w") {
         # released W
@@ -102,7 +117,7 @@ action onKeyUp(str key) {
 }
 
 # key held listener
-action onKeyHeld(str key) {
+public action onKeyHeld(str key, num code) {
     # check for key value:
     if (key == "w") {
         # holding W
@@ -110,10 +125,15 @@ action onKeyHeld(str key) {
 }
 
 # mouse scroll listener
-action onMouseScroll(num dir) {
+public action onMouseScroll(num dir) {
 	# scroll direction
 }
 ```
 
 <br><br/>
 
+## VR Controls
+
+VR Support coming soon!
+
+<br><br/>

@@ -6,6 +6,7 @@ Data Storage allows you to store data in a database server to be loaded again at
  * Leaderboards & Highscores
  * Saving map state & data
  * Adding item unlocks & rewards
+
 Only use Data Storage when you want to save persistent data. If you want to save data locally, use [Cookies](./files/data_storage?id=cookies-amp-local-storage) instead.
 
 <br><br/>
@@ -23,7 +24,7 @@ GAME.STORAGE.save(
     key, # str data unique key
     value, # num value to save
     type, # num save type
-    playerID, # num player id (optional)
+    playerName, # str player account name (optional)
 );
 
 # save types:
@@ -53,7 +54,7 @@ Load data from Database using KrunkScript:
 ```krunkscript
 # load player data
 GAME.STORAGE.loadPlayerData(
-    playerID # num player id
+    playerName # str player account name
 );
 
 # get all data for a player:
