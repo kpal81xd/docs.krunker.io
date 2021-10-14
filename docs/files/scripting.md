@@ -7,8 +7,6 @@ You can also interact with game elements such as: **objects**, **interface**, [O
 If you are not sure how to create your own script, we have created a few [Examples & Templates](./files/examples_&_templates) for you to learn from.\
 Alternatively you can search for scripts in the **Community Asset Hub**.
 
-<br><br/>
-
 ## Script Types
 
 There are 3 types of scripts in KrunkScript:
@@ -27,15 +25,12 @@ ___
 
 **Addon Scripts:** These scripts can be imported into the client or server scripts and allow you to modularize your code.\
 Addon scripts can be found on the **Community Asset Hub**
-<br><br/>
 
 ## Create a Script
 
 To create a new script, navigate to the 'Scripting' button in the editor:
 
 ![Preview](./img/scripting/scrpt_0.gif)
-
-<br><br/>
 
 ## Server/Client
 
@@ -44,8 +39,6 @@ Some actions however are specific to one or the other.
 
 Anything rendering related for example will run only on the client.\
 It is important to understand the difference between the two.
-
-<br><br/>
 
 ## Hook Actions
 
@@ -122,9 +115,6 @@ Both scripts also have built-in network listener actions that are called automat
 ___
 Additionally, the client.krnk script has a few [Input Listener](./files/inputs?id=input-listeners) and [UI Interaction](./files/inputs?id=click-events) actions built-in.
 
-
-<br><br/>
-
 ## Default Behaviour
 
 Krunker offers a lot of default behaviour out of the box to make things easier.\
@@ -147,8 +137,6 @@ GAME.UI.hideCrosshair(); # disables crosshair (client only)
 GAME.PLAYERS.disableMeshes(); # hides default player models (replace with custom)
 ```
 
-<br><br/>
-
 ## Variables
 
 Variables are used to store information
@@ -159,8 +147,6 @@ num number = 1; # number (int/float)
 str text = "hello world"; # string/text
 bool val = true; # boolean
 ```
-
-<br><br/>
 
 ## Naming Rules
 
@@ -177,8 +163,6 @@ obj name = {}; # valid
 # no special characters allowed
 ```
 
-<br><br/>
-
 ## Type Conversion
 
 Converting from one type to another
@@ -192,8 +176,6 @@ num newNum = toNum text; # convert to string (deprecated)
 num test = toNum "0"; # valid (deprecated)
 num test2 = toNum "a"; # invalid: returns 0 (deprecated)
 ```
-
-<br><br/>
 
 ## Objects
 
@@ -214,8 +196,6 @@ if (notEmpty other) {
 	# this condition would fail
 }
 ```
-
-<br><br/>
 
 ## Arrays (Lists)
 
@@ -245,8 +225,6 @@ addTo list 10; # add new item to list
 # nested lists
 num[][] nested = num[][num[1], num[1, 2]];
 ```
-
-<br><br/>
 
 ## Functions & Actions
 
@@ -286,8 +264,6 @@ ___
 
 You can also use [Trigger Objects](./files/trigger_logic?id=trigger-logic) in your scene to call a custom script action by using the "Call Action" [Trigger Action](./files/trigger_logic?id=trigger-actions). The player object will be passed in (if available).
 
-<br><br/>
-
 ## Debugging
 
 
@@ -298,8 +274,6 @@ GAME.log("Text"); # logs text to the browser console
 GAME.log(object); # logs object to console
 GAME.log((str) number + "text"); # log number concatenated to string
 ```
-
-<br><br/>
 
 ## Maths & Calculations
 
@@ -397,8 +371,6 @@ obj.x; # x direction
 obj.y; # y direction
 ```
 
-<br><br/>
-
 ## String Manipulation & Testing
 
 You can use KrunkScript to manipulate strings in several ways:
@@ -423,8 +395,6 @@ if (UTILS.textContains(testString, "test")) {
 
 # regex support coming soon
 ```
-
-<br><br/>
 
 ## Loops
 
@@ -466,8 +436,6 @@ for (num i = 0; i < 10; i++) {
 # looping through objects will come soon
 # ...
 ```
-
-<br><br/>
 
 ## Conditions & if Statements
 
@@ -516,8 +484,6 @@ num = (true?1:0);
 # also make sure to wrap operations in ()
 ```
 
-<br><br/>
-
 ## Importing Scripts
 
 You can add dependencies to your scripts to extend their functionality.\
@@ -535,8 +501,6 @@ obj lib = import("scriptName"); # name as shown in dependencies list
 
 \* Note that importing & publishing of scripts is currently disabled.
 
-<br><br/>
-
 ## Script Usage
 
 Once you understand how to create a basic script, it's time to apply some logic to the game itself.\
@@ -553,6 +517,3 @@ Check the following sections for more info:
 [Send Network Data](./files/multiplayer_&_networking?id=introduction)\
 [Execute Triggers](./files/trigger_logic?id=triggers-amp-scripts)\
 [Collisions](./files/game_logic?id=collisions)
-
-<br><br/>
-

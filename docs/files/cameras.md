@@ -2,8 +2,6 @@
 
 By default Krunker adds a camera object to your scene. Cameras are responsible for rendering the 3D world. The camera behaviour and position determines the type of game youll make; Top Down, First Person, 3rd Person or Static
 
-<br><br/>
-
 ## Updating Cameras
 
 By default, the player camera will be attached to your player object.\
@@ -45,8 +43,6 @@ GAME.CAMERA.lookAt(
 );
 ```
 
-<br><br/>
-
 ## Camera Properties
 
 Certain camera properties that can be changed in KrunkScript:
@@ -64,6 +60,3 @@ num xP = (num) GAME.CAMERA.position.x;
 GAME.CAMERA.rotation.y = Math.PI;
 num yR = (num) GAME.CAMERA.rotation.y;
 ```
-
-<br><br/>
-

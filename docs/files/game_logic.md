@@ -8,8 +8,6 @@ A basic game consists of a few simple components:
  * **Feedback:** Response to user-actions & inputs applied to elements.
  * **Rendering:** Visual representation of game elements.
 
-<br><br/>
-
 ## Timing
 
 Time plays a very important role in any game/simulation.\
@@ -48,8 +46,6 @@ public action update(num delta) {
     }
 }
 ```
-
-<br><br/>
 
 ## Players
 
@@ -92,8 +88,6 @@ player.visible = false; # hide player object
 (bool) player.isYou; # (client-side) if this player is the current active client
 player.assetID = "325253"; # update player asset (must have existing asset to work)
 ```
-
-<br><br/>
 
 ## AIs & NPCs
 
@@ -183,13 +177,9 @@ You can also add an AI spawner via the editor:
 
 ![Preview](./img/game_logic/ai_add.png)
 
-<br><br/>
-
 ## Vehicles
 
 Coming Soon
-
-<br><br/>
 
 ## Movement
 
@@ -249,17 +239,10 @@ player.disableDefault("jump");
 
 If you want to simply make changes to Krunkers default movement, such as: **Speed, Velocity, Jump Height, etc**, you can simply use the Class Configuration in the Editor.
 
-<br><br/>
-
 ## Collisions
 
 Nothing Here Yet
 
-<br><br/>
-
 ## Controls
 
 Nothing Here Yet
-
-<br><br/>
-

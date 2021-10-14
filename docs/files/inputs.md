@@ -2,8 +2,6 @@
 
 You can check/listen for user inputs. This information is useful when creating custom movement or user interacions.
 
-<br><br/>
-
 ## Keyboard Inputs
 
 You can check if a certain keyboard key is pressed by using KrunkScript:
@@ -23,8 +21,6 @@ action update(num delta) {
 
 If you want to learn which keycodes match which key, go [here](https://keycode.info/).
 
-<br><br/>
-
 ## Mouse Position
 
 You can get the Mouse Position at any time on the client by using KrunkScript:
@@ -41,8 +37,6 @@ obj pos = GAME.INPUTS.mousePosOverlay();
 GAME.OVERLAY.drawCircle((num) pos.x, (num) pos.y, 10, 10, 0, "#ff0000");
 ```
 
-<br><br/>
-
 ## Mouse Movement
 
 You can also get the amount the mouse has moved by this frame using KrunkScript:
@@ -53,8 +47,6 @@ You can also get the amount the mouse has moved by this frame using KrunkScript:
 # get mouse movement vector
 obj pos = GAME.INPUTS.mouseMovement();
 ```
-
-<br><br/>
 
 ## Unlock Mouse
 
@@ -79,8 +71,6 @@ You can also permanently unlock your mouse if your game requires it:
 # unlock mouse at all times
 GAME.INPUTS.freeMouse();
 ```
-
-<br><br/>
 
 ## Input Listeners
 
@@ -130,10 +120,6 @@ public action onMouseScroll(num dir) {
 }
 ```
 
-<br><br/>
-
 ## VR Controls
 
 VR Support coming soon!
-
-<br><br/>

@@ -10,8 +10,6 @@ If you need some inspiration, check out our list of [Examples](./files/examples_
 [WebArcade](http://www.freewebarcade.com/game-collections.php) - Simple Games\
 [Simple Arcade](http://thesimplearcade.com/) - Classic Flash Games
 
-<br><br/>
-
 ## Create a Game
 
 Once you have an idea of how you want your game to work and look, you can start working on it.\
@@ -26,8 +24,6 @@ Otherwise just select "Quick Start".
 ---
 
 For more information on creating your first game, check out the [Additional Learning](./files/additional_learning) section.
-
-<br><br/>
 
 ## Iterative Design
 

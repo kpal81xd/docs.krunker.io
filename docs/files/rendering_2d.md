@@ -3,8 +3,6 @@
 Want to show something on screen? You came to the right place. Depending on the type of game you want to make, you will either want to render 2D elements, 3D elements or both.\
 For rendering 3D Objects, please refer to the [3D Objects](./files/scene?id=adding-3d-objects) or [Custom Assets](./custom_assets?id=resources) section. Any 3D object added to the scene will render automatically.
 
-<br><br/>
-
 ## Overlay Canvas
 
 The overlay canvas allows you to render 2D Elements on the screen. This is useful for creating [UI Elements](./files/user_interface?id=adding-an-element-div) or rendering game objects for a 2D Game.
@@ -22,8 +20,6 @@ GAME.OVERLAY.scale(0.1); # scale entire rendering context
 GAME.OVERLAY.measureText(10, "Test"); # measure text with based on font size
 GAME.OVERLAY.clear(); # clear canvas
 ```
-
-<br><br/>
 
 ## Render Loop
 
@@ -43,8 +39,6 @@ action render(num delta) {
     GAME.OVERLAY.drawRect(0, 0, 20, 15, 0, "#ff0000", 1); # red rectangle
 }
 ```
-
-<br><br/>
 
 ## 2D Shapes
 
@@ -106,8 +100,6 @@ GAME.OVERLAY.drawLine(
 );
 ```
 
-<br><br/>
-
 ## Other Elements
 
 Other elements you can render on the overlay canvas.
@@ -154,5 +146,3 @@ num textWidth = GAME.OVERLAY.measureText(
     "Testing" # string text
 );
 ```
-
-<br><br/>

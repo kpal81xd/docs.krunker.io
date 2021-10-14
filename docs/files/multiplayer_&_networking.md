@@ -5,8 +5,6 @@ Each client is connected to the server.\
 The server receives information and then sends it to clients when needed.\
 This allows you to see other players moving around for example.
 
-<br><br/>
-
 ## Sending Data
 
 To send information from the client to the server you can use:
@@ -55,8 +53,6 @@ if (GAME.NETWORK.broadcast("hi there", {a: 1}) {
 }
 ```
 
-<br><br/>
-
 ## Receiving Data
 
 The **client.krnk** and **server.krnk** scripts both have built-in actions that receive all network messages.
@@ -98,8 +94,6 @@ action onNetworkMessage(str id, obj data) {
 }
 ```
 
-<br><br/>
-
 ## Syncing Objects
 
 When synchronizing an objects position/data in a multiplayer environment, it is important that the server has the authority.\
@@ -108,8 +102,6 @@ If for example, you would like to have a cube that moves around for all players,
 ```krunkscript
 
 ```
-
-<br><br/>
 
 ## Performance
 
@@ -133,8 +125,6 @@ GAME.NETWORK.send("1", {
 
 **In short:** less data sent less frequently is better for your performance.
 
-<br><br/>
-
 ## Limitations
 
 In order to preserve performance, we have introduced a few Networking & Data limitations:
@@ -155,8 +145,3 @@ ___
 ___
 
 If you run into issues with these limitations, try to restructure your data & logic.
-
-
-
-<br><br/>
-

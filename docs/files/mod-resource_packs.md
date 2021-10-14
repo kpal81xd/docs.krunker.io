@@ -19,8 +19,6 @@ GAME.MODS.load(
 GAME.MODS.reset();
 ```
 
-<br><br/>
-
 ## Structure
 
 The default [mod.zip](https://krunker.io/modzip) has the following structure:
@@ -32,8 +30,6 @@ The default [mod.zip](https://krunker.io/modzip) has the following structure:
  * **css**: allows for overriding of default CSS & fonts.
  * **css-img**: use this if you want to load any images via CSS.
  * **shaders**: apply custom post processing shaders (example in mod.zip).
-
-<br><br/>
 
 ## Custom CSS
 
@@ -55,8 +51,6 @@ Here is a small example of how you would override default Krunker elements:
     src: CSSFONT:font2; /* css/fonts/font2.ttfq */
 }
 ```
-
-<br><br/>
 
 ## Settings Override
 
@@ -93,11 +87,6 @@ GAME.SETTINGS.set(
 GAME.SETTINGS.set("resolution", '0.6');
 ```
 
-<br><br/>
-
 ## Download Latest
 
 Download the latest mod.zip [here](https://krunker.io/modzip). It will update when major changes are made to modding.
-
-<br><br/>
-

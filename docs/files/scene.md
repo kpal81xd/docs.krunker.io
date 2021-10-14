@@ -2,13 +2,9 @@
 
 Unless you are creating a 2D Game on the [Overlay Canvas](./files/rendering_2d?id=overlay-canvas), you will most likely utilize the 3D Scene in some way.
 
-<br><br/>
-
 ## Structure
 
 A basic 3D Scene comprises of a Skybox, a [Camera](./files/cameras) and a few Objects. There are a few extra components to help you further customize the look of your scene.
-
-<br><br/>
 
 ## Components
 
@@ -96,9 +92,6 @@ ___
 ___
 
 Some of these components may be limited in terms of functionality.
-
-<br><br/>
-
 ## Environments
 
 A scene can feature several environments.\
@@ -119,9 +112,6 @@ You can also get the active environment zone via **KrunkScript:**
 # get active environment zone index
 num activeZone = (num) GAME.CAMERA.envZone; # index or -1 if in default
 ```
-
-<br><br/>
-
 ## Lights
 
 Light Objects can be used to add more ambience to your scene.\
@@ -242,8 +232,6 @@ ___
 
 For updating/moving lights, refer to the [Moving, Rotating & Scaling](./files/scene?id=moving-rotating-amp-scaling) section.\
 Please note that lights require you to use a Lighting setting higher than default.
-
-<br><br/>
 
 ## Adding 3D Objects
 
@@ -418,9 +406,6 @@ ___
 
 You can also import custom assets to your game, if the default objects don't fulfill your needs.
 
-
-<br><br/>
-
 ## Removing 3D Objects
 
 You can clear your 3D scene by using KrunkScript:
@@ -439,8 +424,6 @@ cube.delete();
 # clear scene
 GAME.SCENE.clear(); # removes all objects in scene
 ```
-
-<br><br/>
 
 ## Attaching/Detaching 3D Objects
 
@@ -470,8 +453,6 @@ cube.attachTo(player, 0, 0, 0, true);
 cube.detach();
 ```
 
-<br><br/>
-
 ## Coordinate System
 
 Coordinates in 2D and 3D space are represented as x, y and x, y, z:
@@ -498,8 +479,6 @@ obj coords2D = GAME.SCENE.posToScreen(0, 10, 0);
 
 This is useful for adding 2D Overlays to objects such as: Healthbars, Text-tags, etc.
 
-<br><br/>
-
 ## Path Nodes
 
 Path/Coordinate 3D objects that can be added by hand and interacted with using KrunkScript:
@@ -519,8 +498,6 @@ for (num i = 0; i < lengthOf nodes; ++i) {
 ```
 
 This is useful for creating basic path-findingg or accessing coordinates.
-
-<br><br/>
 
 ## Moving, Rotating & Scaling
 
@@ -568,8 +545,6 @@ cube.lookAt(0, 0, 0);
 
 If you want to move an object across the server and all clients, please refer to the [Multiplayer & Networking](./files/multiplayer_&_networking) section.
 
-<br><br/>
-
 ## Object Visibility
 
 Any 3D Object can be hidden using KrunkScript:
@@ -581,8 +556,6 @@ Any 3D Object can be hidden using KrunkScript:
 obj cube = GAME.SCENE.addCube("", "#fff", 0, 0, 0, 10, 10, 10);
 cube.visible = false; # hide cube
 ```
-
-<br><br/>
 
 ## Sounds
 

@@ -9,8 +9,6 @@ Data Storage allows you to store data in a database server to be loaded again at
 
 Only use Data Storage when you want to save persistent data. If you want to save data locally, use [Cookies](./files/data_storage?id=cookies-amp-local-storage) instead.
 
-<br><br/>
-
 ## Storing Data
 
 <div class="disBar">Currently Disabled</div>
@@ -41,8 +39,6 @@ GAME.STORAGE.save("coins", 20, 0, player.id);
 GAME.STORAGE.save("gamePlays", 1, 3);
 ```
 
-<br><br/>
-
 ## Loading Data
 
 <div class="disBar">Currently Disabled</div>
@@ -61,8 +57,6 @@ GAME.STORAGE.loadPlayerData(
 obj data = GAME.STORAGE.loadPlayerData(player.id);
 GAME.log(data.coins); # access data
 ```
-
-<br><br/>
 
 ## Cookies & Local Storage
 
@@ -93,11 +87,9 @@ GAME.COOKIES.has(
 );
 ```
 
-<br><br/>
-
 ## Pricing
 
 Data Storage is currently free.
 
-<br><br/>
+
 

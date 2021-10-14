@@ -19,5 +19,3 @@ GAME.PLATFORM.isMobile(); # is on mobile device
 GAME.PLATFORM.isBrowser(); # is on a browser
 GAME.PLATFORM.isClient(); # is using client (steam, official etc)
 ```
-
-<br><br/>

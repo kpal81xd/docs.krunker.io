@@ -22,8 +22,6 @@ GAME.UI.removeDIV(
 );
 ```
 
-<br><br/>
-
 ## Positioning & Styling
 
 You can update the styling and positioning of UI elements with KrunkScript:
@@ -49,8 +47,6 @@ GAME.UI.updateDIV("healthBar", "width", "10px");
 - ...
 ```
 
-<br><br/>
-
 ## Click Events
 
 You can assign click events to UI elements to call custom actions when a player clicks something:
@@ -66,8 +62,6 @@ public action onDIVClicked(str id) {
 }
 ```
 
-<br><br/>
-
 ## Updating Content
 
 You can update the inner content of a UI element using KrunkScript:
@@ -82,13 +76,9 @@ GAME.UI.updateDIVText(
 );
 ```
 
-<br><br/>
-
 ## Custom CSS
 
 You can fully customize your games CSS using a [Resource Pack](./files/mod-resource_packs?id=custom-css)
-
-<br><br/>
 
 ## Mobile Friendly UI
 
@@ -130,6 +120,3 @@ Alternatively you can assign the Mobile Only property to the Element in the edit
 ```
 
 The usage of these elements is entirely optional. You can create your own elements and assign custom behaviour to them using scripting or the editor UI.
-
-<br><br/>
-

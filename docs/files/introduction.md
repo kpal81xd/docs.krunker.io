@@ -8,8 +8,6 @@ Krunker also offers a unique and engaging core experience to draw in new users.
 
 ![PreviewSmall](./img/education/teacher_1.gif)
 
-<br><br/>
-
 ## Workflow
 
 Creating **Your First Game** on Krunker is easy.\
@@ -23,8 +21,6 @@ Publishing to Web & Mobile can also be done with a few clicks!
 5. [Publish your Game](./files/publish_your_game) to Multiple Platforms
 
 ![PreviewSmall](./img/education/student_0.gif)
-
-<br><br/>
 
 ## Benefits
 
@@ -40,16 +36,12 @@ and additionally handles a lot of the mundane aspects of game creation:
 * No Upfront Costs for Creating & Publishing
 * Unique Revenue model that earns you money per play
 
-<br><br/>
-
 ## Cross Platform
 
 Krunkers engine allows you to create and publish a cross platform experience very easily.\
 Once you publish your creation, it will be available on Web, Mobile and via Downloadable Client immediately!
 
 See the [User Interface](./files/user_interface?id=adding-an-element-div) section for details on making your experience cross-platform friendly.
-
-<br><br/>
 
 ## Community
 

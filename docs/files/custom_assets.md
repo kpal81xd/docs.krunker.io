@@ -25,8 +25,6 @@ ___
 
 When uploading any custom assets or using them in your game, make sure that you have the legal right to do so. Its always better to check the license.
 
-<br><br/>
-
 ## 3D Models
 
 You can upload custom 3D Models to use in your scene. Currently only .obj and .gtlf are supported. You can load a 3D asset into your scene using KrunkScript:
@@ -46,8 +44,6 @@ obj model = GAME.SCENE.addAsset(
 );
 ```
 
-<br><br/>
-
 ## Textures & Images
 
 Textures & Images can be used to render an image on a 3D asset or on the [Overlay Canvas](./files/rendering_2d?id=overlay-canvas). Currently only .png images are supported.
@@ -65,8 +61,6 @@ obj cube = GAME.SCENE.addCube("", "#fff", 0, 0, 0, 10, 10, 10);
 # update texture
 cube.texture = "assetID"; # new asset id
 ```
-
-<br><br/>
 
 ## Animations
 
@@ -125,8 +119,6 @@ These animations will play automatically if you assign a [Custom Model](./files/
 ___
 
 If you want to play animations through the server and all clients, please refer to the [Multiplayer & Networking](./files/multiplayer_&_networking) section.
-
-<br><br/>
 
 ## Sounds & Music
 
@@ -195,8 +187,6 @@ ___
 
 If you want to play sounds/audio through the server and all clients, please refer to the [Multiplayer & Networking](./files/multiplayer_&_networking) section.
 
-<br><br/>
-
 ## Scripts
 
 A script is used to calculate and apply logic to your game.
@@ -210,6 +200,3 @@ GAME.log(calc(5)); # logs 50
 ```
 
 To learn more about scripts, refer to the [Scripting](./files/scripting) section of the documentation.
-
-<br><br/>
-

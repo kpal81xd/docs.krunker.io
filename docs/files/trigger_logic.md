@@ -4,8 +4,6 @@ Triggers offer a non-scripting solution to creating your own game logic.\
 Triggers interact with eachother using interface IDs.\
 Think of it like walkie talkies that communicate on a certain frequency.
 
-<br><br/>
-
 ## Trigger Events
 
 Events will allow you to listen for game events and trigger specific actions accordingly:
@@ -101,8 +99,6 @@ You can use this for many things, when you press the interact key you can give y
 
 ---
 
-<br><br/>
-
 ## Trigger Conditions
 
 Conditions will allow you to execute an action only if a certain condition is met, similary to if statements in KrunkScript:
@@ -138,9 +134,6 @@ Conditions will allow you to execute an action only if a certain condition is me
 **(ID: 09) Player is Partner**: Requires player to have partner status in-game.
 
 ---
-
-
-<br><br/>
 
 ## Trigger Actions
 
@@ -338,9 +331,6 @@ You have to set the GUI element a ID, then put that same ID for the trigger to s
 
 ---
 
-
-<br><br/>
-
 ## Triggers & Scripts
 
 Triggers and [Scripts](./files/scripting?id=introduction) can interact with eachother.\
@@ -381,6 +371,3 @@ GAME.TRIGGERS.execute(
     args # other arguments depends on action
 );
 ```
-
-<br><br/>
-

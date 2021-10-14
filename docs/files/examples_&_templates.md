@@ -37,7 +37,6 @@ If you can't find what youre looking for, there are some **Community Examples** 
 <div><a href="https://krunker.io/editor.html?gameT=27" target="_blank"><img src="./files/img/templates/20.png" width=180></a><p>Raid</p></div>
 <div><a href="https://krunker.io/editor.html?gameT=28" target="_blank"><img src="./files/img/templates/21.png" width=180></a><p>Brawl</p></div>
 </div>
-<br><br/>
 
 ## KrunkScript Examples
 

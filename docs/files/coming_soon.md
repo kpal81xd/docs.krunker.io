@@ -7,5 +7,3 @@ In the next few updates we will add support for:
 * Default Krunker player scripting overrides: onShoot, onMove
 * Function on objects: ex sound.play(), sound.stop(), obj.move() etc
 * Built-in Collision functions
-
-<br><br/>

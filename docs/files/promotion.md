@@ -12,8 +12,6 @@ If you qualify for funding, we will reach out to you. Genereally we look for:
 
 If you are working on a unique project in Krunker, let us know at **krunker@yendis.ch** and we can explore funding options.
 
-<br><br/>
-
 ## Community
 
 In addition to funding, Yendis can assist you by utilizing it's network of contentcreators to drive new players to your game.\
@@ -36,8 +34,6 @@ ___
 
 We also have an official [Discord Server](https://discord.com/invite/Dw8F62u), where we can advertise your game to over *300,000 potential users*.
 
-<br><br/>
-
 ## Online Platforms
 
 Once you've assigned a [Custom URL](./files/publish_your_game?id=custom-url) to your game, you can submit it to online gaming portals for extra exposure:
@@ -45,16 +41,12 @@ Once you've assigned a [Custom URL](./files/publish_your_game?id=custom-url) to 
  * [Crazygames.com](https://www.Crazygames.com/)
  * [Kongregate.com](https://www.kongregate.com/)
 
-<br><br/>
-
 ## Ad Campaigns
 
 Promoting your game through traditional marketing channels can be very effective. In some cases, Yendis will assist you in setting-up a marketing strategy & budget. Here are some of the most common marketing channels:
 
  * [Google Ads](https://ads.google.com/) - Display Ads, Video Ads, Search Results
  * [Instagram Ads](https://business.instagram.com/advertising/) - Display Ads, Video Ads
-
-<br><br/>
 
 ## In-Game
 
@@ -64,6 +56,3 @@ You can also buy direct ad space in-game using KR (Krunker Currency).
 ```
 
 * This feature is a work in progress and will be expanded upon in the near future.
-
-<br><br/>
-
