@@ -3,10 +3,10 @@
 :root {
 	--white: #fdfdfd;
 	--whiteHT: #ffffff99;
-	--yellow: #ffbb28;
-	--yellowHT: #ffbb2899;
+	--main: #6e75a8;
+	--mainHT: #6e75a899;
 	--red: #ff0000;
-	--link: #26abe2;
+	--link: #9dd4f1;
 	--blackHT: #00000099;
 }
 
@@ -58,7 +58,7 @@ div#app:empty:before {
 }
 
 .search a:hover {
-	color: var(--yellowHT);
+	color: var(--mainHT);
 }
 
 .search .search-keyword {
@@ -247,7 +247,7 @@ main.hidden {
 }
 
 .anchor span {
-	color: var(--yellow);
+	color: var(--main);
 }
 
 .anchor:hover {
@@ -329,7 +329,7 @@ html::-webkit-scrollbar-thumb {
 
 .sidebar::-webkit-scrollbar-thumb,
 html::-webkit-scrollbar-thumb {
-	background: var(--yellow);
+	background: var(--main);
 	/* background: #88888866 */
 }
 
@@ -359,7 +359,7 @@ html::-webkit-scrollbar-track {
 }
 
 .sidebar-toggle span {
-	background-color: var(--yellow);
+	background-color: var(--main);
 	display: block;
 	margin-bottom: 4px;
 	width: 16px;
@@ -734,7 +734,7 @@ body {
 }
 
 .sidebar {
-	color: var(--yellow);
+	color: var(--main);
 }
 
 .sidebar li {
@@ -754,7 +754,7 @@ body {
 .sidebar div > ul > li > a {
 	font-weight: 700;
 	font-size: 18px;
-	color: var(--yellow);
+	color: var(--main);
 }
 
 .sidebar ul li a:hover {
