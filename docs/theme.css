@@ -1144,3 +1144,8 @@ img[alt="PreviewSmall"] {
 .imgGrid a:hover + p {
 	font-size: 1.25rem;
 }
+
+.matching-post .imgGrid,
+.matching-post img {
+	display: none;
+}
