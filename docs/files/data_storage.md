@@ -23,7 +23,7 @@ GAME.STORAGE.XXX( # set, update, transact
     accountName, # str player account name
     data, # obj data to store
     access, # bool private (false) or global (true)
-    callback, # action callback after data is saved (optional)
+    callback # action callback after data is saved (optional)
 );
 # the access type determines how the data can be accessed:
 # private (default): data can only be accessed on games by the same owner (read/write)
@@ -97,7 +97,7 @@ GAME.STORAGE.load(
     accountName, # str player account name
     gameName, # str name of game storage you want
               # to load data from (optional)
-    callback, # action that is called when the data is ready
+    callback # action that is called when the data is ready
 );
 
 # get all data for a specific player:

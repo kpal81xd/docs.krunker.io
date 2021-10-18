@@ -72,7 +72,7 @@ You can update the inner content of a UI element using KrunkScript:
 # update div text by id
 GAME.UI.updateDIVText(
     id, # str ID of div
-    text, # str text value to update to
+    text # str text value to update to
 );
 ```
 
