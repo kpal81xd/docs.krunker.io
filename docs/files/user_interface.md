@@ -10,7 +10,7 @@ str divID = GAME.UI.addDIV(
     id, # str ID of div
     vis, # bool default visiblity
     css, # str default CSS/styling
-	parentID, # str parent DIV id (optional)
+	parentID # str parent DIV id (optional)
 );
 
 # parent ID allows you to add a div to another div.
