@@ -109,6 +109,29 @@ public action onPlayerUpdate(str id, num delta, static obj inputs) {
 }
 ```
 
+**onGameEnd():** Called on the server. This is called whenever the game ends.\
+Could be used for things like: resetting a counter, updating data storage, etc.
+
+<p class="hidep"><strong class="server-side">server-side</strong></p>
+
+```krunkscript
+public action onGameEnd() {
+    # do something after the game ends
+}
+```
+
+**onAdFinished():** Called on the server. This is called whenever a player finishes an [ad video](./files/revenue_&_currencies?id=video-ads).
+
+<p class="hidep"><strong class="server-side">server-side</strong></p>
+
+```krunkscript
+# When a player finished a video
+public action onAdFinished(str playerID, bool success) {
+    # playerID is the ID of the player who finished the ad video
+    # success is whether the task was successful or not
+}
+```
+
 ---
 
 Both scripts also have built-in network listener actions that are called automatically when a message is sent through the network. [More Information](./files/multiplayer_&_networking?id=receiving-data)
