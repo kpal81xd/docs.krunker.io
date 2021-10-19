@@ -145,7 +145,7 @@ obj data = {
     hitBotW: 1,        # num hitbox width multiplier
     hitBoxH: 1,        # num hitbox height multiplier
     modelOffsetY: 0,   # num mesh y-offset
-    modelRotation: 0,  # num mesh rotation offset
+    modelRotation: 0  # num mesh rotation offset
 
 };
 

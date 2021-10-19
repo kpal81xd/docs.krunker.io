@@ -135,7 +135,7 @@ obj lamp = GAME.SCENE.addPointLight(
     0,      # num y position
     0,      # num z position
     50,     # num range
-    0.1     # num falloff
+    0.1,     # num falloff
     false   # bool castShadow
 );
 ```
@@ -155,7 +155,7 @@ obj sun = GAME.SCENE.addDirLight(
     "#fff", # str color
     0,      # num x direction
     0,      # num y direction
-    0       # num z direction
+    0,       # num z direction
     false   # bool castShadow
 );
 ```

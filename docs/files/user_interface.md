@@ -10,7 +10,7 @@ str divID = GAME.UI.addDIV(
     id, # str ID of div
     vis, # bool default visiblity
     css, # str default CSS/styling
-	parentID, # str parent DIV id (optional)
+	parentID # str parent DIV id (optional)
 );
 
 # parent ID allows you to add a div to another div.
@@ -72,7 +72,7 @@ You can update the inner content of a UI element using KrunkScript:
 # update div text by id
 GAME.UI.updateDIVText(
     id, # str ID of div
-    text, # str text value to update to
+    text # str text value to update to
 );
 ```
 

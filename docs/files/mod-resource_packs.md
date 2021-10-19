@@ -58,7 +58,7 @@ Allows you to temporarily override user settings to accomodate specific game req
 
 ```krunkscript
 # some example settings
-#settingname,value
+# settingname,value
 shaderRendering,false
 resolution,0.6
 shadows,true
@@ -80,7 +80,7 @@ Alternatively you can use KrunkScript to set Settings:
 # update setting
 GAME.SETTINGS.set(
     key, # str setting key
-    val, # str value of setting
+    val # str value of setting
 );
 
 # example

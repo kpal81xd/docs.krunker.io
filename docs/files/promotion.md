@@ -52,7 +52,5 @@ Promoting your game through traditional marketing channels can be very effective
 
 You can also buy direct ad space in-game using KR (Krunker Currency).
 
-```
-```
 
 * This feature is a work in progress and will be expanded upon in the near future.
