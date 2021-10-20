@@ -109,6 +109,8 @@ public action onPlayerUpdate(str id, num delta, static obj inputs) {
 }
 ```
 
+---
+
 **onGameEnd():** Called on the server. This is called whenever the game ends.\
 Could be used for things like: resetting a counter, updating data storage, etc.
 
@@ -119,6 +121,8 @@ public action onGameEnd() {
     # do something after the game ends
 }
 ```
+
+---
 
 **onAdFinished():** Called on the server. This is called whenever a player finishes an [ad video](./files/revenue_&_currencies?id=video-ads).
 
