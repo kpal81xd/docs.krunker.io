@@ -138,6 +138,20 @@ public action onAdFinished(str playerID, bool success) {
 
 ---
 
+**onPlayerDeath():** Called on the server. This is called whenever a player dies.
+
+<p class="hidep"><strong class="server-side">server-side</strong></p>
+
+```krunkscript
+# id = player id
+public action onPlayerDeath(str id) {
+    # example
+    GAME.CHAT.send(id, "Better luck next time", "#fff");
+}
+```
+
+---
+
 Both scripts also have built-in network listener actions that are called automatically when a message is sent through the network. [More Information](./files/multiplayer_&_networking?id=receiving-data)
 ___
 Additionally, the client.krnk script has a few [Input Listener](./files/inputs?id=input-listeners) and [UI Interaction](./files/inputs?id=click-events) actions built-in.
