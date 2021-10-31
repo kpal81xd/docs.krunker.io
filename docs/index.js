@@ -79,3 +79,40 @@ hljs.registerLanguage("krunkscript", function () {
         }]
     };
 });
+
+
+let toggleSidebar = null,
+    touchStartX = 0,
+    touchEndX = 0;
+
+function Swipe(dir) {
+
+    if (!toggleSidebar)
+        toggleSidebar = document.querySelector("button.sidebar-toggle")
+
+    switch (dir) {
+        case "left":
+            !document.body.classList.contains("close") && toggleSidebar.click();
+            break;
+
+        case "right":
+            document.body.classList.contains("close") && toggleSidebar.click();
+            break;
+    }
+}
+
+function handleGesture() {
+    if (touchEndX != touchStartX && Math.abs(touchEndX - touchStartX) >= 100)
+        Swipe(touchEndX < touchStartX ? "left" : "right")
+    touchStartX = 0;
+    touchEndX = 0;
+}
+
+window.addEventListener("touchstart", e => {
+    touchStartX = e.changedTouches[0].screenX;
+})
+
+window.addEventListener("touchend", e => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleGesture()
+})
