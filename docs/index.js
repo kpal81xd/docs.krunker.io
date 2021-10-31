@@ -6,9 +6,9 @@ var checkHighlights = setInterval(() => {
     if (main && main.lastChild && h2s.length > 0) {
 
         let h = h2s[h2s.length - 1],
-            fixedHeight = main.clientHeight + (screen.availHeight - (main.scrollHeight - h.offsetTop + h.clientHeight + main.offsetTop + 10)) + "px";
+            fixedHeight = main.clientHeight + (window.innerHeight - (main.scrollHeight - h.offsetTop + h.clientHeight + main.offsetTop - 75)) + "px";
 
-        if (main.style.height < fixedHeight) {
+        if (main.style.height != fixedHeight) {
             main.style.height = fixedHeight;
         }
     }
