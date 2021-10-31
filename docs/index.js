@@ -103,7 +103,7 @@ function Swipe(dir) {
 
 function handleGesture() {
     if (touchEndX != touchStartX && Math.abs(touchEndX - touchStartX) >= 100)
-        Swipe(touchEndX < touchStartX ? "left" : "right")
+        Swipe(touchEndX < touchStartX ? "right" : "left")
     touchStartX = 0;
     touchEndX = 0;
 }
