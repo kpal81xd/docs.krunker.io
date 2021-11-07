@@ -247,7 +247,7 @@ All krunker objects default to this method. You can enable it on most objects in
 
 ![Preview](./img/game_logic/coll_0.png)
 
-Alternatively you can select the Complex Collisions option for Rotated Objects & Assets.
+Alternatively you can select the Complex Collisions option for Rotated Objects & Assets.\
 It is recommended that you use a invisible simple mesh for collision calculation and a more detailed mesh to display in the same location:
 
 ![Preview](./img/game_logic/decim_0.png)
