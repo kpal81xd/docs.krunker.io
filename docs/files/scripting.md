@@ -148,8 +148,8 @@ public action onPlayerDeath(str id, str killerID) {
     # example
     obj killer = GAME.PLAYERS.findByID(killerID);
     str msg = !killer.username ? # if killer exists
-		toStr "What was that":
-		toStr "Time to get revenge on " + toStr killer.username;
+		"What was that" :
+		"Time to get revenge on " + toStr killer.username;
     GAME.CHAT.send(id, msg, "#ff0");
 }
 ```
