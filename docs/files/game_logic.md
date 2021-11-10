@@ -241,7 +241,19 @@ If you want to simply make changes to Krunkers default movement, such as: **Spee
 
 ## Collisions
 
-Nothing Here Yet
+Collisions determine how you interact with objects in the world. If you walk into a wall, you would expect to stop.\
+Krunker offers a lot of built-in collision functionality. The most performant collision method is between two Axis Aligned Bounding Boxes (AABB).\
+All krunker objects default to this method. You can enable it on most objects in the editor using the Collidable Option:
+
+![Preview](./img/game_logic/coll_0.png)
+
+Alternatively you can select the Complex Collisions option for Rotated Objects & Assets.\
+It is recommended that you use a invisible simple mesh for collision calculation and a more detailed mesh to display in the same location:
+
+![Preview](./img/game_logic/decim_0.png)
+
+Note: while complex collisions can be very useful when creating a map, they need to be used sparingly and with perfomance in mind.\
+Complex collisions use an objects tirangle data to resolve collisions. You are currently limited to 5000 collision triangles per map export.
 
 ## Controls
 

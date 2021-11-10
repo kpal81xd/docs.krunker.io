@@ -6,7 +6,7 @@ var checkHighlights = setInterval(() => {
     if (main && main.lastChild && h2s.length > 0) {
 
         let h = h2s[h2s.length - 1],
-            fixedHeight = main.clientHeight + (screen.availHeight - (main.scrollHeight - h.offsetTop + h.clientHeight + main.offsetTop + 10)) + "px";
+            fixedHeight = main.clientHeight + (window.innerHeight - (main.scrollHeight - h.offsetTop + h.clientHeight + main.offsetTop - 75)) + "px";
 
         if (main.style.height < fixedHeight) {
             main.style.height = fixedHeight;
@@ -79,3 +79,40 @@ hljs.registerLanguage("krunkscript", function () {
         }]
     };
 });
+
+
+let toggleSidebar = null,
+    touchStartX = 0,
+    touchEndX = 0;
+
+function Swipe(dir) {
+
+    if (!toggleSidebar)
+        toggleSidebar = document.querySelector("button.sidebar-toggle")
+
+    switch (dir) {
+        case "left":
+            !document.body.classList.contains("close") && toggleSidebar.click();
+            break;
+
+        case "right":
+            document.body.classList.contains("close") && toggleSidebar.click();
+            break;
+    }
+}
+
+function handleGesture() {
+    if (touchEndX != touchStartX && Math.abs(touchEndX - touchStartX) >= 100)
+        Swipe(touchEndX < touchStartX ? "right" : "left")
+    touchStartX = 0;
+    touchEndX = 0;
+}
+
+window.addEventListener("touchstart", e => {
+    touchStartX = e.changedTouches[0].screenX;
+})
+
+window.addEventListener("touchend", e => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleGesture()
+})

@@ -199,7 +199,7 @@ This could be used in a game where players work together to accomplish something
 **(ID: 17) Send Message:** Once this trigger action is executed, a message will be broadcasted only to the player to see.
 
 ---
-**(ID: 18) Swap Player Team:** Once this trigger is executed, the players team is swapped to the opposing team. This can be used in .
+**(ID: 18) Swap Player Team:** Once this trigger is executed, the players team is swapped to the opposing team.
 
 ---
 **(ID: 19) Set Player Team:** This trigger is used to set the players team.\
