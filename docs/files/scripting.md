@@ -143,10 +143,14 @@ public action onAdFinished(str playerID, bool success) {
 <p class="hidep"><strong class="server-side">server-side</strong></p>
 
 ```krunkscript
-# id = player id
-public action onPlayerDeath(str id) {
+# id = player id, killerID = killer ID
+public action onPlayerDeath(str id, str killerID) {
     # example
-    GAME.CHAT.send(id, "Better luck next time", "#fff");
+    obj killer = GAME.PLAYERS.findByID(killerID);
+    str msg = !killer.username ? # if killer exists
+		toStr "What was that":
+		toStr "Time to get revenge on " + toStr killer.username;
+    GAME.CHAT.send(id, msg, "#ff0");
 }
 ```
 
