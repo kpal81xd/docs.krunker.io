@@ -330,6 +330,21 @@ You have to set the GUI element a ID, then put that same ID for the trigger to s
 **(ID: 58) Custom Action:** Executes a custom action once the trigger action is executed.
 
 ---
+**(ID: 59) Change Ambient Sound:** Changes the game's ambient sound when action is executed.
+
+---
+**(ID: 60) Play Animation (Self):** Plays a custom animation for itself on execution (styling must use a .gltf custom asset).
+
+---
+**(ID: 61) Give Effect:** Gives the player a selected Effect upon execution.
+
+---
+**(ID: 62) Give Random Effect:** Gives the player a randomized Effect upon execution.
+
+---
+**(ID: 63) Play Video Ad:** Plays a full-screen video ad on execution (can only be called every 5 mins).
+
+---
 
 ## Triggers & Scripts
 
