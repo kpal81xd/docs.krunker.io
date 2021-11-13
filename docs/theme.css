@@ -417,6 +417,7 @@ body.sticky .sidebar-toggle {
 	margin-bottom: 1rem;
 	overflow: auto;
 	width: 100%;
+	font-family: Consolas, Monospace;
 }
 
 .markdown-section th {
