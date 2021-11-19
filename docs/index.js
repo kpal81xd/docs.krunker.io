@@ -1,14 +1,16 @@
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
 var checkHighlights = setInterval(() => {
 
     let main = document.querySelector("article#main"),
         h2s = main && main.querySelectorAll("h2") || [];
 
-    if (main && main.lastChild && h2s.length > 0) {
+    if (!isMobile && main && main.lastChild && h2s.length > 0) {
 
         let h = h2s[h2s.length - 1],
             fixedHeight = main.clientHeight + (window.innerHeight - (main.scrollHeight - h.offsetTop + h.clientHeight + main.offsetTop - 75)) + "px";
 
-        if (main.style.height < fixedHeight) {
+        if (main.style.height != fixedHeight) {
             main.style.height = fixedHeight;
         }
     }
