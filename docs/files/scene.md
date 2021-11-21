@@ -184,7 +184,7 @@ obj flashlight = GAME.SCENE.addSpotLight(
     1,      # num intensity
     0,      # num angle (degrees)
     0,      # num penumbra
-    false,  # bool castShadow
+    false   # bool castShadow
 );
 ```
 
