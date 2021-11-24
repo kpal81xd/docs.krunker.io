@@ -1,6 +1,6 @@
 ## Resources
 
-If you are not able to make your own assets or find what youre looking for in the **Community Asset Hub**, have a look at the following sites:
+If you are not able to make your own assets or find what you're looking for in the **Community Asset Hub**, have a look at the following sites:
 
 ___
 
@@ -27,7 +27,7 @@ When uploading any custom assets or using them in your game, make sure that you 
 
 ## 3D Models
 
-You can upload custom 3D Models to use in your scene. Currently only .obj and .gtlf are supported. You can load a 3D asset into your scene using KrunkScript:
+You can upload custom 3D Models to use in your scene. Currently only .obj and .gltf are supported. You can load a 3D asset into your scene using KrunkScript:
 
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
@@ -67,7 +67,7 @@ cube.texture = "assetID"; # new asset id
 Animations can be used to add life to your scene.\
 To use animations on models, please use the .gltf format.\
 For an asset to use animations it must have clips attached to the model.\
-When attempting to play an animation, make sure youre using the correct name of the clip.\
+When attempting to play an animation, make sure you're using the correct name of the clip.\
 You have a few options for playing animations on an asset:
 
 ---
