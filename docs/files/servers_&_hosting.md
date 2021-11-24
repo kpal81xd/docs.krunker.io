@@ -6,7 +6,7 @@ A dedicated server runs continuously and provides several other benefits:
 
 * **Better performance**
 * **Persists through Updates**
-* **Better visiblity for your game on server browser**
+* **Better visibility for your game on server browser**
 
 ## Create a Server
 
