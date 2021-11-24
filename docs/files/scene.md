@@ -120,7 +120,7 @@ The different light types you can add to your scene are:
 
 ___
 
-**Point Light:** Emits light equally in all directions from a point (Bulb, Candle, Flame etc).
+**Point Light:** Emits light equally in all directions from a point (Bulb, Candle, Flame etc.)
 
 ![Preview](./img/scene/lights_0.png)
 
@@ -162,7 +162,7 @@ obj sun = GAME.SCENE.addDirLight(
 
 ___
 
-**Spot Light:** Emits light in a specfici direction from a point (Flashlight, Projector etc)
+**Spot Light:** Emits light in a specific direction from a point (Flashlight, Projector etc.)
 
 ![Preview](./img/scene/lights_2.png)
 
@@ -190,7 +190,7 @@ obj flashlight = GAME.SCENE.addSpotLight(
 
 ___
 
-**Rectarea Light:** Emits light from a rectangular area (Windows, Screens etc)
+**Rectarea Light:** Emits light from a rectangular area (Windows, Screens etc.)
 
 ![Preview](./img/scene/lights_3.png)
 
@@ -497,7 +497,7 @@ for (num i = 0; i < lengthOf nodes; ++i) {
 }
 ```
 
-This is useful for creating basic path-findingg or accessing coordinates.
+This is useful for creating basic path-finding or accessing coordinates.
 
 ## Moving, Rotating & Scaling
 

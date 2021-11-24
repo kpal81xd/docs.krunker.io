@@ -82,7 +82,7 @@ You can fully customize your games CSS using a [Resource Pack](./files/mod-resou
 
 ## Mobile Friendly UI
 
-To make your experience more mobile friendly, you will have to make some adjustments to the control sheme and user interface.
+To make your experience more mobile friendly, you will have to make some adjustments to the control scheme and user interface.
 
 ___
 
@@ -119,4 +119,4 @@ Alternatively you can assign the Mobile Only property to the Element in the edit
 #mobileEsc {}
 ```
 
-The usage of these elements is entirely optional. You can create your own elements and assign custom behaviour to them using scripting or the editor UI.
+The usage of these elements is entirely optional. You can create your own elements and assign custom behavior to them using scripting or the editor UI.

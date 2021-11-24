@@ -18,7 +18,7 @@ From there you will be greeted with the following popup:
 
 ![Preview](./img/your_first_game/docs_0.png)
 
-Depending on what youre trying to make, you can use one of our [Templates](./files/examples_&_templates?id=basic-templates) to kickstart your project.\
+Depending on what you're trying to make, you can use one of our [Templates](./files/examples_&_templates?id=basic-templates) to kickstart your project.\
 Otherwise just select "Quick Start".
 
 ---

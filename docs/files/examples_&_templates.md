@@ -2,7 +2,7 @@
 
 Examples allow you to have a look at the structure of a game.\
 The best way to learn is by editing existing templates and seeing how your changes impact the game.\
-If you can't find what youre looking for, there are some **Community Examples** as well.
+If you can't find what you're looking for, there are some **Community Examples** as well.
 
 ## Non-Script Examples
 

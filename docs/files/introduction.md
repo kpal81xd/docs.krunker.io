@@ -38,7 +38,7 @@ and additionally handles a lot of the mundane aspects of game creation:
 
 ## Cross Platform
 
-Krunkers engine allows you to create and publish a cross platform experience very easily.\
+Krunker's engine allows you to create and publish a cross platform experience very easily.\
 Once you publish your creation, it will be available on Web, Mobile and via Downloadable Client immediately!
 
 See the [User Interface](./files/user_interface?id=adding-an-element-div) section for details on making your experience cross-platform friendly.

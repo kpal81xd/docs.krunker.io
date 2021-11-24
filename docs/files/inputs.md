@@ -1,6 +1,6 @@
 ## Introduction
 
-You can check/listen for user inputs. This information is useful when creating custom movement or user interacions.
+You can check/listen for user inputs. This information is useful when creating custom movement or user interactions.
 
 ## Keyboard Inputs
 

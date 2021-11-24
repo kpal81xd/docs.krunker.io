@@ -3,7 +3,7 @@
 Yendis Entertainment offers funding to certain developers and teams.\
 Funding will allow teams to fully realize their vision and to better advertise the final product.
 
-If you qualify for funding, we will reach out to you. Genereally we look for:
+If you qualify for funding, we will reach out to you. Generally we look for:
 
  * High quality games
  * Initiative to market your own product
@@ -14,7 +14,7 @@ If you are working on a unique project in Krunker, let us know at **krunker@yend
 
 ## Community
 
-In addition to funding, Yendis can assist you by utilizing it's network of contentcreators to drive new players to your game.\
+In addition to funding, Yendis can assist you by utilizing it's network of content creators to drive new players to your game.\
 Krunker has several dedicated content creators and channels across multiple platforms:
 
  * [YouTube](https://www.youtube.com/channel/UCqH34FGuOae5o-wO2wOa38A)

@@ -80,7 +80,7 @@ public action render(num delta) {
 ___
 
 **onPlayerSpawn():** Called on server & client. This is called whenever a player spawns in.\
-Could be used for things like: Assigning player objects to globals, spawn in messages/sounds etc.
+Could be used for things like: Assigning player objects to global, spawn in messages/sounds etc.
 
 ```krunkscript
 public action onPlayerSpawn(str id) {
@@ -95,7 +95,7 @@ public action onPlayerSpawn(str id) {
 ---
 
 **onPlayerUpdate():** Called on server & client. Works similarly to the update action, however it is synchronized to the player.\
-Use this for overriding krunkers default movement or for creating your own custom movement.\
+Use this for overriding Krunker's default movement or for creating your own custom movement.\
 Do not use it for updating game objects or making non-client-predicted movement.
 
 ```krunkscript
@@ -160,10 +160,10 @@ Both scripts also have built-in network listener actions that are called automat
 ___
 Additionally, the client.krnk script has a few [Input Listener](./files/inputs?id=input-listeners) and [UI Interaction](./files/inputs?id=click-events) actions built-in.
 
-## Default Behaviour
+## Default Behavior
 
-Krunker offers a lot of default behaviour out of the box to make things easier.\
-You can disable certain behaviours to further customize your game:
+Krunker offers a lot of default behavior out of the box to make things easier.\
+You can disable certain behaviors to further customize your game:
 
 ```krunkscript
 GAME.DEFAULT.disablePrediction(); # disable client prediction (client only)
