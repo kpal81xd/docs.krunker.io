@@ -1,6 +1,6 @@
 ## Introduction
 
-Resource Packs and Mods are used to replace or change the default components of krunker such as: Textures, Sounds, Models and the interface.\
+Resource Packs and Mods are used to replace or change the default components of Krunker such as: Textures, Sounds, Models and the interface.\
 If you are making a game entirely from scratch, only the Custom CSS section is relevant for you.
 
 ___
@@ -23,8 +23,8 @@ GAME.MODS.reset();
 
 The default [mod.zip](https://krunker.io/modzip) has the following structure:
 
- * **textures**: allows for replacing of default krunker textures and images (.png only).
- * **models**: allows for replacing of default krunker models.
+ * **textures**: allows for replacing of default Krunker textures and images (.png only).
+ * **models**: allows for replacing of default Krunker models.
  * **sound**: allows for replacing of default sounds assets (.mp3 only).
  * **scripts**: contains scripts such as [settings.txt](./files/mod-resource_packs?id=settings-override) which allows you to override default settings (example in mod.zip).
  * **css**: allows for overriding of default CSS & fonts.
@@ -54,7 +54,7 @@ Here is a small example of how you would override default Krunker elements:
 
 ## Settings Override
 
-Allows you to temporarily override user settings to accomodate specific game requirements: **fov, disabling skins, saturation, etc.**
+Allows you to temporarily override user settings to accommodate specific game requirements: **fov, disabling skins, saturation, etc.**
 
 ```krunkscript
 # some example settings
@@ -68,7 +68,7 @@ postProcessing,true
 bloom,false
 ```
 
-To view a full list of changable settings, click [here](https://krunker.io/docs/settings.txt). These settings are reset once a player leaves your game.
+To view a full list of changeable settings, click [here](https://krunker.io/docs/settings.txt). These settings are reset once a player leaves your game.
 
 ___
 
