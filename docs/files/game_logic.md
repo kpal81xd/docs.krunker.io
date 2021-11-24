@@ -168,12 +168,12 @@ testBot.pathIndex = 5; # pathnode indexes
 ```
 
 Currently you are limited to 40 active AIs per game.\
-An AI is consiered active if it has an active respawn timer or is currently alive.\
-You can build custom behaviour onto the pre-built AI such as: **Interactivity, Custom movement, Custom Attacks, etc.**
+An AI is considered active if it has an active respawn timer or is currently alive.\
+You can build custom behavior onto the pre-built AI such as: **Interactivity, Custom movement, Custom Attacks, etc.**
 
 ---
 
-You can also add an AI spawner via the editor:
+You can also add an AI Spawner via the editor:
 
 ![Preview](./img/game_logic/ai_add.png)
 
@@ -184,7 +184,7 @@ Coming Soon
 ## Movement
 
 There are a few ways to create custom movement.\
-In order to override/disable Krunkers default movement, you have to use KrunkScript:
+In order to override/disable Krunker's default movement, you have to use KrunkScript:
 
 ```krunkscript
 # disable default behaviour on spawn:
@@ -237,7 +237,7 @@ player.disableDefault("jump");
 # this is reset on spawn
 ```
 
-If you want to simply make changes to Krunkers default movement, such as: **Speed, Velocity, Jump Height, etc**, you can simply use the Class Configuration in the Editor.
+If you want to simply make changes to Krunker's default movement, such as: **Speed, Velocity, Jump Height, etc.**, you can simply use the Class Configuration in the Editor.
 
 ## Collisions
 
@@ -253,7 +253,7 @@ It is recommended that you use a invisible simple mesh for collision calculation
 ![Preview](./img/game_logic/decim_0.png)
 
 Note: while complex collisions can be very useful when creating a map, they need to be used sparingly and with perfomance in mind.\
-Complex collisions use an objects tirangle data to resolve collisions. You are currently limited to 5000 collision triangles per map export.
+Complex collisions use an objects triangle data to resolve collisions. You are currently limited to 5000 collision triangles per map export.
 
 ## Controls
 
