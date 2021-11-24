@@ -1,6 +1,6 @@
 ## Introduction
 
-By default Krunker adds a camera object to your scene. Cameras are responsible for rendering the 3D world. The camera behaviour and position determines the type of game youll make; Top Down, First Person, 3rd Person or Static
+By default Krunker adds a camera object to your scene. Cameras are responsible for rendering the 3D world. The camera behaviour and position determines the type of game you'll make; Top Down, First Person, 3rd Person or Static.
 
 ## Updating Cameras
 
