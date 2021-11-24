@@ -107,7 +107,7 @@ If for example, you would like to have a cube that moves around for all players,
 
 It is important to consider networking performance when sending data.\
 The more frequently you send data, the higher the impact on performance will be.\
-You also need to make sure you send as little data as possible to convery information:
+You also need to make sure you send as little data as possible to convey information:
 
 ```krunkscript
 # TOO MUCH DATA
