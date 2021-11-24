@@ -5,7 +5,7 @@ In order to qualify for payouts you must be an approved [Krunker Partner](./file
 
 ## Gameplays
 
-Everytime someone plays your game, you get paid.\
+Every time someone plays your game, you get paid.\
 This revenue share is calculated based on ad impressions on your game:
 
 ![Revenue gameplays](./img/revenue/1.png)
@@ -16,7 +16,7 @@ This revenue share is calculated based on ad impressions on your game:
 
 Using KrunkScript you can choose to display a video-ad on the players screen. Here are some use-cases where it makes sense to display a video-ad:
 
- * **Reward for watching:** Coins, Items, Stage Skip etc
+ * **Reward for watching:** Coins, Items, Stage Skip etc.
  * **Between game rounds:** Play an ad when the round ends.
  * **On death:** When a player dies, you can play an ad if enough time has passed since the last ad.
 
@@ -35,8 +35,8 @@ GAME.ADS.playVideo(); # can only be called every 5 mins
 
 ## Referral Link
 
-A referral link allows us to track how a new player comes to krunker.\
-When a player signs up with your referral link, you get paid every time they play any krunker game.\
+A referral link allows us to track how a new player comes to Krunker.\
+When a player signs up with your referral link, you get paid every time they play any Krunker game.\
 To fully take advantage of this system, make sure to include your referral code when sharing your games URL: [https://krunker.io/?play=AIM_Room&ref=CODEHERE](https://krunker.io/?play=AIM_Room&ref=CODEHERE)
 
 ![Referral images](./img/revenue/2.png)
@@ -68,6 +68,6 @@ Player retention is very important if you want to create a consistent revenue st
  * **Community**: Build a community around your game. And be sure to update them around changes to your game.
 ## Krunkies
 
-Krunkies are Krunkers default currency that can be earned from playing or through purchases.\
+Krunkies are Krunker's default currency that can be earned from playing or through purchases.\
 You can award KR to players or charge KR for certain features.
 
