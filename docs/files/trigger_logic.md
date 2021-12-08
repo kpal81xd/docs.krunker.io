@@ -135,7 +135,8 @@ Using Triggers to execute custom script action:
 ```krunkscript
 Custom Action 58):(
     playerID, # player id passed in automatically
-    customParam # str custom string you can pass in
+    customParam, # custom string you can pass in
+    value # custom number you can pass in
 )
 ```
 
@@ -146,7 +147,7 @@ In order to call a custom action from a Trigger Object, make sure you declare it
 <p class="hidep"><strong class="server-side">server-side</strong></p>
 
 ```krunkscript
-public action onCustomTrigger(str playerID, str customParam) {
+public action onCustomTrigger(str playerID, str customParam, num value) {
     # do something
 }
 ```
