@@ -8,16 +8,16 @@ Events will allow you to listen for game events and trigger specific actions acc
 
 | ID | Event | Description |
 | - | - | - |
-| **00** | **onShoot** | When you shoot your trigger object, the trigger will execute. |
-| **01** | **onMelee** | When you knife/melee your trigger object, the trigger action will execute. |
-| **02** | **onDamage** | If you do damage to the trigger object in any way(shooting, knifing etc), the trigger action will execute. |
-| **03** | **onEnterObject** | As soon as you enter the trigger object, the trigger action for it will execute. |
-| **04** | **onDestroy** | As soon as the object gets destroyed, the trigger action will execute. You can set a health to your object so you know how much damage people will need to do to your object to destroy it. |
-| **05** | **onRespawn** | Once the object respawns, the trigger action will execute. You can set a respawn timer for each object to control how fast it respawns and more. |
-| **06** | **onTimer** | You can set a timer for your trigger object, once the timer runs out the trigger action will execute. |
-| **07** | **onProjectile** | On the projectile you set, the trigger action will execute. |
-| **08** | **onThrowingMelee** | On the event the melee is thrown, the trigger action will execute. |
-| **09** | **onPunch** | If you punch the trigger object (with the fists of the character), the trigger action will execute. |
+| **0** | **onShoot** | When you shoot your trigger object, the trigger will execute. |
+| **1** | **onMelee** | When you knife/melee your trigger object, the trigger action will execute. |
+| **2** | **onDamage** | If you do damage to the trigger object in any way(shooting, knifing etc), the trigger action will execute. |
+| **3** | **onEnterObject** | As soon as you enter the trigger object, the trigger action for it will execute. |
+| **4** | **onDestroy** | As soon as the object gets destroyed, the trigger action will execute. You can set a health to your object so you know how much damage people will need to do to your object to destroy it. |
+| **5** | **onRespawn** | Once the object respawns, the trigger action will execute. You can set a respawn timer for each object to control how fast it respawns and more. |
+| **6** | **onTimer** | You can set a timer for your trigger object, once the timer runs out the trigger action will execute. |
+| **7** | **onProjectile** | On the projectile you set, the trigger action will execute. |
+| **8** | **onThrowingMelee** | On the event the melee is thrown, the trigger action will execute. |
+| **9** | **onPunch** | If you punch the trigger object (with the fists of the character), the trigger action will execute. |
 | **10** | **onHoldMouse** | If you punch the trigger object (with the fists of the character), the trigger action will execute. |
 | **11** | **onCollision** | On the collision, the trigger action will execute. |
 | **12** | **onStorageEquals** | When the storage equals a specific value, the trigger action will execute. |
@@ -37,27 +37,29 @@ Events will allow you to listen for game events and trigger specific actions acc
 | **26** | **onGameStart** | As soon as the game starts, the trigger action will execute. |
 | **27** | **onObjectiveSwitch** | When the objective switches (Objectives like Hardpoint), the trigger action will execute. |
 | **28** | **onPlayerDamage** | The trigger action will execute you on the player damage. |
+| **29** | **N/A** | **-** |
+| **30** | **onCustomValGreater** | When the specific custom value is greater than a specific value, the trigger action will execute. |
 ## Trigger Conditions
 
 Conditions will allow you to execute an action only if a certain condition is met, similary to if statements in KrunkScript:
 
-| ID | Event | Description |
+| ID | Condition | Description |
 | - | - | - |
-| **00** | **None** | No conditions are needed to be met for the action to be executed. |
-| **01** | **Player Value** | Requires a specific player value (you can set the player value using triggers) for the action to be executed. |
-| **02** | **Current Class** | Requires the person to be on a certain class you decide for the action to properly execute. |
-| **03** | **Trigger Value** | Requires the trigger value to be a certain amount for the trigger to be executed. |
-| **04** | **Player Count** | Requires players to have a cerian player count number (You can set player count with triggers). |
-| **05** | **Global Value** | Requires players to have a cerian global count number (You can set global count with triggers). |
-| **06** | **Player has Account** | Requires player to have a registered Krunker account. |
-| **07** | **Player has Premium** | Requires player to be subscribed to Krunker Premium. |
-| **08** | **Player is Verified** | Requires player to have verification status in-game. |
-| **09** | **Player is Partner** | Requires player to have partner status in-game. |
+| **0** | **None** | No conditions are needed to be met for the action to be executed. |
+| **1** | **Player Value** | Requires a specific player value (you can set the player value using triggers) for the action to be executed. |
+| **2** | **Current Class** | Requires the person to be on a certain class you decide for the action to properly execute. |
+| **3** | **Trigger Value** | Requires the trigger value to be a certain amount for the trigger to be executed. |
+| **4** | **Player Count** | Requires players to have a cerian player count number (You can set player count with triggers). |
+| **5** | **Global Value** | Requires players to have a cerian global count number (You can set global count with triggers). |
+| **6** | **Player has Account** | Requires player to have a registered Krunker account. |
+| **7** | **Player has Premium** | Requires player to be subscribed to Krunker Premium. |
+| **8** | **Player is Verified** | Requires player to have verification status in-game. |
+| **9** | **Player is Partner** | Requires player to have partner status in-game. |
 ## Trigger Actions
 
 Execute certain actions to interact with the game & players:
 
-| ID | Event | Description |
+| ID | Action | Description |
 | - | - | - |
 | **0** | **Give Player Score** | Gives player an amount of score that you choose. For example, when someone hits a block, they can get rewarded 25 points. |
 | **1** | **Kill Player** | Kills the player as soon as the trigger action is executed. |
