@@ -138,7 +138,7 @@ public action onAdFinished(str playerID, bool success) {
 
 ---
 
-**onPlayerDeath():** Called on the server. This is called whenever a player dies.
+**onPlayerDeath():** Called on server & client. This is called whenever a player dies.
 
 <p class="hidep"><strong class="server-side">server-side</strong></p>
 
