@@ -138,6 +138,7 @@ public action onAdFinished(str playerID, bool success) {
 
 ---
 
+
 **onPlayerDeath():** Called on server & client. This is called whenever a player dies.
 
 <p class="hidep"><strong class="server-side">server-side</strong></p>
@@ -153,7 +154,46 @@ public action onPlayerDeath(str id, str killerID) {
     GAME.CHAT.send(id, msg, "#ff0");
 }
 ```
+---
 
+**onChatMessage():** Called on the server. This is called whenever a player sends a message in game-chat.
+
+<p class="hidep"><strong class="server-side">server-side</strong></p>
+
+```krunkscript
+# When a player sends a message in game-chat
+public action onChatMessage(str msg, str playerID) {
+    # msg is the message that was sent
+    # playerID is the ID of the player who sent the message
+}
+```
+
+---
+
+**onPlayerLeave():** Called on the server. This is called whenever a player disconnects.
+
+<p class="hidep"><strong class="server-side">server-side</strong></p>
+
+```krunkscript
+# When a player disconnects from the server
+public action onPlayerLeave(str playerID) {
+    # playerID is the ID of the player that disconnected
+    # Remove playerID from custom playerList
+}
+```
+
+---
+
+**onServerClosed():** Called on the server. This is called whenever the server closes. E.g when host ends the game.
+
+<p class="hidep"><strong class="server-side">server-side</strong></p>
+
+```krunkscript
+# When the server closes
+public action onServerClosed() {
+	# Save player data
+}
+```
 ---
 
 Both scripts also have built-in network listener actions that are called automatically when a message is sent through the network. [More Information](./files/multiplayer_&_networking?id=receiving-data)
