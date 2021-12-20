@@ -159,6 +159,8 @@ public action onPlayerDeath(str id, str killerID) {
 Both scripts also have built-in network listener actions that are called automatically when a message is sent through the network. [More Information](./files/multiplayer_&_networking?id=receiving-data)
 ___
 Additionally, the client.krnk script has a few [Input Listener](./files/inputs?id=input-listeners) and [UI Interaction](./files/inputs?id=click-events) actions built-in.
+___
+And, the server.krnk script has [Trigger Interaction](./files/trigger_logic?id=triggers-amp-scripts) actions built-in
 
 ## Default Behavior
 
