@@ -79,9 +79,18 @@ player.position.z = 10; # move player z pos
 player.rotation.x = 0.3; # set player direction
 player.velocity.x = 0.1; # set player velocity
 (num) player.health -= 10; # change player health
+player.score = 5; # (server-side) change player score
+player.team = 1; # (server-side) change player team
 player.visible = false; # hide player object
+(num) player.classIndex; # returns class ID
+(num) player.weaponIndex; # returns ID of the weapon the player is currently holding
 (num) player.sid; # short unique ID of player (can be used for sending network data in an optimized way)
 (str) player.id; # long unique ID of player
+(str) player.username; # username of the player (can be custom name set using krunker premium)
+(str) accountName; # account name of the player (used when storing data)
+(str) accountID; # ID linking to the profile of the player (doesn't change on leave)
+(bool) player.active; # if player model has spawned in (returns false when player is dead, in spec or not spawned in)
+(bool) player.onWall; # if player is touching a wall
 (bool) player.onGround; # if player is on the ground currently
 (bool) player.isCrouching; # if player is crouching
 (bool) player.onTerrain; # player on terrain object
