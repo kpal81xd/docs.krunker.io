@@ -289,28 +289,43 @@ if (notEmpty other) {
 Arrays/Lists are used to store several objects/values of the same type
 
 ```krunkscript
-# create basic object array
-str[] list = str["a", "b"]; # list of strings
-obj[] list = obj[{ # list of objects
-    a: 1
-}, {
-    a: 5,
-	b: 10
-}];
+# list of numbers
+num[] myNumberList = num[1, 2, 3, 4, 5];
 
-# create list of numbers
-num[] list = num[1, 2, 3, 4, 5]; # list of numbers
-num test = list[0] + list[1]; # access list values
+# list of strings
+str[] myStringList = str["a", "b"];
+
+# list of objects
+obj[] myObjectList = obj[
+    {a: 1},
+    {a: 5, b: 10}
+];
+
+num test = myNumberList[0] + myNumberList[1]; # access list values
 
 lengthOf list; # returns length of list
 
 remove list[0]; # remove first item from list
 remove list[i]; # remove specific index from list
 
+# sidenote:
+# all items in the list with a greater index value than the removed item will see their index get subtracted by 1
+# the length of the list (lengthOf) will also get dynamically subtracted by 1.
+
 addTo list 10; # add new item to list
 
 # nested lists
-num[][] nested = num[][num[1], num[1, 2]];
+num[][] list2D = num[][
+    num[1], # 1D list at index 0
+    num[1, 2] # 1D list at index 1
+];
+
+# access a 1D list from a 2D list
+num[] list1D = list2D[0]; # list1D = num[1]
+
+# access a value directly from a two-dimensional list
+num numberValue = list2D[1][1]; # the 2nd value of the 2nd 1D list in the 2D list (in this case, 2)
+
 ```
 
 ## Functions & Actions
@@ -376,7 +391,7 @@ num value = 10 - 1; # deduction
 num value = 2 * 1.5; # multiplication
 num value = 2 ** 2; # power of
 num value = 2 / 1; # division
-num value = 10 % 5; # modulo
+num value = 10 % 5; # remainder
 value += 10; # add to value
 value++; # add 1 to value
 value -= 5; # subtract from value
@@ -421,7 +436,7 @@ Math.hypot(...args) # returns hypotenuse of values
 Math.sqrt(num) # returns square root of number
 Math.min(num1, num2) # returns lowest of two values
 Math.max(num1, num2) # returns highest of two values
-Math.lerp(num1, num2, amnt) # returns rounded down number
+Math.lerp(num1, num2, amnt) # returns num1 + amnt * (num2 - num1)
 Math.calcPerc(num, perc) # returns percent value of number
 ```
 ___
@@ -476,6 +491,7 @@ You can also check certain properties of a string:
 
 ```krunkscript
 str testString = "test"; # create string
+
 if (UTILS.textContains(testString, "test")) {
 	# check if string contains certain value
 }
@@ -492,34 +508,42 @@ Loops allow you to run certain code multiple times or to iterate over [Arrays](.
 for (num i = 0; i < 10; i++) { # loop 10 times
 	# more code here
 }
+```
+```krunkscript
+str[] list = str["a", "b", "c"];
 
 # iterate over array
-str[] list = str["a", "b", "c"];
 for (num i = 0; i < lengthOf list; i++) {
     GAME.log(list[i]); # log item in list
 }
+```
+```krunkscript
+num test = 10;
 
 # while condition loop
-num test = 10;
 while (test > 0) {
 	test--;
 }
-
+```
+```krunkscript
 # you can break out of a loop (end loop entirely):
 for (num i = 0; i < 10; i++) {
     if (i == 5) {
 		break; # ends loop
 	}
 }
-
+```
+```krunkscript
 # you can also continue out of a loop (jump to next iteration):
 for (num i = 0; i < 10; i++) {
     if (i == 5) {
         continue; # go to next iteration
     };
+
     GAME.log("Test " + toStr i);
 }
-
+```
+```krunkscript
 # looping through objects will come soon
 # ...
 ```
@@ -530,14 +554,16 @@ If statements allow you to run certain code only if a certain condition is met. 
 
 ```krunkscript
 num value = 10;
+
 if (value > 20) {
     GAME.log("Bigger than 20");
 } else {
     GAME.log("Less than 20");
 };
+
+# in this case, "Less than 20" would be logged since 10 is not greater than 20
 ```
 
-In this case, the second log would run. Because value is not greater than 20.\
 Here is a list of operators you can use in your if statements:
 
 ```krunkscript
@@ -548,27 +574,55 @@ value <= other # less than or the same
 value == other # same as
 value != other # not the same as
 
-condition && condition # multiple conditions must be met
-condition || condition # any condition is met
+condition1 && condition2 # both conditions must be met
+condition1 || condition2 # any of these conditions must be met
 
-# you can also check if a value exists/is true:
+# you can also check if a value exists/is truthy (double negation):
 if (!!value) {
-
+    # your code here
 }
+```
 
-# some examples
-if ((10 < 5) || (5 == 10)) {
+The values that are falsy for KrunkScript are essentially the same as JavaScript:
++ false
++ 0
++ -0
++ ""
++ null
++ undefined
++ NaN (which is actually just 0 in KrunkScript)
+
+___
+
+Some examples:
+
+```krunkscript
+if (10 < 5 || 5 == 10) {
     # wont run
 };
+```
+```krunkscript
 str test = "ab";
-if (("a"+"b") == test && (1+1) == 2) {
+
+if ("a" + "b" == test && 1 + 1 == 2) {
     # will run
 };
 
-# ternary operations
-num = (true?1:0);
+if (!!test) {
+    # will run since test is not an empty string (is therefore truthy)
+}
+```
 
-# also make sure to wrap operations in ()
+Ternary operator:
+
+```krunkscript
+bool condition = 10 < 5; # false
+
+# if the condition is true, returns the left-hand side of the colon (1). Otherwise, returns the right-hand side (0)
+num myNumber = condition ? 1 : 0; # myNumber is equal to 0 since condition is false
+
+# make sure to wrap inside parentheses when used as an operand in an expression
+str myString = "Hello " + (!condition ? "world" : "foo"); # myString is equal to "Hello world" since !condition = true
 ```
 
 ## Importing Scripts

@@ -102,7 +102,7 @@ GAME.STORAGE.load(
 
 # get all data for a specific player:
 public action dataReady(obj data, bool success) { # prepare callback
-    if (data && success) {
+    if (notEmpty data && success) {
         GAME.log(data.coins); # access data
     }
 };
@@ -110,7 +110,7 @@ GAME.STORAGE.load(player.accountName, "", dataReady);
 
 # load data for specific game:
 public action dataReady(obj data, bool success) { # prepare callback
-    if (data && success) {
+    if (notEmpty data && success) {
         GAME.log(data.wins); # access data
     }
 };
