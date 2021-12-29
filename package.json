@@ -1,0 +1,17 @@
+{
+  "name": "krdocs",
+  "version": "1.0.0",
+  "description": "Tossing vuepress over the krunker docs markdown",
+  "main": "index.js",
+  "repository": "https://github.com/SwatDoge/krunkdocs",
+  "author": "Swat",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.32"
+  },
+    "scripts": {
+      "dev": "vuepress dev docs",
+      "build": "vuepress build docs"
+    }
+}
