@@ -42,6 +42,18 @@ obj model = GAME.SCENE.addAsset(
     colr, # str color (optional)
     data # obj additional data (optional)
 );
+
+# add sign
+obj sign = GAME.SCENE.addSign(
+    fontSize,
+    fontColor,
+    backgroundColor,
+    backgroundInvisible,
+    textAlign # 0-2 left center right
+    outlineColor,
+    outlineThickness,
+    mimicSprite,    
+)
 ```
 
 ## Textures & Images
