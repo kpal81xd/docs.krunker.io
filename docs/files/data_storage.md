@@ -44,7 +44,7 @@ GAME.STORAGE.update(player.accountName, {
 # highscore sample:
 # newScore comes from game
 if (newScore > player.highscore) {
-    public action callback(obj data, bool success) {
+    action callback(obj data, bool success) {
         if (success) {
             player.highscore = data.score;
         }
@@ -56,7 +56,7 @@ if (newScore > player.highscore) {
 
 # transact values on specific player:
 # a transaction requires that no values fall below 0
-public action callback(obj data, bool success) {
+action callback(obj data, bool success) {
     if (success) {
         # transaction successfully completed
         # update to latest synced values
@@ -101,7 +101,7 @@ GAME.STORAGE.load(
 );
 
 # get all data for a specific player:
-public action dataReady(obj data, bool success) { # prepare callback
+action dataReady(obj data, bool success) { # prepare callback
     if (data && success) {
         GAME.log(data.coins); # access data
     }
@@ -109,7 +109,7 @@ public action dataReady(obj data, bool success) { # prepare callback
 GAME.STORAGE.load(player.accountName, "", dataReady);
 
 # load data for specific game:
-public action dataReady(obj data, bool success) { # prepare callback
+action dataReady(obj data, bool success) { # prepare callback
     if (data && success) {
         GAME.log(data.wins); # access data
     }
