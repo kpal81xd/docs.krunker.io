@@ -1,0 +1,17 @@
+// :root{
+//     --c-danger: #df70ad;
+//     --c-danger-bg: #df70ad;
+// }
+
+// html.dark{
+//     --c-danger: #df70ad;
+//     --c-danger-bg: #df70ad;
+// }
+
+div[class*="language-"].line-numbers-mode .line-numbers{
+    line-height: 1.19 !important;
+}
+
+div.navbar-item > a.router-link-active[aria-label="Merged view"], div.navbar-item > a.router-link-active[aria-label="Unmerged view"]{
+    display: none;
+}

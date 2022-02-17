@@ -8,10 +8,16 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "vuepress": "^2.0.0-beta.32"
+    "@snippetors/vuepress-plugin-code-copy": "^1.1.1",
+    "vuepress": "^2.0.0-beta.32",
+    "vuepress-plugin-redirect-frontmatter": "^1.0.0"
   },
-    "scripts": {
-      "dev": "vuepress dev docs",
-      "build": "vuepress build docs"
-    }
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "dependencies": {
+    "markdown-it": "^12.3.2",
+    "markdown-it-highlightjs": "^3.6.0"
+  }
 }
