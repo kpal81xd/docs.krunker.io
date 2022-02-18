@@ -52,6 +52,14 @@ GAME.NETWORK.broadcast(
 Once the message has been sent, we can listen for it and use its given object.
 
 ```krunkscript
+# Receive message from server or client
+action onNetworkMessage(str id, obj data, str playerID) {
+    #str id             - message name
+    #obj data           - data as string
+    #str playerID       - player id (server-side only)
+```
+
+```krunkscript
 # Server
 action onNetworkMessage(str id, obj data, str playerID) {
     if (id == "test") {
@@ -82,4 +90,56 @@ if (GAME.NETWORK.broadcast("hi there", {a: 1}) {
 else {
     # message rate limited
 }
+```
+
+## Sending & broadcasting chat messages <Badge type="tip" text="server-side" vertical="middle" />
+You can send chat messages from the server.
+
+```krunkscript
+# Send message to specific player
+GAME.CHAT.send(
+    player.id,      # str player id
+    "hello world",  # str message
+    "#FFF"          # str color
+);
+```
+
+```krunkscript
+# Broadcast message to all players
+GAME.CHAT.broadcast(
+    "hello world",  # str message
+    "#FFF"          # str color
+);
+```
+
+## Open a window to a different game or platform  <Badge type="tip" text="client-side" vertical="middle" />
+
+```krunkscript
+GAME.URLS.openDiscord(
+    "YBnq2um"                            # str discord invite url
+);
+```
+
+```krunkscript
+GAME.URLS.openOpensea(
+    "https://opensea.io/SwatDoge"        # str discord invite url
+);
+```
+
+```krunkscript
+GAME.URLS.openTwitter(
+    "https://twitter.com/swatdoge"       # str twitter url
+);
+```
+
+```krunkscript
+GAME.URLS.openYoutube(
+    "https://www.youtube.com/channel/UCkQM8ePPA8me73585aLJvmw"       # str youtube url
+);
+```
+
+```krunkscript
+GAME.changeGame(
+    "DQ_Battleboats"                    # str game name
+);
 ```

@@ -11,7 +11,7 @@ actions:
       link: /unmerged/
       type: secondary
     - text: Quick lists →
-      link: "/"
+      link: "/lists"
       type: secondary
 features:
   - title: KrunkScript only

@@ -12,7 +12,7 @@ module.exports = function (hljs){
             {
                 'className': 'keyword',
                 'variants': [{
-                    'begin': '\x5cb(public|action|return|if|else|for|while|addTo|remove|lengthOf|notEmpty|toStr|toNum)\x5cb'
+                    'begin': '\x5cb(public|action|return|if|else|for|while|addTo|remove|lengthOf|notEmpty|toStr|toNum|hasProp)\x5cb'
                 }]
             },
             {

@@ -15,6 +15,7 @@ str id = GAME.UI.addDIV(
 );
 ```
 
+### Changing div properties
 ```krunkscript
 # Update div style property
 GAME.UI.updateDIV(
@@ -24,6 +25,16 @@ GAME.UI.updateDIV(
 );
 ```
 
+### Getting div properties
+```krunkscript
+# Get property of div, returns str css value
+    GAME.UI.getProp(
+        "minimap"           # str id of div
+        "background-color"  # property to get value of
+    );
+```
+
+### Changing div text
 ```krunkscript
 # Update div text
 GAME.UI.updateDIVText(
@@ -32,6 +43,21 @@ GAME.UI.updateDIVText(
 );
 ```
 
+### Moving the div
+**Tags: clone**
+```krunkscript
+# Create element
+GAME.UI.addDIV("sott_test", true, "");
+
+# Move element to a different parent
+GAME.UI.moveDIV(
+    "sott_test",            # Current child id
+    "gameUI",               # New parent to move to
+    "sott_test_2"           # New child id
+);
+```
+
+### Removing the div
 ```krunkscript
 # Remove the div
 GAME.UI.removeDIV(
@@ -39,6 +65,7 @@ GAME.UI.removeDIV(
 );
 ```
 
+### Onclick  event listener
 ```krunkscript
 # Runs when div is clicked
 public action onDIVClicked(str id) {
