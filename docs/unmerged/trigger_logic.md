@@ -1,6 +1,6 @@
 # Trigger logic
 
-## Trigger events
+## Trigger events <Badge type="tip" text="server-side" vertical="middle" /> 
 
 | ID | Event | Description |
 | - | - | - |
@@ -35,7 +35,7 @@
 | 28 | onPlayerDamage | The trigger action will execute you on the player damage. |
 | 29 | N/A | - |
 | 30 | onCustomValGreater | When the specific custom value is greater than a specific value, the trigger action will execute. |
-## Trigger conditions
+## Trigger conditions <Badge type="tip" text="server-side" vertical="middle" /> 
 
 | ID | Condition | Description |
 | - | - | - |
@@ -50,7 +50,7 @@
 | 8 | Player is Verified | Requires player to have verification status in-game. |
 | 9 | Player is Partner | Requires player to have partner status in-game. |
 
-## Trigger actions
+## Trigger actions <Badge type="tip" text="server-side" vertical="middle" /> 
 
 | ID | Action | Description |
 | - | - | - |
@@ -125,11 +125,15 @@
 This part of the documentation seems malformed with no statement made by the developers yet, it is best to ignore this.
 :::
 
+:::details Developer statement on this action
+“if its on docs.krunker.io just send a PR to fix it„ ~ KPal, discord
+:::
+
 ```krunkscript
 custom action 58):(
-    playerID,       # player id
-    customParam,    # custom trigger parameter
-    value           # custom trigger value
+    # str playerID           - player id
+    # str customParam        - custom trigger parameter
+    # num value              - custom trigger value
 )
 ```
 
@@ -138,19 +142,8 @@ custom action 58):(
 ```krunkscript
 # Runs when trigger triggers "custom action" action
 public action onCustomTrigger(str playerID, str customParam, num value) {
-    # do something
+    # str playerID           - player id
+    # str customParam        - custom trigger parameter
+    # num value              - custom trigger value
 }
-```
-
-
-## Execute trigger <Badge type="tip" text="server-side" vertical="middle" />
-:::warning
-Currently Disabled
-:::
-
-```krunkscript
-GAME.TRIGGERS.execute(
-    ID,     # num action id
-    args    # arguments
-);
 ```

@@ -111,6 +111,11 @@ GAME.SETTINGS.set(
 );
 ```
 
+```krunkscript
+# Get str[] of all available settings
+GAME.SETTINGS.list();
+```
+
 ## Latest mod.zip download
 
 [Download the latest mod.zip here](https://krunker.io/modzip)

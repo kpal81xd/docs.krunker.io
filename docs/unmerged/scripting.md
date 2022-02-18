@@ -57,8 +57,19 @@ public action onPlayerUpdate(str id, num delta, obj inputs) {
 ```krunkscript
 # Runs when player dies
 public action onPlayerDeath(str id, str killerID) {
-    #str id     - id of dead player
-    #str id     - id of killer
+    #str id         - id of dead player
+    #str killerID   - id of killer
+}
+```
+
+### onPlayerDamage() <Badge type="tip" text="server-side" vertical="middle" /> 
+
+```krunkscript
+# Runs when player receives damage
+public action onPlayerDamage(str id, str doerID, num amount) {
+    #str id         - id of player who got damaged
+    #str doerID     - id of player who dealt the damage
+    #num amount     - amount of damage dealt
 }
 ```
 
@@ -100,16 +111,36 @@ public action onServerClosed() {
 }
 ```
 
-### Input hooks
+### onAdFinished() <Badge type="tip" text="server-side" vertical="middle" />
+
+```krunkscript
+# Runs when a player finished watching an ad
+public action onAdFinished(str playerID, bool success) {
+    # str playerID      - Player who finished watching
+    # bool success      - Whether the ad played succesfully
+}
+```
+
+Ads can be ran on the clientside using GAME.ADS.playVideo().
+
+:::tip
+You can play a video every 5 minutes
+:::
+
+```krunkscript
+GAME.ADS.playVideo();
+```
+
+### Input hooks <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" /> 
 See: [Input hooks](/unmerged/inputs.html)
 
-### Networking hooks
+### Networking hooks <Badge type="tip" text="server-side" vertical="middle" /> 
 See: [Networking hooks](/unmerged/multiplayer_&_networking.html)
 
-### Trigger hooks
+### Trigger hooks <Badge type="tip" text="server-side" vertical="middle" /> 
 See: [Trigger hooks](/unmerged/trigger_logic.html)
 
-### UI hooks
+### UI hooks <Badge type="tip" text="client-side" vertical="middle" />
 See: [UI hooks](/unmerged/user_interface.html#adding-an-element-div)
 
 ## Default behavior <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" /> 
@@ -133,7 +164,7 @@ player.disableMelee = true;             # disables melee (client & server)
 player.disableDefault("jump");          # disables input behaviours (client & server)
 ```
 
-## Variables
+## Variables <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" /> 
 Variables are used to store information.
 
 ```krunkscript
@@ -143,7 +174,7 @@ str text = "hello world";   # text (string)
 bool val = true;            # boolean
 ```
 
-## Naming rules
+## Naming rules <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" /> 
 :::warning
 - Variables can't start with a number
 - Variables can not use special charactes
@@ -162,7 +193,7 @@ num test0 = 0;      # valid
 obj name = {};      # valid
 ```
 
-## Type conversion
+## Type conversion <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" /> 
 Converting from one type to another.
 
 ```krunkscript
@@ -175,11 +206,12 @@ num test = toNum "0";       # valid ("Deprecated" according to developers)
 num test2 = toNum "a";      # invalid: returns 0 ("Deprecated" according to developers)
 ```
 
-## Objects
+## Objects <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" /> 
 **Tags: dictionaries, hashmaps**
 
 :::warning
-Don't forget the ; after creating an object
+- Don't forget the ; after creating an object
+- hasProp is undocumented, documentation on it might be flawed.
 :::
 
 ```krunkscript
@@ -198,9 +230,13 @@ obj other = {};
 if (notEmpty other) {
 	# this condition would fail
 }
+
+# Check if property exists
+(hasProp car "name");   # returns true
+(hasProp car "wing");   # returns false
 ```
 
-## Arrays
+## Arrays <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" /> 
 **Tags: lists, collections, fields, lengthof, size, length, push**
 
 Arrays are used to store several objects/values of the same type.
@@ -228,7 +264,7 @@ lengthOf list;
 addTo list 10;
 ```
 
-## Functions & actions
+## Functions & actions <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" /> 
 KrunkScript allows you to create custom actions (traditionally called functions). For example you could create an action that moves a car and depletes fuel from said car:
 
 :::warning
@@ -265,7 +301,25 @@ num action addFuel(num amount) {
 car.fuel = (num) car.fuel + addFuel(10);
 ```
 
-## Debugging
+### Passing actions as arguments <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" /> 
+
+:::tip
+In update v5.4.1 this was announced: "Action parameters are now option for all GAME sub actions". We are not sure what this means, but maybe you do
+:::
+
+```krunkscript
+# Create function to pass as argument
+str action word(str word){
+    return "This is a word: " + word;
+}
+
+# Pass function as argument
+action say(str action(str) funcArg){
+    funcArg("Pizza");   # Outputs "This is a word: Pizza"
+}
+```
+
+## Debugging <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" /> 
 **Tags: Log, Println, Say**
 Use the following functions to help you when debugging
 
@@ -279,7 +333,7 @@ GAME.log((str) number + "text");            # combine number with text
 GAME.log("test", "test2", 6, [0, 1, 2]);    # returns: test test2 6 [0, 1, 2]
 ```
 
-## Maths & calculations
+## Maths & calculations <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" /> 
 ```krunkscript
 num value = 1 + 1;          # addition
 num value = 10 - 1;         # deduction
@@ -297,7 +351,7 @@ num x = 2 >>> 1;            # unsigned right shift bit operation
 num value = 2 * (5 - 3);    # brackets
 ```
 
-## Basic math functions & utilities
+## Basic math functions & utilities <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" /> 
 
 ```krunkscript
 Math.E                              # Euler's number
@@ -342,20 +396,20 @@ Math.toDeg(num);                    # Converts radians to degrees
 ```
 
 
-## Random number generation
+## Random number generation <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" /> 
 ```krunkscript
 UTILS.randInt(x, y);     # random number between x and y
 UTILS.randFloat(x, y);   # random float between x and y
 ```
 
-## Distance calculations
+## Distance calculations <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" /> 
 
 ```krunkscript
 UTILS.getDist2D(x1, y1, x2, y2);         # distance between 2 points in 2D space
 UTILS.getDist3D(x1, y1, z1, x2, y2, z2); # distance between 2 points in 3D space
 ```
 
-## Angle calculations
+## Angle calculations <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" /> 
 **Tags: direction, vector**
 
 ```krunkscript
@@ -370,15 +424,34 @@ dirs.y;                                              # y direction
 dirs.z;                                              # z direction
 ```
 
-## String manipulation & testing
-You can use KrunkScript to manipulate strings in several ways:
+## String manipulation & testing <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" /> 
+You can use KrunkScript to manipulate strings in several ways.
 
 :::tip
-Regex support has been confirmed by the developers, but it not yet available.
+Regex support has been confirmed by the developers, but it not yet available
+:::
+
+:::warning
+UTILS.truncateTxt randomly appends dots at the end of a string
+:::
+
+:::details Developer statement regarding UTILS.truncateTxt.
+‟Docs are wrong„ ~ KPal, discord
 :::
 
 ```krunkscript
 # Create string
+str testString = "Test";    
+
+str string2 = testString + "Me";                            # Combine strings
+str string3 = UTILS.toUpper(testString);                    # Makes text uppercase (returns "TEST")
+str string4 = UTILS.toLower(testString);                    # Makes text lowercase (returns "test")
+str string5 = UTILS.truncateTxt("123456", 2, true);         # Reduce text to first 2 characters (returns "12")
+str string6 = UTILS.truncateTxt("123456", 2, false);        # results in: "12..."
+str string7 = UTILS.replaceText("hello there", "the", "");  # results in: "hello re"
+```
+
+```krunkscript
 # Create string
 str testString = "test"; 
 if (UTILS.textContains(testString, "test")) {
@@ -396,7 +469,14 @@ if (UTILS.textContains(testString, "test")) {
 }
 ```
 
-## Loops
+### Saving string to keyboard <Badge type="tip" text="client-side" vertical="middle" />
+
+```krunkscript
+# Copies text to clipboard
+UTILS.copyToClipboard("hello world");
+```
+
+## Loops <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" /> 
 
 ```krunkscript
 # Create for loop
@@ -448,7 +528,7 @@ for (num i = 0; i < 10; i++) {
 }
 ```
 
-## Conditions & if statements
+## Conditions & if statements <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" /> 
 
 If statements allow you to run certain code only if a certain condition is met.
 

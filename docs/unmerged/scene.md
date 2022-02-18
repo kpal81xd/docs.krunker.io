@@ -232,6 +232,18 @@ obj cube = GAME.SCENE.addCube(
 );
 ```
 
+```krunkscript
+GAME.SCENE.addSign(
+    5,          # num x position
+    0,          # num y position
+    5,          # num z position
+    10,         # num width
+    10,         # num length
+    "Wow!",     # str text
+    {}          # obj additional data
+);
+```
+
 ### Plane
 
 ```krunkscript

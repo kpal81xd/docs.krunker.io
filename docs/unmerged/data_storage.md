@@ -6,13 +6,14 @@
 Databases allow you to store variables permanently, without being able to be modified by others. Its useful for keeping track of currencies, personal best scores and what items a player owns. 
 
 :::warning
-- You can only store and access data from players who are active in game.
-- set, update, transact 10/second per connection/player.
-- load 5/second per connection/player.
+- You can only store and access data from players who are active in game
+- set, update, transact 10/second per connection/player
+- load 5/second per connection/player
 - 30 Keys per game, keys length is 20 characters. (Object properties are treated as unique database keys)
+- To delete data storage values you can use `delete all` as a key
 :::
 
-### Set storage
+### Set storage <Badge type="tip" text="server-side" vertical="middle" />
 ```krunkscript
 # Set a player value to a specific value.
 GAME.STORAGE.set(
@@ -23,7 +24,7 @@ GAME.STORAGE.set(
 );
 ```
 
-### Update storage
+### Update storage <Badge type="tip" text="server-side" vertical="middle" />
 ```krunkscript
 # Updating ADDS the value you give it to the existing value. Negative values will thus be subtracted.
 # Removing 5 kills from SwatDoge's kills
@@ -35,7 +36,7 @@ GAME.STORAGE.update(
 );
 ```
 
-### Transact storage
+### Transact storage <Badge type="tip" text="server-side" vertical="middle" />
 ```krunkscript
 # The same as GAME.STORAGE.update but you can not go below 0. If this does happen, the success parameter on the callback function will be false.
 GAME.STORAGE.transact(
@@ -46,7 +47,7 @@ GAME.STORAGE.transact(
 );
 ```
 
-### Loading Data
+### Loading Data <Badge type="tip" text="server-side" vertical="middle" />
 
 ```krunkscript
 # Load data you stored on your map.

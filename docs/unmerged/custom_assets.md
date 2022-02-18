@@ -23,6 +23,17 @@ GAME.SCENE.addAsset(
 );
 ```
 
+### Object morphing <Badge type="tip" text="client-side" vertical="middle" />
+**Tags: morph target, Shape key**
+
+You can interpolate between morphstates on a 3d model.
+```krunkscript
+    object.updateMorph(
+        "Comedy",       # str morph target/Shape key
+        0.2             # num value (0 - 1)
+    );
+```
+
 ## Textures & images <Badge type="tip" text="client-side" vertical="middle" />
 
 :::tip
@@ -49,7 +60,7 @@ The krunker playermodels has some player animations by default.
 - **Melee:** Plays when player melees
 - **Shoot:** Plays when player shoots
 
-### Custom animations
+### Custom animations <Badge type="tip" text="client-side" vertical="middle" />
 :::tip
 Only gltf's support animations
 :::
@@ -70,6 +81,17 @@ aiBot.playAnim("Jump");
 
 # Stop object animation
 object.stopAnim();
+```
+
+```krunkscript
+# Playing an animation thru GAME method
+obj object = GAME.SCENE.addAsset("11441g", 0, 0, 0, 1);
+
+# Play animation
+GAME.ANIM.playClip(object, "Jump", 0);
+
+# Stop animation
+GAME.ANIM.stopClip(object, "Jump");
 ```
 
 ## Sounds & music <Badge type="tip" text="client-side" vertical="middle" />

@@ -56,7 +56,17 @@ Canvas shapes start at the top left of your screen, setting position will offset
 
 ### Text
 
+:::tip
+You can use a custom font-family from a mod for the canvas, as shown in the example below
+:::
+
+:::warning
+Keep in mind that default browser font families may differ for other browsers
+:::
+
 ```krunkscript
+
+# Draw text on screen
 GAME.OVERLAY.drawText(
     "Hello world",  # str text
     0,              # num x position
@@ -65,12 +75,11 @@ GAME.OVERLAY.drawText(
     20,             # num font size
     "center",       # str alignment ("left", "center", "right")
     "#FFF",         # str color
-    0.9             # num opacity
+    0.9,            # num opacity
+    "comic sans"    # str font
 );
 
-#### Get canvas width
-
-# get canvas text width
+# Get canvas text width
 num textWidth = GAME.OVERLAY.measureText(
     24, # num fontsize
     "Testing" # string text
@@ -133,4 +142,138 @@ GAME.OVERLAY.drawImage(
     0,          # num rotation (0 - 360)
     0.9         # num opacity (1 - 0)
 );
+```
+
+## Direct canvas drawing <Badge type="tip" text="client-side" vertical="middle" />
+In javascript, you can draw on the canvas using the `CanvasRenderingContext2D` API. Krunkscript also allows you to do this, and works mostly the same.
+
+To create one of these drawings, you first make a path by moving the cursor and pathing shapes. After that you "stroke" (draw) the path. These lines and shapes can be modified in several ways to fit your needs.
+
+:::warning
+- These features are not officially documented, there might be mistakes
+- This part of the doc is not final
+:::
+
+### Creating a basic line
+```krunkscript
+# Starting the path
+GAME.OVERLAY.beginPath();
+
+# Move cursor to a position
+GAME.OVERLAY.moveTo(50, 140);
+
+# Draw line
+GAME.OVERLAY.lineTo(150, 60);
+
+# Closing the path
+GAME.OVERLAY.closePath();
+
+# Drawing out the path
+GAME.OVERLAY.stroke();
+```
+
+### Moving & drawing
+```krunkscript
+# Move the cursor
+GAME.OVERLAY.moveTo(
+    50,     # num x position
+    140     # num y position
+);
+```
+
+```krunkscript
+# Set line width
+GAME.OVERLAY.lineWidth(
+    20       # num pixel width
+);
+
+# Set line dash width
+GAME.OVERLAY.lineDashOffset(
+    5        # num space between dashes on line
+);
+
+# Set corners where two lines meet
+GAME.OVERLAY.lineJoin(
+    "round"     #str type ("round", "bevel", "miter")
+);
+
+# Draw a line from cursor
+GAME.OVERLAY.lineTo(
+    150,     # num x position
+    60       # num y position
+);
+```
+
+### Filling & filling style
+You can fill a shape with a certain color.
+
+```krunkscript
+# Set filling style
+GAME.OVERLAY.fillStyle(
+    "#FFF"  # str color
+);
+
+# Fill a path (before stroke)
+GAME.OVERLAY.fill();
+```
+
+### Stroke & stroke style
+Stroke style is the color of stroke lines.
+
+```krunkscript
+# Set stroke style
+GAME.OVERLAY.strokeStyle(
+    "#FFF"  # str color
+);
+```
+
+```krunkscript
+# Stroke a path
+GAME.OVERLAY.stroke();
+```
+
+### Transforming & translating paths
+You can modify a paths properties using translation.
+
+```krunkscript
+# Move path relative to itself
+GAME.OVERLAY.translate(
+    20,     # num x direction
+    20      # num y direction
+);
+```
+
+```krunkscript
+# Transform allows you to translate an object thru a matrix
+GAME.OVERLAY.transform(
+    1,      # horizontal scaling
+    0,      # horizontal skewing
+    1,      # vertical skewing
+    1,      # vertical scaling
+    0,      # horizontal moving
+    0       # vertical moving
+);
+```
+
+```krunkscript
+# Resets the current transform and reapplies using transform()
+GAME.OVERLAY.setTransform(
+    1,      # horizontal scaling
+    0,      # horizontal skewing
+    1,      # vertical skewing
+    1,      # vertical scaling
+    0,      # horizontal moving
+    0       # vertical moving
+);
+```
+
+### Saving & restoring drawing styles
+```krunkscript
+# Save a drawing state
+GAME.OVERLAY.save();
+```
+
+```krunkscript
+# Rollback a drawing state
+GAME.OVERLAY.restore();
 ```

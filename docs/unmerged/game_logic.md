@@ -10,7 +10,8 @@
 ## Timing <Badge type="tip" text="server-side" vertical="middle" /> <Badge type="tip" text="client-side" vertical="middle" />
 
 :::warning
-You can only freeze time on the server side
+- You can only freeze time on the server side
+- GAME.TIME.fixedDelta() might not work
 :::
 
 ```krunkscript
@@ -27,6 +28,9 @@ public action update(delta) {
 # Freeze or unfreeze game timer
 GAME.TIME.freeze();
 GAME.TIME.unfreeze();
+
+# Get delta unaffected by game speed
+GAME.TIME.fixedDelta();
 ```
 
 ## Players <Badge type="tip" text="server-side" vertical="middle" /> <Badge type="tip" text="client-side" vertical="middle" />
@@ -147,6 +151,7 @@ obj data = {
 };
 ```
 
+
 ```krunkscript
 # Delete AI
 GAME.AI.remove(testBot.sid);
@@ -162,7 +167,7 @@ testBot.behaviour = 1;          # num (0: disabled 1: default)
 testBot.pathIndex = 5;          # num pathnodes
 ```
 
-## Movement
+## Movement <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" />
 
 :::warning
 Movement restrictions get reset on respawn
