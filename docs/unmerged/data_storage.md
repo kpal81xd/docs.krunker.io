@@ -15,7 +15,7 @@ Databases allow you to store variables permanently, without being able to be mod
 
 ### Set storage <Badge type="tip" text="server-side" vertical="middle" />
 ```krunkscript
-# Set a player value to a specific value.
+# Set a player value to a specific value
 GAME.STORAGE.set(
     "SwatDoge",                     # str username
     {kills: 300, nick: "Swat"},     # obj data
@@ -38,7 +38,7 @@ GAME.STORAGE.update(
 
 ### Transact storage <Badge type="tip" text="server-side" vertical="middle" />
 ```krunkscript
-# The same as GAME.STORAGE.update but you can not go below 0. If this does happen, the success parameter on the callback function will be false.
+# The same as GAME.STORAGE.update but you can not go below 0. If this does happen, the success parameter on the callback function will be false
 GAME.STORAGE.transact(
     "SwatDoge",   # str username
     {kills: -5},  # obj data
@@ -50,7 +50,7 @@ GAME.STORAGE.transact(
 ### Loading Data <Badge type="tip" text="server-side" vertical="middle" />
 
 ```krunkscript
-# Load data you stored on your map.
+# Load data you stored on your map
 GAME.STORAGE.load(
     "SwatDoge",     # str username
     "",             # str name of game with public database. (leave empty)
@@ -59,7 +59,7 @@ GAME.STORAGE.load(
 ```
 
 ```krunkscript
-# Load data you stored on another map.
+# Load data you stored on another map
 GAME.STORAGE.load(
     "SwatDoge",     # str username
     "lava_run",     # str name of game with public database. (leave empty)
@@ -74,7 +74,7 @@ Cookies allow you to store variables on a users browser. These variables can be 
 Useful for settings.
 
 :::warning
-Cookies can only store strings as values.
+Cookies can only store strings as values
 :::
 
 ```krunkscript
