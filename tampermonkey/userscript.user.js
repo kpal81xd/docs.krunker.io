@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         SOTT Quick Krunker Docs Intergration
 // @version      0.1
-// @updateURL    https://github.com/SwatDoge/SOTT-Quick-Krunkscript-Docs/raw/main/tampermonkey/userscript.user.js
-// @downloadURL  https://github.com/SwatDoge/SOTT-Quick-Krunkscript-Docs/raw/main/tampermonkey/userscript.user.js
+// @updateURL    https://github.com/SwatDoge/SOTT-Quick-Krunkscript-Docs/raw/master/tampermonkey/userscript.user.js
+// @downloadURL  https://github.com/SwatDoge/SOTT-Quick-Krunkscript-Docs/raw/master/tampermonkey/userscript.user.js
 // @supportURL   https://discord.gg/bz8abvq
 // @description  Integrates the SOTT Quick KrunkScript documentation into the scripting screen.
 // @author       Swat

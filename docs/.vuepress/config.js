@@ -85,6 +85,19 @@ module.exports = {
 						link: "/lists/hook_list.html"
 					}
 				]
+			},
+			{
+				text: "Extension",
+				children: [
+					{
+						text: "Get extension",
+						link: "https://github.com/SwatDoge/SOTT-Quick-Krunkscript-Docs/raw/master/tampermonkey/userscript.user.js"
+					},
+					{
+						text: "Learn more",
+						link: "https://docs.swatdo.ge/tools/sott_qkdi/#what-is-sottqkdi"
+					}
+				]
 			}
 		],
 		sidebar: {
