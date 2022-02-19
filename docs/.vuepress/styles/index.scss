@@ -15,10 +15,8 @@ p.sidebar-item.sidebar-heading + ul > li > a{
     font-size: 18px;
 }
 
-.image_container{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 5px;
+svg.hover{
+    z-index: 2 !important;
 }
 
 .imageGrid .page a > img {
