@@ -77,7 +77,7 @@ GAME.SCENE.addAsset(
 ```
 
 ### Object morphing <Badge type="tip" text="client-side" vertical="middle" />
-**Tags: morph target, Shape key**
+**Tags: Morph targets, Shape keys**
 
 You can interpolate between morphstates on a 3d model.
 ```krunkscript
@@ -1524,6 +1524,16 @@ cube.attachTo(player, 0, 0, 0, true);
 
 # Detach cube
 cube.detach();
+```
+
+### Attach bones
+
+```krunkscript
+# Get "HandL" bone from 3D model
+leftHand = (obj) dat.getBone("HandL");
+
+# Attach cube to left hand bone
+cube.attachTo(leftHand, 0, 0, 0);
 ```
 
 ## Coordinate system

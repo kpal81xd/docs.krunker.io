@@ -371,6 +371,16 @@ cube.attachTo(player, 0, 0, 0, true);
 cube.detach();
 ```
 
+### Attach bones
+
+```krunkscript
+# Get "HandL" bone from 3D model
+leftHand = (obj) dat.getBone("HandL");
+
+# Attach cube to left hand bone
+cube.attachTo(leftHand, 0, 0, 0);
+```
+
 ## Coordinate system
 Coordinates in 2D and 3D space are represented as x, y and x, y, z:
 
