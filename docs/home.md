@@ -3,6 +3,7 @@ home: true
 heroImage: /images/meta/sott_krunker_light.png
 heroImageDark: /images/meta/sott_krunker.png
 heroAlt: Swat's over the top quick krunker docs
+tagline: For more advanced KrunkScript users
 actions:
     - text: Merged docs →
       link: /
