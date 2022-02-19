@@ -503,6 +503,7 @@ inputs.restK;           #bool parkour reset key
 inputs.inter;           #bool interact key
 ```
 
+# Inputs
 ## Keyboard Inputs <Badge type="tip" text="client-side" vertical="middle" />
 
 :::tip
@@ -857,6 +858,8 @@ GAME.changeGame(
     "DQ_Battleboats"                    # str game name
 );
 ```
+
+# Platforms
 
 ## Detect platform <Badge type="tip" text="client-side" vertical="middle" /> 
 

@@ -1,3 +1,5 @@
+# Platforms
+
 ## Detect platform <Badge type="tip" text="client-side" vertical="middle" /> 
 
 :::tip

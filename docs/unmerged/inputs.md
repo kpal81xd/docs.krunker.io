@@ -1,3 +1,4 @@
+# Inputs
 ## Keyboard Inputs <Badge type="tip" text="client-side" vertical="middle" />
 
 :::tip
