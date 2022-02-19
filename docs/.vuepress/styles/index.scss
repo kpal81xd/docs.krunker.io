@@ -1,0 +1,26 @@
+div[class*="language-"].line-numbers-mode .line-numbers{
+    line-height: 1.19 !important;
+}
+
+div.navbar-item > a.router-link-active[aria-label="Merged view"], div.navbar-item > a.router-link-active[aria-label="Unmerged view"]{
+    display: none;
+}
+
+p.sidebar-item.sidebar-heading{
+    display: none;
+}
+
+p.sidebar-item.sidebar-heading + ul > li > a{
+    font-weight: bold !important;
+    font-size: 18px;
+}
+
+.image_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+}
+
+.imageGrid .page a > img {
+    width: 246px;
+}

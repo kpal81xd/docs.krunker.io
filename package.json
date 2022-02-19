@@ -1,0 +1,23 @@
+{
+  "name": "krdocs",
+  "version": "1.0.0",
+  "description": "Tossing vuepress over the krunker docs markdown",
+  "main": "index.js",
+  "repository": "https://github.com/SwatDoge/SOTT-Quick-Krunkscript-Docs",
+  "author": "Swat",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@snippetors/vuepress-plugin-code-copy": "^1.1.1",
+    "vuepress": "^2.0.0-beta.32",
+    "vuepress-plugin-redirect-frontmatter": "^1.0.0"
+  },
+  "scripts": {
+    "dev": "node .\\merge_docs.js && vuepress dev docs",
+    "build": "node .\\merge_docs.js && vuepress build docs"
+  },
+  "dependencies": {
+    "markdown-it": "^12.3.2",
+    "markdown-it-highlightjs": "^3.6.0"
+  }
+}
