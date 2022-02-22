@@ -122,7 +122,7 @@ GAME.URLS.openDiscord(
 
 ```krunkscript
 GAME.URLS.openOpensea(
-    "https://opensea.io/SwatDoge"        # str discord invite url
+    "https://opensea.io/SwatDoge"        # str openSea wallet url
 );
 ```
 
