@@ -4,7 +4,9 @@ const path = require("path");
 let relative = "./docs/unmerged/";
 let dir = fs.readdirSync(relative);
 let merge = `---
-sidebar: "auto"
+title: SOTT Merged docs
+tagline: For more advanced KrunkScript users  
+sidebar: auto
 ---
 `;
 

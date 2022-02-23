@@ -5,7 +5,8 @@
     # Methods
     player.playAnim("Jump");        # play animation on player
     player.disableDefault("jump");  # str disables input behaviours (client & server)
-
+    player.registerSyncValues(str object key)     # register player attributes to sync with server prediction
+    player.deregisterSyncValues(str object key)   # deregister player attributes to sync with server prediction
 
     # Attributes
     player.position.x = 10;        # num set x pos

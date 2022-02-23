@@ -83,6 +83,10 @@ module.exports = {
 					{
 						text: "Hooks",
 						link: "/lists/hook_list.html"
+					},
+					{
+						text: "Links",
+						link: "/lists/krunker_links.html"
 					}
 				]
 			},

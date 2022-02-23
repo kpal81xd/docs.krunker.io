@@ -1,5 +1,7 @@
 ---
-sidebar: "auto"
+title: SOTT Merged docs
+tagline: For more advanced KrunkScript users  
+sidebar: auto
 ---
 # Cameras
 ## Attaching/Detaching cameras <Badge type="tip" text="client-side" vertical="middle" />
@@ -366,6 +368,9 @@ if (notEmpty player && !player) {
 
 You can change/access player values like with any other objects:
 
+:::tip
+You can find a full player object at [here](/lists/player_object.html)
+:::
 :::warning
 player.accountID and player.accountName suddenly became server side only. It is unclear if it will ever come back to client side
 :::
@@ -592,6 +597,12 @@ public action onKeyHeld(str key, num code) {
 
 # Mod/Resource packs
 
+:::tip Important links
+- [mod.zip](https://krunker.io/modzip)
+- [settings.txt](https://krunker.io/docs/settings.txt)
+- [Full list of useful links](/lists/krunker_links.html#developer-links)
+:::
+
 ## Loading/Unloading mods with KrunkScript <Badge type="tip" text="client-side" vertical="middle"/>
 ```krunkscript
 # Load mod by URL
@@ -605,7 +616,6 @@ GAME.MODS.reset();
 ```
 
 ## Structure <Badge type="tip" text="client-side" vertical="middle"/>
-
 The default [mod.zip](https://krunker.io/modzip) has the following structure.
 
 - **css:** css files in here will be loaded into krunker
