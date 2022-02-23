@@ -7,9 +7,9 @@
 - Partner tips -        [https://krunker.io/docs/partner_tips.txt](https://krunker.io/docs/partner_tips.txt)
 - Texture viewer -      [https://krunker.io/viewer.html](https://krunker.io/viewer.html)
 - Documentation -       [https://docs.krunker.io/](https://docs.krunker.io/)
-- Krunker proxy         [https://browserfps.com/](https://browserfps.com/)
-- Krunker assets API    [https://assets.krunker.io/](https://assets.krunker.io/)
-- Krunker API           [https://api.krunker.io/](https://api.krunker.io/)
+- Krunker proxy -         [https://browserfps.com/](https://browserfps.com/)
+- Krunker assets API -    [https://assets.krunker.io/](https://assets.krunker.io/)
+- Krunker API -           [https://api.krunker.io/](https://api.krunker.io/)
 
 - Rotation map sources (community ran) - [https://drive.google.com/drive/folders/1lK5-qiMBbOxrMdtL9GxwUpjGzFIF2tRy?usp=sharing](https://drive.google.com/drive/folders/1lK5-qiMBbOxrMdtL9GxwUpjGzFIF2tRy?usp=sharing)
 
