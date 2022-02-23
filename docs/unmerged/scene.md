@@ -395,10 +395,10 @@ You can convert 3D coordinates into 2D ones:
 ```krunkscript
 # Get screen-space coords
 obj coords2D = GAME.SCENE.posToScreen(0, 10, 0);
-# use coords to render to screen
+# Use coords to render to screen
 (num) coords2D.x;
 (num) coords2D.y;
-# you can check if those coordinates or on the screen:
+# You can check if those coordinates or on the screen:
 (bool) coords2D.onScreen;
 ```
 

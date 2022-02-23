@@ -120,3 +120,14 @@ GAME.TRIGGERS.execute(num ID, args){
     # num value              - custom trigger value
 }
 ```
+
+### Object morphing <Badge type="tip" text="client-side" vertical="middle" />
+**Tags: Morph targets, Shape keys**
+
+You can interpolate between morphstates on a 3d model. Does not work.
+```krunkscript
+    object.updateMorph(
+        "Comedy",       # str morph target/Shape key
+        0.2             # num value (0 - 1)
+    );
+```
