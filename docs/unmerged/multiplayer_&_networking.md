@@ -112,6 +112,37 @@ GAME.CHAT.broadcast(
 );
 ```
 
+## Movement syncing <Badge type="tip" text="client-side" vertical="middle" />
+Every second the server sends the players position to the client. Once that information arrives at the client, the client retraces its steps since that point in time to now, using the corrected information that it has received from the server.
+
+If your movement code includes custom playervalues, those have to be registered, to be included in the sync.
+
+:::tip
+Check out [this example](/examples/double_jump.html) to add basic double jumping using server syncing
+:::
+
+:::warning
+To sync a player property, the property must exist first (currently it gives a wrong error)
+:::
+
+```krunkscript
+# Create player reference
+obj players = GAME.players.getSelf();
+
+# Set property
+players.hasDoubleJump = true;
+
+# Start syncing player value
+player.registerSyncValues(
+    "hasDoubleJump"     #str object key
+);
+```
+
+```krunkscript
+# Stop syncing player value
+player.unregisterSyncValues(str object key);
+```
+
 ## Open a window to a different game or platform  <Badge type="tip" text="client-side" vertical="middle" />
 
 ```krunkscript
