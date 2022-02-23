@@ -1593,10 +1593,10 @@ You can convert 3D coordinates into 2D ones:
 ```krunkscript
 # Get screen-space coords
 obj coords2D = GAME.SCENE.posToScreen(0, 10, 0);
-# use coords to render to screen
+# Use coords to render to screen
 (num) coords2D.x;
 (num) coords2D.y;
-# you can check if those coordinates or on the screen:
+# You can check if those coordinates or on the screen:
 (bool) coords2D.onScreen;
 ```
 
@@ -2512,6 +2512,17 @@ GAME.TRIGGERS.execute(num ID, args){
     # str customParam        - custom trigger parameter
     # num value              - custom trigger value
 }
+```
+
+### Object morphing <Badge type="tip" text="client-side" vertical="middle" />
+**Tags: Morph targets, Shape keys**
+
+You can interpolate between morphstates on a 3d model. Does not work.
+```krunkscript
+    object.updateMorph(
+        "Comedy",       # str morph target/Shape key
+        0.2             # num value (0 - 1)
+    );
 ```
 
 # User interface
