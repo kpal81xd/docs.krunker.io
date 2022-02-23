@@ -20,7 +20,7 @@ GAME.STORAGE.set(
     "SwatDoge",                     # str username
     {kills: 300, nick: "Swat"},     # obj data
     true,                           # bool private (false: private, true: public) Public databases can be accessed by others
-    callback                        # action(obj data, bool success) callback function
+    callback                        # action(obj data, bool success, str accountName) callback function
 );
 ```
 
@@ -32,7 +32,7 @@ GAME.STORAGE.update(
     "SwatDoge",    # str username
     {kills: -5},   # obj data
     true,          # bool private (false: private, true: public) Public databases can be accessed by others
-    callback       # action(obj data, bool success) callback function
+    callback       # action(obj data, bool success, str accountName) callback function
 );
 ```
 
@@ -43,7 +43,7 @@ GAME.STORAGE.transact(
     "SwatDoge",   # str username
     {kills: -5},  # obj data
     true,         # bool private (false: private, true: public) Public databases can be accessed by others
-    callback      # action(obj data, bool success) callback function
+    callback      # action(obj data, bool success, str accountName) callback function
 );
 ```
 
@@ -54,7 +54,7 @@ GAME.STORAGE.transact(
 GAME.STORAGE.load(
     "SwatDoge",     # str username
     "",             # str name of game with public database. (leave empty)
-    callback        # action(obj data, bool success) callback function
+    callback        # action(obj data, bool success, str accountName) callback function
 );
 ```
 
@@ -63,7 +63,7 @@ GAME.STORAGE.load(
 GAME.STORAGE.load(
     "SwatDoge",     # str username
     "lava_run",     # str name of game with public database. (leave empty)
-    callback        # action(obj data, bool success) callback function
+    callback        # action(obj data, bool success, str accountName) callback function
 );
 ```
 
