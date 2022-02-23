@@ -15,7 +15,7 @@
 
 ## Github
 - Translation github repo - [https://github.com/mty22/krunker.io-translations](https://github.com/mty22/krunker.io-translations)
-- 
+- Documentation github repo - [https://github.com/kpal81xd/krunkdocs](https://github.com/kpal81xd/krunkdocs)
 
 ## Game:
 - Main game -           [https://krunker.io/](https://krunker.io/)
