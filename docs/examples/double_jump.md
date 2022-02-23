@@ -1,6 +1,8 @@
 # Double jump script example
 
 ```krunkscript
+# Add this both on the server and client side.
+
 public action onPlayerSpawn(str id) {
 	obj player = GAME.PLAYERS.findByID(id);
 	player.doubleJump = false;
