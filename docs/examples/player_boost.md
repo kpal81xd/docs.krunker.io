@@ -11,7 +11,7 @@ public action onPlayerSpawn(str id) {
 
 public action onPlayerUpdate(str id, num delta, obj inputs) {
 	if(!!inputs.lMouse){ # if holding left mouse button
-		num xComp = 0.0002 * delta * (Math.sin((num)player.rotation.x)); # Resolving player rotation vector into x component
+		num xComp = 0.0002 * delta * (Math.sin((num)player.rotation.x)); # Resolving player rotation vector
 		num zComp = 0.0002 * delta * (Math.cos((num)player.rotation.x));
 		(num) player.velocity.x -= xComp; # Subtracting it from player x vel to add it, its weird
 		(num) player.velocity.z -= zComp;
