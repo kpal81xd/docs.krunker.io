@@ -77,8 +77,8 @@ module.exports = {
 						link: "/lists/editor_object_object.html"
 					},
 					{
-						text: "AI objects",
-						link: "/lists/ai_object.html"
+						text: "Inputs",
+						link: "/#movement"
 					},
 					{
 						text: "Hooks",
