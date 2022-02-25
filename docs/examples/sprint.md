@@ -1,6 +1,8 @@
 # Sprint script example
 
 ```krunkscript
+# Special thanks to Steakfisher for submitting this example
+
 # Add this both on the server and client side
 public action onPlayerUpdate(str id, num delta, obj inputs) {
 	obj player = GAME.PLAYERS.findByID(id);
