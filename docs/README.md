@@ -848,7 +848,8 @@ Check out [this example](/examples/double_jump.html) to add basic double jumping
 :::
 
 :::warning
-To sync a player property, the property must exist first (currently it gives a wrong error)
+- To sync a player property, the property must exist first (currently it gives a wrong error)
+- Syncing objects is not yet possible
 :::
 
 ```krunkscript
