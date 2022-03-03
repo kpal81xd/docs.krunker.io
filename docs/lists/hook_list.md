@@ -201,7 +201,7 @@ public action onDIVClicked(str id) {
 # Runs when a controller button gets pressed
 public action onControllerPress(str key, num code) {
     #str key                - button in text format (dpad up == "dpad_up") 
-    #num code               - code of button (space == 32)
+    #num code               - code of button (shoulder_bottom_left == 10003) 
 }
 ```
 
@@ -210,7 +210,7 @@ public action onControllerPress(str key, num code) {
 # Runs when a controller button was pressed
 public action onControllerUp(str key, num code) {
     #str key                - button in text format (dpad up == "dpad_up") 
-    #num code               - code of button (space == 32) 
+    #num code               - code of button (shoulder_bottom_left == 10003) 
 }
 ```
 
@@ -219,6 +219,6 @@ public action onControllerUp(str key, num code) {
 # Runs when a controller button is being held
 public action onControllerHeld(str key, num code) {
     #str key                - button in text format (dpad up == "dpad_up") 
-    #num code               - code of button (space == 32) 
+    #num code               - code of button (shoulder_bottom_left == 10003) 
 }
 ```

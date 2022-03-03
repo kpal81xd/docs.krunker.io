@@ -625,11 +625,15 @@ public action onKeyHeld(str key, num code) {
 
 ### Controller input listeners <Badge type="tip" text="client-side" vertical="middle" />
 
+:::warning
+Input hooks have a very inconsistent `code` parameter, its recommended to use the `key` parameter instead
+:::
+
 ```krunkscript
 # Runs when a controller button gets pressed
 public action onControllerPress(str key, num code) {
     #str key                - button in text format (dpad up == "dpad_up") 
-    #num code               - code of button (space == 32)
+    #num code               - code of button (shoulder_bottom_left == 10003)
 }
 ```
 
@@ -637,7 +641,7 @@ public action onControllerPress(str key, num code) {
 # Runs when a controller button was pressed
 public action onControllerUp(str key, num code) {
     #str key                - button in text format (dpad up == "dpad_up") 
-    #num code               - code of button (space == 32) 
+    #num code               - code of button (shoulder_bottom_left == 10003) 
 }
 ```
 
@@ -645,7 +649,7 @@ public action onControllerUp(str key, num code) {
 # Runs when a controller button is being held
 public action onControllerHeld(str key, num code) {
     #str key                - button in text format (dpad up == "dpad_up") 
-    #num code               - code of button (space == 32) 
+    #num code               - code of button (shoulder_bottom_left == 10003) 
 }
 ```
 
@@ -2692,12 +2696,6 @@ Some elements are specific to mobile and can be edited and repositioned with CSS
 ```
 
 
-<style scoped>
-/*Reason: Unmerged pages use # for their titles. A merged view will only use the first # as a header for the sidebar.*/
-p.sidebar-item.sidebar-heading.active {
-    display: none;
-}
-</style>
-
 # Table of contents
+
 [[toc]]
