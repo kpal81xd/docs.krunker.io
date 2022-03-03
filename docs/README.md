@@ -1279,15 +1279,7 @@ GAME.SCENE.setSkyDome(
 ```
 
 ```krunkscript
-# Change fog settings
-GAME.SCENE.setFog(
-    "#fff",     # str color
-    100         # num distance
-);
-```
-
-```krunkscript
-# Additional data to change a cube
+# Additional data to change the skydome
 obj additional = {
     texture: "27997",            # str asset id
     emissive: "#ff0000",         # str hex color
@@ -1295,6 +1287,14 @@ obj additional = {
     textureMoveAxis: 0,          # str/num axis (0 - 1 OR "x" - "y")
     textureMoveSpeed: 0          # num speed (-20 - 20)
 };
+```
+
+```krunkscript
+# Change fog settings
+GAME.SCENE.setFog(
+    "#fff",     # str color
+    100         # num distance
+);
 ```
 
 ```krunkscript
@@ -1586,6 +1586,12 @@ obj custom = GAME.SCENE.addCustom(
     10,             # num length
     {}              # obj additional data
 );
+```
+
+## Listing 3D objects <Badge type="tip" text="client-side" vertical="middle" /> 
+```krunkscript
+# Get all objects in the scene
+GAME.SCENE.list();      #obj list of object positions, scaling and rotation
 ```
 
 ## Removing 3D objects <Badge type="tip" text="client-side" vertical="middle" /> 
