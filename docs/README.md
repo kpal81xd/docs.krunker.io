@@ -1589,9 +1589,13 @@ obj custom = GAME.SCENE.addCustom(
 ```
 
 ## Listing 3D objects <Badge type="tip" text="client-side" vertical="middle" /> 
+:::tip
+GAME.SCENE.list() only returns rotation, position, scaling and an id right now
+:::
+
 ```krunkscript
-# Get all objects in the scene
-GAME.SCENE.list();      #obj list of object positions, scaling and rotation
+# Get an obj[] of objects in a scene
+GAME.SCENE.list();
 ```
 
 ## Removing 3D objects <Badge type="tip" text="client-side" vertical="middle" /> 
