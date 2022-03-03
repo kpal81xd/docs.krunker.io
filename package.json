@@ -14,7 +14,7 @@
   },
   "scripts": {
     "dev": "node .\\merge_docs.js && vuepress dev docs && node .\\fix_darkmode.js",
-    "build": "node .\\merge_docs.js && vuepress build docs && node .\\fix_darkmode.js"
+    "build": "node .\\versioning.js && node .\\merge_docs.js && vuepress build docs && node .\\fix_darkmode.js"
   },
   "dependencies": {
     "markdown-it": "^12.3.2",
