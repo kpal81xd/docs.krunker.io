@@ -1,12 +1,27 @@
 # Player object
 
+:::tip
+For player class loadout modifications, you can use the [quick weapon id list](/lists/weapon_ids.html)
+:::
+
 ```krunkscript
 {
     # Methods
-    player.playAnim("Jump");        # play animation on player
-    player.disableDefault("jump");  # str disables input behaviours (client & server)
-    player.registerSyncValues(str object key)     # register player attributes to sync with server prediction
-    player.deregisterSyncValues(str object key)   # deregister player attributes to sync with server prediction
+    player.playAnim("Jump");       # str play animation on player
+
+    player.disableDefault("jump"); # str disables input behaviours (client & server)
+
+    player.registerSyncValues("hasDoubleJump")     # str register player attributes to sync with server prediction
+    player.deregisterSyncValues("hasDoubleJump")   # str deregister player attributes to sync with server prediction
+
+    player.removeMelee();          # void remove melee item from player
+    player.removePrimary();        # void remove primary item from player
+    player.removeSecondary();      # void remove secondary item from player
+
+    player.changePrimary(0);       # void change primary item slot of player
+    player.changeSecondary(0);     # void change secondary item slot of player
+    player.clearLoadout(0);        # void clear loadout of player
+    player.giveWeapon(0);          # void give player weapon (automatically assigns primary/secondary)
 
     # Attributes
     player.position.x = 10;        # num set x pos
@@ -23,6 +38,7 @@
     player.score = 5;              # num score (server-side)
     player.team = 1;               # num team (server-side)
     player.visible = false;        # bool visible
+    player.ammo                    # num ammo count (read-only)
 
     player.classIndex;             # num returns class ID
     player.loadoutIndex;           # num weapon id of held weapon

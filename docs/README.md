@@ -391,6 +391,7 @@ player.health = 10;            # num health
 player.score = 5;              # num score (server-side)
 player.team = 1;               # num team (server-side)
 player.visible = false;        # bool visible
+player.ammo                    # num ammo count (read-only)
 
 player.classIndex;             # num returns class ID
 player.loadoutIndex;           # num weapon id of held weapon
@@ -402,6 +403,24 @@ player.onTerrain;              # bool touching terrain
 player.isCrouching;            # bool is crouching
 player.isYou;                  # bool player reference is self (client-side)
 player.assetID = "325253";     # update player model
+```
+
+### Modifying loadout slots
+:::warning
+Clearing the melee slot seems to not work at the moment
+:::
+
+```krunkscript
+player.changePrimary();        # void change primary item from player
+player.changeSecondary();      # void change secondary item from player
+player.clearLoadout();         # void clear loadout of player
+player.giveWeapon();           # void give player weapon
+```
+
+```krunkscript
+player.removeMelee();          # void remove melee item from player
+player.removePrimary();        # void remove primary item from player
+player.removeSecondary();      # void remove secondary item from player
 ```
 
 ## AIs & NPCs <Badge type="tip" text="server-side" vertical="middle" />
@@ -562,14 +581,18 @@ public action onMouseClick(num button, num x, num y) {
     # num x         - x position of mouse
     # num y         - y position of mouse
 }
+```
 
+```krunkscript
 # After mouse click
 public action onMouseUp(num button, num x, num y) {
     # num button    - mouse click button id (1: left mouse, 2: middle mouse, 3: right mouse, 4+: mouse macro's)
     # num x         - x position of mouse
     # num y         - y position of mouse
 }
+```
 
+```krunkscript
 # When mouse scrolls
 public action onMouseScroll(num dir) {
 	# num dir       - 1: scroll up, scroll left 2: scroll down, scroll right
@@ -582,17 +605,51 @@ public action onKeyPress(str key, num code) {
     # str key        - key in text format. (space == " ")
     # num code       - code of key. (space == 32)
 }
+```
 
+```krunkscript
 # After key was pressed
 public action onKeyUp(str key, num code) {
     # str key        - key in text format. (space == " ")
     # num code       - code of key. (space == 32)
 }
+```
 
+```krunkscript
 # When key is held
 public action onKeyHeld(str key, num code) {
     # str key        - key in text format. (space == " ")
     # num code       - code of key. (space == 32)
+}
+```
+
+### Controller input listeners <Badge type="tip" text="client-side" vertical="middle" />
+
+:::warning
+Input hooks have a very inconsistent `code` parameter, its recommended to use the `key` parameter instead
+:::
+
+```krunkscript
+# Runs when a controller button gets pressed
+public action onControllerPress(str key, num code) {
+    #str key                - button in text format (dpad up == "dpad_up") 
+    #num code               - code of button (shoulder_bottom_left == 10003)
+}
+```
+
+```krunkscript
+# Runs when a controller button was pressed
+public action onControllerUp(str key, num code) {
+    #str key                - button in text format (dpad up == "dpad_up") 
+    #num code               - code of button (shoulder_bottom_left == 10003) 
+}
+```
+
+```krunkscript
+# Runs when a controller button is being held
+public action onControllerHeld(str key, num code) {
+    #str key                - button in text format (dpad up == "dpad_up") 
+    #num code               - code of button (shoulder_bottom_left == 10003) 
 }
 ```
 
