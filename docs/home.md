@@ -11,9 +11,6 @@ actions:
     - text: Unmerged docs →
       link: /unmerged/
       type: secondary
-    - text: Quick lists →
-      link: "/lists"
-      type: secondary
 features:
   - title: KrunkScript only
     details: No documentation about the editor or making money.

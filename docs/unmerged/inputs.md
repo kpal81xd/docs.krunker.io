@@ -51,14 +51,18 @@ public action onMouseClick(num button, num x, num y) {
     # num x         - x position of mouse
     # num y         - y position of mouse
 }
+```
 
+```krunkscript
 # After mouse click
 public action onMouseUp(num button, num x, num y) {
     # num button    - mouse click button id (1: left mouse, 2: middle mouse, 3: right mouse, 4+: mouse macro's)
     # num x         - x position of mouse
     # num y         - y position of mouse
 }
+```
 
+```krunkscript
 # When mouse scrolls
 public action onMouseScroll(num dir) {
 	# num dir       - 1: scroll up, scroll left 2: scroll down, scroll right
@@ -71,16 +75,46 @@ public action onKeyPress(str key, num code) {
     # str key        - key in text format. (space == " ")
     # num code       - code of key. (space == 32)
 }
+```
 
+```krunkscript
 # After key was pressed
 public action onKeyUp(str key, num code) {
     # str key        - key in text format. (space == " ")
     # num code       - code of key. (space == 32)
 }
+```
 
+```krunkscript
 # When key is held
 public action onKeyHeld(str key, num code) {
     # str key        - key in text format. (space == " ")
     # num code       - code of key. (space == 32)
+}
+```
+
+### Controller input listeners <Badge type="tip" text="client-side" vertical="middle" />
+
+```krunkscript
+# Runs when a controller button gets pressed
+public action onControllerPress(str key, num code) {
+    #str key                - button in text format (dpad up == "dpad_up") 
+    #num code               - code of button (space == 32)
+}
+```
+
+```krunkscript
+# Runs when a controller button was pressed
+public action onControllerUp(str key, num code) {
+    #str key                - button in text format (dpad up == "dpad_up") 
+    #num code               - code of button (space == 32) 
+}
+```
+
+```krunkscript
+# Runs when a controller button is being held
+public action onControllerHeld(str key, num code) {
+    #str key                - button in text format (dpad up == "dpad_up") 
+    #num code               - code of button (space == 32) 
 }
 ```

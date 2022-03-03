@@ -1,24 +1,25 @@
+/*Reason: CodeMirror numbers are misaligned with vuepress 2.*/
 div[class*="language-"].line-numbers-mode .line-numbers{
     line-height: 1.19 !important;
 }
 
+/*Reason: While using one of the two views, the button should not be visible.*/
 div.navbar-item > a.router-link-active[aria-label="Merged view"], div.navbar-item > a.router-link-active[aria-label="Unmerged view"]{
     display: none;
 }
 
+/*Reason: Unmerged pages use # for their titles. A merged view will only use the first # as a header for the sidebar.*/
 p.sidebar-item.sidebar-heading{
     display: none;
 }
 
+/*Hardcoded sidebar config does not support sidebarDepth frontmatter.*/
 p.sidebar-item.sidebar-heading + ul > li > a{
     font-weight: bold !important;
     font-size: 18px;
 }
 
+/*Prevents copy button from overflowing the navbar ()*/
 svg.hover{
-    z-index: 2 !important;
-}
-
-.imageGrid .page a > img {
-    width: 246px;
+    z-index: 1 !important;
 }
