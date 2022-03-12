@@ -41,7 +41,7 @@ module.exports = {
 		logo: "/images/meta/sott_krunker_light.png",
 		logoDark: "/images/meta/sott_krunker.png",
 		home: "/home.html",
-		repo: "https://github.com/SwatDoge/KR-Docs",
+		repo: "https://github.com/SwatDoge/SOTT-Quick-Krunkscript-Docs",
 		sidebarDepth: 1,
 		lastUpdated: false,
 		externalLinkIcon: true,
@@ -747,7 +747,7 @@ module.exports = {
 				children: [
 					{
 						text: "Get extension",
-						link: "https://github.com/SwatDoge/SOTT-Quick-Krunkscript-Docs/raw/master/tampermonkey/userscript.user.js"
+						link: "https://github.com/SwatDoge/SOTT-Quick-Krunkscript-Docs/raw/main/tampermonkey/userscript.user.js"
 					},
 					{
 						text: "Learn more",
