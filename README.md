@@ -12,7 +12,7 @@ A Krunker documentation website that purely focusses on KrunkScript (no editor/m
 - Cosistent formatting across the website.
 - Prefilled action parameters, allowing you to instantly paste and test code.
 - Quick access to frequently used stuff, like the entire player object or a list of all hooks.
-- [An extension to directly integrate the documentation into the editor.](https://github.com/SwatDoge/SOTT-Quick-Krunkscript-Docs/raw/master/tampermonkey/userscript.user.js)
+- [An extension to directly integrate the documentation into the editor.](https://github.com/SwatDoge/SOTT-Quick-Krunkscript-Docs/raw/main/tampermonkey/userscript.user.js)
 
 
 Showcase video:
