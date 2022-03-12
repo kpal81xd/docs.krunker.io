@@ -25,6 +25,9 @@ module.exports = {
 			color: "#3aa675",
 			backgroundColor: "#3aa675",
 			backgroundColor: "#3aa675"
+		}],
+		["@vuepress/plugin-google-analytics", {
+			id: "G-DMRNGH8H2W"
 		}]
 	],
 	title: "SOTT Quick Krunker Docs",
