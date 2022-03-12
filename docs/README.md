@@ -2593,7 +2593,7 @@ You can interpolate between morphstates on a 3d model. Does not work.
     );
 ```
 
-### Fixed delta <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" />
+## Fixed delta <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" />
 :::tip
 You can get fixed delta regularly by deviding the last GAME.TIME.now() by the current one.
 :::
@@ -2603,7 +2603,7 @@ Suposed to give delta non dependent on game speed on the client side. Currently 
 GAME.TIME.fixedDelta();
 ```
 
-### Currency exchange <Badge type="tip" text="server-side" vertical="middle" />
+## Payment <Badge type="tip" text="server-side" vertical="middle" />
 Suposed to allow scripters to give and charge players for KR. Unimplemented.
 
 ```krunkscript
@@ -2617,7 +2617,7 @@ Suposed to allow scripters to give and charge players for KR. Unimplemented.
     );
 ```
 
-### Libraries <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" />
+## Libraries <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" />
 Allows for importing external tooling for krunkscript. Not enough is known about the implementation of this yet.
 
 # User interface
