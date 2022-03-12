@@ -747,7 +747,7 @@ module.exports = {
 				children: [
 					{
 						text: "Get extension",
-						link: "https://github.com/SwatDoge/SOTT-Quick-Krunkscript-Docs/raw/master/tampermonkey/userscript.user.js"
+						link: "https://github.com/SwatDoge/SOTT-Quick-Krunkscript-Docs/raw/main/tampermonkey/userscript.user.js"
 					},
 					{
 						text: "Learn more",

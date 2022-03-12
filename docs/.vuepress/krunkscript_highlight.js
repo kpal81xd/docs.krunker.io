@@ -1,7 +1,7 @@
 /**
  * Language: KrunkScript
  * Contributors:
- *   KPal81xd (https://github.com/kpal81xd/krunkdocs/blob/master/docs/index.js)
+ *   KPal81xd (https://github.com/kpal81xd/krunkdocs/blob/main/docs/index.js)
  *   SwatDoge <email@swatdo.ge>
  */
 module.exports = function (hljs){
