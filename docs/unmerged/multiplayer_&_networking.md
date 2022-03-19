@@ -175,3 +175,13 @@ GAME.changeGame(
     "DQ_Battleboats"                    # str game name
 );
 ```
+
+## Getting host <Badge type="tip" text="server-side" vertical="middle" />
+
+:::warning
+You can only retrieve host player object if player is spawned in
+:::
+```krunkscript
+# Get player object of host
+obj player = GAME.CONFIG.getHost();
+```

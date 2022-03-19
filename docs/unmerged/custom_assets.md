@@ -97,8 +97,8 @@ GAME.ANIM.stopClip(object, "Jump");
 ## Sounds & music <Badge type="tip" text="client-side" vertical="middle" />
 **Tags: audio**
 
-:::warning
-GAME.SOUND's methods require your id's to be num's, unlike simular methods across KrunkScript
+:::tip
+The `sound asset id` parameter will automatically convert str's to num's as of update 5.5.0
 :::
 
 ```krunkscript
