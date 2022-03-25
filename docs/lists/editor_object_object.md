@@ -2,6 +2,12 @@
 
 ```krunkscript
 {
+    # Rotate object relative to itself, not relative to the world.
+    object.rotateLocal(
+        3,      # x rotation
+        0,      # y rotation
+        3       # z rotation
+    ); 
 
     # Works on all object types:
     opacity: 0.5,                    # num opacity (0 - 1)

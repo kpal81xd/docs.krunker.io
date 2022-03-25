@@ -84,7 +84,7 @@ player.visible = false;        # bool visible
 player.ammo                    # num ammo count (read-only)
 
 player.classIndex;             # num returns class ID
-player.loadoutIndex;           # num weapon id of held weapon
+player.loadoutIndex;           # num weapon slot ID
 
 player.active;                 # bool spawned in (not when spectator/dead)
 player.onWall;                 # bool touching a wall
@@ -97,14 +97,21 @@ player.assetID = "325253";     # update player model
 
 ### Modifying loadout slots
 :::warning
-Clearing the melee slot seems to not work at the moment
+- Clearing the melee slot seems to not work at the moment
+- You can only give/change weapons to their designated slot (pistol = secondary only, ak = primary only)
 :::
 
 ```krunkscript
-player.changePrimary();        # void change primary item from player
-player.changeSecondary();      # void change secondary item from player
-player.clearLoadout();         # void clear loadout of player
-player.giveWeapon();           # void give player weapon
+player.clearLoadout();          # void clear loadout of player
+player.changePrimary(           # void change primary item from player
+    0       # - Weapon id
+);        
+player.changeSecondary(         # void change secondary item from player
+    0       # - Weapon id
+);      
+player.giveWeapon(              # void give player weapon
+    0       # - Weapon id
+);           
 ```
 
 ```krunkscript

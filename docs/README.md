@@ -78,17 +78,6 @@ GAME.SCENE.addAsset(
 );
 ```
 
-### Object morphing <Badge type="tip" text="client-side" vertical="middle" />
-**Tags: Morph targets, Shape keys**
-
-You can interpolate between morphstates on a 3d model.
-```krunkscript
-    object.updateMorph(
-        "Comedy",       # str morph target/Shape key
-        0.2             # num value (0 - 1)
-    );
-```
-
 ## Textures & images <Badge type="tip" text="client-side" vertical="middle" />
 
 :::tip
@@ -394,7 +383,7 @@ player.visible = false;        # bool visible
 player.ammo                    # num ammo count (read-only)
 
 player.classIndex;             # num returns class ID
-player.loadoutIndex;           # num weapon id of held weapon
+player.loadoutIndex;           # num weapon slot ID
 
 player.active;                 # bool spawned in (not when spectator/dead)
 player.onWall;                 # bool touching a wall
@@ -407,14 +396,21 @@ player.assetID = "325253";     # update player model
 
 ### Modifying loadout slots
 :::warning
-Clearing the melee slot seems to not work at the moment
+- Clearing the melee slot seems to not work at the moment
+- You can only give/change weapons to their designated slot (pistol = secondary only, ak = primary only)
 :::
 
 ```krunkscript
-player.changePrimary();        # void change primary item from player
-player.changeSecondary();      # void change secondary item from player
-player.clearLoadout();         # void clear loadout of player
-player.giveWeapon();           # void give player weapon
+player.clearLoadout();          # void clear loadout of player
+player.changePrimary(           # void change primary item from player
+    0       # - Weapon id
+);        
+player.changeSecondary(         # void change secondary item from player
+    0       # - Weapon id
+);      
+player.giveWeapon(              # void give player weapon
+    0       # - Weapon id
+);           
 ```
 
 ```krunkscript
@@ -2511,7 +2507,7 @@ GAME.NFT.ownedAssets(
 
 # Check if player  has a crypto wallet
 GAME.NFT.hasWallet(
-    player.id
+    player.id       #str player id
 );
 ```
 
@@ -2568,26 +2564,20 @@ GAME.RAYCAST.fromPlayer(
 );
 ```
 
-## Local rotation <Badge type="tip" text="???" vertical="middle" />
-:::details Developer statement on local rotation
-‟Added ability to set local rotation on object in script„ ~ Krunker development team, patchnotes.
-There is no information about this.
-:::
-
 ## Player LOD <Badge type="tip" text="???" vertical="middle" />
 A dead feature to change LOD of players, likely created for 7fi's & Ocotodools spacesim project.
 
+```krunkscript
 GAME.PLAYERS.toggleLOD(
     1       #num value
 );
+```
 
 ## Execute trigger <Badge type="tip" text="server-side" vertical="middle" />
 
 ```krunkscript
-GAME.TRIGGERS.execute(num ID, args){
-    # str playerID           - player id
-    # str customParam        - custom trigger parameter
-    # num value              - custom trigger value
+GAME.TRIGGERS.execute(num ID, ??? args){
+    #???
 }
 ```
 

@@ -41,7 +41,7 @@ GAME.NFT.ownedAssets(
 
 # Check if player  has a crypto wallet
 GAME.NFT.hasWallet(
-    player.id
+    player.id       #str player id
 );
 ```
 
@@ -98,26 +98,20 @@ GAME.RAYCAST.fromPlayer(
 );
 ```
 
-## Local rotation <Badge type="tip" text="???" vertical="middle" />
-:::details Developer statement on local rotation
-‟Added ability to set local rotation on object in script„ ~ Krunker development team, patchnotes.
-There is no information about this.
-:::
-
 ## Player LOD <Badge type="tip" text="???" vertical="middle" />
 A dead feature to change LOD of players, likely created for 7fi's & Ocotodools spacesim project.
 
+```krunkscript
 GAME.PLAYERS.toggleLOD(
     1       #num value
 );
+```
 
 ## Execute trigger <Badge type="tip" text="server-side" vertical="middle" />
 
 ```krunkscript
-GAME.TRIGGERS.execute(num ID, args){
-    # str playerID           - player id
-    # str customParam        - custom trigger parameter
-    # num value              - custom trigger value
+GAME.TRIGGERS.execute(num ID, ??? args){
+    #???
 }
 ```
 

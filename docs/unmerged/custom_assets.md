@@ -23,17 +23,6 @@ GAME.SCENE.addAsset(
 );
 ```
 
-### Object morphing <Badge type="tip" text="client-side" vertical="middle" />
-**Tags: Morph targets, Shape keys**
-
-You can interpolate between morphstates on a 3d model.
-```krunkscript
-    object.updateMorph(
-        "Comedy",       # str morph target/Shape key
-        0.2             # num value (0 - 1)
-    );
-```
-
 ## Textures & images <Badge type="tip" text="client-side" vertical="middle" />
 
 :::tip
