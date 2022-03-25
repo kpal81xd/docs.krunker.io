@@ -9,6 +9,13 @@ For player class loadout modifications, you can use the [quick weapon id list](/
     # Methods
     player.playAnim("Jump");       # str play animation on player
 
+    # Rotate player relative to itself, not relative to the world.
+    player.rotateLocal(
+        3,      # x rotation
+        0,      # y rotation
+        3       # z rotation
+    );    
+
     player.disableDefault("jump"); # str disables input behaviours (client & server)
 
     player.registerSyncValues("hasDoubleJump")     # str register player attributes to sync with server prediction
@@ -18,9 +25,9 @@ For player class loadout modifications, you can use the [quick weapon id list](/
     player.removePrimary();        # void remove primary item from player
     player.removeSecondary();      # void remove secondary item from player
 
+    player.clearLoadout();         # void clear loadout of player
     player.changePrimary(0);       # void change primary item slot of player
     player.changeSecondary(0);     # void change secondary item slot of player
-    player.clearLoadout(0);        # void clear loadout of player
     player.giveWeapon(0);          # void give player weapon (automatically assigns primary/secondary)
 
     # Attributes
@@ -41,7 +48,7 @@ For player class loadout modifications, you can use the [quick weapon id list](/
     player.ammo                    # num ammo count (read-only)
 
     player.classIndex;             # num returns class ID
-    player.loadoutIndex;           # num weapon id of held weapon
+    player.loadoutIndex;           # num weapon slot ID
 
     player.defaultMovement              # bool disables player movement
     player.defaultVelocity = false;     # bool disables player velocity (client & server)

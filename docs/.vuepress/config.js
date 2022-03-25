@@ -9,7 +9,8 @@ module.exports = {
 	  },
 	head: [
         ["link", {rel: "icon", href: "/images/meta/sott_krunker.png"}],
-		["link", {rel: "stylesheet", href:"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/base16/material-palenight.min.css"}]
+		["link", {rel: "stylesheet", href:"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/base16/material-palenight.min.css"}],
+		["meta", {property: "og:image", content:"/images/meta/meta_logo.png"}]
     ],
 	markdown: {
 		extractHeaders: {
@@ -34,7 +35,7 @@ module.exports = {
 	locales: {
 		"/":{
 			lang: "en-US",
-			description: "English documentation"
+			description: "English - For more advanced KrunkScript users"
 		}
 	},
 	themeConfig: {
@@ -743,15 +744,18 @@ module.exports = {
 				]
 			},
 			{
-				text: "Extension",
+				text: "More",
 				children: [
 					{
 						text: "Get extension",
-						link: "https://github.com/SwatDoge/SOTT-Quick-Krunkscript-Docs/raw/main/tampermonkey/userscript.user.js"
+						link: "https://docs.swatdo.ge/tools/sott_qkdi/#what-is-sottqkdi"
+					}, {
+						text: "Github",
+						link: "https://github.com/SwatDoge/SOTT-Quick-Krunkscript-Docs"
 					},
 					{
-						text: "Learn more",
-						link: "https://docs.swatdo.ge/tools/sott_qkdi/#what-is-sottqkdi"
+						text: "Change logs",
+						link: "/changelog.html"
 					}
 				]
 			}
