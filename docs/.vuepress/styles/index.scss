@@ -6,6 +6,12 @@
     margin-left: 5px;
 }
 
+/*Reason: cleaner highlighting on script blocks*/
+::-moz-selection, ::selection{
+    background-color: rgba(62, 175, 124, 0.5);
+    color: white !important;
+}
+
 /*Reason: You need to specify a repo link to show edit links, however, it also forces an extra element onto the navbar that I do not want.*/
 .navbar-items > .navbar-item:last-child {
     display: none;

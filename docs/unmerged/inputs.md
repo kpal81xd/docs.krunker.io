@@ -17,6 +17,9 @@ public action update(num delta) {
 
 ## Mouse Position  <Badge type="tip" text="client-side" vertical="middle" />
 
+:::warning
+- GAME.INPUTS.mousePos() does not work currently
+:::
 ```krunkscript
 # Get mouse position
 obj mousePosition = GAME.INPUTS.mousePos();

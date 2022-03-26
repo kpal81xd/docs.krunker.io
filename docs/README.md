@@ -310,7 +310,8 @@ GAME.COOKIES.has(
 
 :::warning
 - You can only freeze time on the server side
-- GAME.TIME.fixedDelta() might not work
+- GAME.TIME.fixedDelta() does not work
+- GAME.TIME.now() is based on system time. Its recommended to sync with server time
 :::
 
 ```krunkscript
@@ -543,6 +544,9 @@ public action update(num delta) {
 
 ## Mouse Position  <Badge type="tip" text="client-side" vertical="middle" />
 
+:::warning
+- GAME.INPUTS.mousePos() does not work currently
+:::
 ```krunkscript
 # Get mouse position
 obj mousePosition = GAME.INPUTS.mousePos();
@@ -1125,6 +1129,61 @@ GAME.OVERLAY.drawImage(
 );
 ```
 
+### Arc
+:::tip
+An arc is essentially a circle, but with more controll on where it starts and ends
+:::
+
+```krunkscript
+# Draw half a circle
+OVERLAY.arc(
+    5,                  # num position x
+    10,                 # num position y
+    17,                 # num circle radius
+    0,                  # num angle the circle starts
+    Math.PI,            # num angle the circle ends
+    true                # bool is counter clockwise
+);
+```
+
+#### Arc clipping
+Using arcTo, you can set boundaries to how far a circle flows until it collides between lines. For a better description check out [CanvasRenderingContext2D](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arcTo) documentation.
+```krunkscript
+OVERLAY.arcTo(
+    180,    # num x start position
+    130,    # num y start position
+    110,    # num x end position
+    130,    # num y end position
+    130     # num radius
+);
+```
+
+### Ellipse
+```krunkscript
+GAME.OVERLAY.ellipse(
+    20,     # num x position
+    20,     # num y position
+    20,     # num x radius
+    20,     # num y radius
+    90,     # num rotation angle
+    20,     # num starting angle
+    80,     # num ending angle
+    false   # bool is counter clockwise
+);
+```
+
+### Curves
+Curves draw from cursor to a point, but are influenced by a control point
+
+![Preview](/images/krunker/renderingcontext2d/curve_control_point.png)
+
+#### Quadratic curve
+
+OVERLAY.quadraticCurveTo(
+    230
+);
+
+
 ## Direct canvas drawing <Badge type="tip" text="client-side" vertical="middle" />
 In javascript, you can draw on the canvas using the `CanvasRenderingContext2D` API. Krunkscript also allows you to do this, and works mostly the same.
 
@@ -1133,6 +1192,10 @@ To create one of these drawings, you first make a path by moving the cursor and 
 :::warning
 - These features are not officially documented, there might be mistakes
 - This part of the doc is not final
+:::
+
+:::tip
+It's recommended to check out the [CanvasRenderingContext2D](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D) documentation, as GAME.OVERLAY is a direct api for it.
 :::
 
 ### Creating a basic line
@@ -1209,8 +1272,24 @@ GAME.OVERLAY.strokeStyle(
 ```
 
 ```krunkscript
-# Stroke a path
+# Start stroking a path
 GAME.OVERLAY.stroke();
+
+# Stroke text
+OVERLAY.strokeText(
+    "SwatDoge",     # str text to stroke out
+    20,             # num x position
+    10,             # num y position
+    5               # num max width of stroke
+);
+
+# Stroke rectangle
+OVERLAY.strokeRect(
+    20,             # num x position 
+    10,             # num y position
+    15,             # num width
+    17              # num height
+);
 ```
 
 ### Transforming & translating paths
@@ -1258,6 +1337,18 @@ GAME.OVERLAY.save();
 # Rollback a drawing state
 GAME.OVERLAY.restore();
 ```
+
+### Global draw opacity 
+**Tags: alpha, transparency**
+
+```krunkscript
+# Set opacity of rendering context
+GAME.OVERLAY.globalAlpha(
+    1       # num (0-1) opacity
+);
+```
+
+
 
 # Scene
 
@@ -2694,6 +2785,14 @@ public action onDIVClicked(str id) {
         # do something
     };
 }
+```
+
+### Changing document title
+```krunkscript
+# Set document title to string
+GAME.setTitle(
+    "My krunker map"    #str document name
+);
 ```
 
 ## Custom CSS & phone compatability <Badge type="tip" text="client-side" vertical="middle" />

@@ -11,7 +11,8 @@
 
 :::warning
 - You can only freeze time on the server side
-- GAME.TIME.fixedDelta() might not work
+- GAME.TIME.fixedDelta() does not work
+- GAME.TIME.now() is based on system time. Its recommended to sync with server time
 :::
 
 ```krunkscript
