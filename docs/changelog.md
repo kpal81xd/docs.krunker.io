@@ -3,6 +3,14 @@ title: Changelog
 tagline: Swat's over the top quick krunker documentation
 ---
 
+# Update 5.5.3
+- Added warning for GAME.INPUTS.mousepos not working
+- Added warning for GAME.TIME.now() being system time
+- Fixed/made highlighting more clear
+- Added GAME.setTitle to "User interface"
+- Added all new GAME.OVERLAY methods to documentation
+- Updated some more meta tags for better search engine indexing
+
 # Update 5.5.1 (cleaning stuff up)
 - Added local rotation, removed it from unimplemented.
 - Moved morph targets to unimplemented only.
