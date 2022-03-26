@@ -1179,10 +1179,29 @@ Curves draw from cursor to a point, but are influenced by a control point
 
 #### Quadratic curve
 
+```krunkscript
+# Draw quadratic curve from cursor
 OVERLAY.quadraticCurveTo(
-    230
+    230         # num control point x position
+    230         # num control point y position
+    400         # num start point y position
+    20          # num end point y position
 );
+```
 
+#### Bezier curve
+
+```krunkscript
+# Draw bezier curve from cursor
+OVERLAY.bezierCurveTo(
+    230         # num control point 1 x position
+    230         # num control point 1 y position
+    300         # num control point 2 x position
+    400         # num control point 2 y position
+    400         # num start point y position
+    20          # num end point y position
+);
+```
 
 ## Direct canvas drawing <Badge type="tip" text="client-side" vertical="middle" />
 In javascript, you can draw on the canvas using the `CanvasRenderingContext2D` API. Krunkscript also allows you to do this, and works mostly the same.
