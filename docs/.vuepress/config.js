@@ -10,7 +10,11 @@ module.exports = {
 	head: [
         ["link", {rel: "icon", href: "/images/meta/sott_krunker.png"}],
 		["link", {rel: "stylesheet", href:"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/base16/material-palenight.min.css"}],
-		["meta", {property: "og:image", content:"/images/meta/meta_logo.png"}]
+		["meta", {property: "og:image", content:"/images/meta/meta_logo.png"}],
+		["meta", {name: "keywords", content: "Krunker, documentation, krunkscript, wiki"}],
+		["meta", {name: "subject", content: "KrunkScript documentation"}],
+		["meta", {name: "language", content: "EN"}],
+		["meta", {name: "author", content: "SwatDoge, email@swatdo.ge"}]
     ],
 	markdown: {
 		extractHeaders: {
@@ -24,7 +28,6 @@ module.exports = {
 		["redirect-frontmatter", {}],
 		["@snippetors/vuepress-plugin-code-copy", {
 			color: "#3aa675",
-			backgroundColor: "#3aa675",
 			backgroundColor: "#3aa675"
 		}],
 		["@vuepress/plugin-google-analytics", {

@@ -75,6 +75,14 @@ public action onDIVClicked(str id) {
 }
 ```
 
+### Changing document title
+```krunkscript
+# Set document title to string
+GAME.setTitle(
+    "My krunker map"    #str document name
+);
+```
+
 ## Custom CSS & phone compatability <Badge type="tip" text="client-side" vertical="middle" />
 Using pure css, you can create phone compatable UI's. For more on mods check out [Mod/Resource packs](/unmerged/mod-resource_packs.html)
 
