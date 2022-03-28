@@ -3,6 +3,10 @@ title: Changelog
 tagline: Swat's over the top quick krunker documentation
 ---
 
+# Update 5.5.4
+- Added GAME.UI.addImage();
+- Updated website ssl
+
 # Update 5.5.3
 - Added warning for GAME.INPUTS.mousepos not working
 - Added warning for GAME.TIME.now() being system time
