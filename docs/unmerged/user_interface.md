@@ -83,6 +83,19 @@ GAME.setTitle(
 );
 ```
 
+## Image element <Badge type="tip" text="client-side" vertical="middle" />
+**Tags: img**
+```krunkscript
+# Add image element
+str id = GAME.UI.addImage(
+    "39190",                        # str image asset id
+    "image",                        # str element id
+    true,                           # bool is shown (display: none)
+    "width: 10px; height: 10px"     # str CSS styling as string
+    "gameUI"                        # str parent div id (default: "customGUIHolder")
+);
+```
+
 ## Custom CSS & phone compatability <Badge type="tip" text="client-side" vertical="middle" />
 Using pure css, you can create phone compatable UI's. For more on mods check out [Mod/Resource packs](/unmerged/mod-resource_packs.html)
 
