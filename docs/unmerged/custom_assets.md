@@ -23,17 +23,6 @@ GAME.SCENE.addAsset(
 );
 ```
 
-### Object morphing <Badge type="tip" text="client-side" vertical="middle" />
-**Tags: Morph targets, Shape keys**
-
-You can interpolate between morphstates on a 3d model.
-```krunkscript
-    object.updateMorph(
-        "Comedy",       # str morph target/Shape key
-        0.2             # num value (0 - 1)
-    );
-```
-
 ## Textures & images <Badge type="tip" text="client-side" vertical="middle" />
 
 :::tip
@@ -97,8 +86,8 @@ GAME.ANIM.stopClip(object, "Jump");
 ## Sounds & music <Badge type="tip" text="client-side" vertical="middle" />
 **Tags: audio**
 
-:::warning
-GAME.SOUND's methods require your id's to be num's, unlike simular methods across KrunkScript
+:::tip
+The `sound asset id` parameter will automatically convert str's to num's as of update 5.5.0
 :::
 
 ```krunkscript

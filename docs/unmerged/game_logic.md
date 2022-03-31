@@ -11,7 +11,8 @@
 
 :::warning
 - You can only freeze time on the server side
-- GAME.TIME.fixedDelta() might not work
+- GAME.TIME.fixedDelta() does not work
+- GAME.TIME.now() is based on system time. Its recommended to sync with server time
 :::
 
 ```krunkscript
@@ -81,9 +82,10 @@ player.health = 10;            # num health
 player.score = 5;              # num score (server-side)
 player.team = 1;               # num team (server-side)
 player.visible = false;        # bool visible
+player.ammo                    # num ammo count (read-only)
 
 player.classIndex;             # num returns class ID
-player.loadoutIndex;           # num weapon id of held weapon
+player.loadoutIndex;           # num weapon slot ID
 
 player.active;                 # bool spawned in (not when spectator/dead)
 player.onWall;                 # bool touching a wall
@@ -92,6 +94,31 @@ player.onTerrain;              # bool touching terrain
 player.isCrouching;            # bool is crouching
 player.isYou;                  # bool player reference is self (client-side)
 player.assetID = "325253";     # update player model
+```
+
+### Modifying loadout slots
+:::warning
+- Clearing the melee slot seems to not work at the moment
+- You can only give/change weapons to their designated slot (pistol = secondary only, ak = primary only)
+:::
+
+```krunkscript
+player.clearLoadout();          # void clear loadout of player
+player.changePrimary(           # void change primary item from player
+    0       # - Weapon id
+);        
+player.changeSecondary(         # void change secondary item from player
+    0       # - Weapon id
+);      
+player.giveWeapon(              # void give player weapon
+    0       # - Weapon id
+);           
+```
+
+```krunkscript
+player.removeMelee();          # void remove melee item from player
+player.removePrimary();        # void remove primary item from player
+player.removeSecondary();      # void remove secondary item from player
 ```
 
 ## AIs & NPCs <Badge type="tip" text="server-side" vertical="middle" />

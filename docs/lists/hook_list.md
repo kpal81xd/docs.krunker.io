@@ -18,7 +18,7 @@ public action update(num delta) {
 
 ### render() <Badge type="tip" text="client-side" vertical="middle" />
 ```krunkscript
-# Updates every tick, primarily used for updating the 2d canvas.
+# Updates every tick, primarily used for updating the 2d canvas
 public action render(num delta) {
     # num delta     - time since last update in miliseconds
 }
@@ -136,8 +136,8 @@ public action onMouseScroll(num dir) {
 ```krunkscript
 # Runs when mouse scrolls
 public action onKeyPress(str key, num code) {
-    # str key        - key in text format. (space == " ")
-    # num code       - code of key. (space == 32)
+    # str key        - key in text format (space == " ")
+    # num code       - code of key (space == 32)
 }
 ```
 
@@ -145,8 +145,8 @@ public action onKeyPress(str key, num code) {
 ```krunkscript
 # Runs after key was pressed
 public action onKeyUp(str key, num code) {
-    # str key        - key in text format. (space == " ")
-    # num code       - code of key. (space == 32)
+    # str key        - key in text format (space == " ")
+    # num code       - code of key (space == 32)
 }
 ```
 
@@ -154,8 +154,8 @@ public action onKeyUp(str key, num code) {
 ```krunkscript
 # Runs when key is held
 public action onKeyHeld(str key, num code) {
-    # str key        - key in text format. (space == " ")
-    # num code       - code of key. (space == 32)
+    # str key        - key in text format (space == " ")
+    # num code       - code of key (space == 32)
 }
 ```
 
@@ -193,5 +193,32 @@ public action onCustomTrigger(str playerID, str customParam, num value) {
 # Runs when div is clicked
 public action onDIVClicked(str id) {
     # str divid             - element id
+}
+```
+
+### onControllerPress() <Badge type="tip" text="client-side" vertical="middle" />
+```krunkscript
+# Runs when a controller button gets pressed
+public action onControllerPress(str key, num code) {
+    #str key                - button in text format (dpad up == "dpad_up") 
+    #num code               - code of button (shoulder_bottom_left == 10003) 
+}
+```
+
+### onControllerUp() <Badge type="tip" text="client-side" vertical="middle" />
+```krunkscript
+# Runs when a controller button was pressed
+public action onControllerUp(str key, num code) {
+    #str key                - button in text format (dpad up == "dpad_up") 
+    #num code               - code of button (shoulder_bottom_left == 10003) 
+}
+```
+
+### onControllerHeld() <Badge type="tip" text="client-side" vertical="middle" />
+```krunkscript
+# Runs when a controller button is being held
+public action onControllerHeld(str key, num code) {
+    #str key                - button in text format (dpad up == "dpad_up") 
+    #num code               - code of button (shoulder_bottom_left == 10003) 
 }
 ```

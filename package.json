@@ -9,12 +9,13 @@
   "private": false,
   "devDependencies": {
     "@snippetors/vuepress-plugin-code-copy": "^1.1.1",
+    "@vuepress/plugin-google-analytics": "^2.0.0-beta.36",
     "vuepress": "^2.0.0-beta.32",
     "vuepress-plugin-redirect-frontmatter": "^1.0.0"
   },
   "scripts": {
     "dev": "node .\\merge_docs.js && vuepress dev docs && node .\\fix_darkmode.js",
-    "build": "node .\\merge_docs.js && vuepress build docs && node .\\fix_darkmode.js"
+    "build": "node .\\versioning.js && node .\\merge_docs.js && vuepress build docs && node .\\fix_darkmode.js"
   },
   "dependencies": {
     "markdown-it": "^12.3.2",

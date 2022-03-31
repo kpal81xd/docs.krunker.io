@@ -78,17 +78,6 @@ GAME.SCENE.addAsset(
 );
 ```
 
-### Object morphing <Badge type="tip" text="client-side" vertical="middle" />
-**Tags: Morph targets, Shape keys**
-
-You can interpolate between morphstates on a 3d model.
-```krunkscript
-    object.updateMorph(
-        "Comedy",       # str morph target/Shape key
-        0.2             # num value (0 - 1)
-    );
-```
-
 ## Textures & images <Badge type="tip" text="client-side" vertical="middle" />
 
 :::tip
@@ -152,8 +141,8 @@ GAME.ANIM.stopClip(object, "Jump");
 ## Sounds & music <Badge type="tip" text="client-side" vertical="middle" />
 **Tags: audio**
 
-:::warning
-GAME.SOUND's methods require your id's to be num's, unlike simular methods across KrunkScript
+:::tip
+The `sound asset id` parameter will automatically convert str's to num's as of update 5.5.0
 :::
 
 ```krunkscript
@@ -321,7 +310,8 @@ GAME.COOKIES.has(
 
 :::warning
 - You can only freeze time on the server side
-- GAME.TIME.fixedDelta() might not work
+- GAME.TIME.fixedDelta() does not work
+- GAME.TIME.now() is based on system time. Its recommended to sync with server time
 :::
 
 ```krunkscript
@@ -391,9 +381,10 @@ player.health = 10;            # num health
 player.score = 5;              # num score (server-side)
 player.team = 1;               # num team (server-side)
 player.visible = false;        # bool visible
+player.ammo                    # num ammo count (read-only)
 
 player.classIndex;             # num returns class ID
-player.loadoutIndex;           # num weapon id of held weapon
+player.loadoutIndex;           # num weapon slot ID
 
 player.active;                 # bool spawned in (not when spectator/dead)
 player.onWall;                 # bool touching a wall
@@ -402,6 +393,31 @@ player.onTerrain;              # bool touching terrain
 player.isCrouching;            # bool is crouching
 player.isYou;                  # bool player reference is self (client-side)
 player.assetID = "325253";     # update player model
+```
+
+### Modifying loadout slots
+:::warning
+- Clearing the melee slot seems to not work at the moment
+- You can only give/change weapons to their designated slot (pistol = secondary only, ak = primary only)
+:::
+
+```krunkscript
+player.clearLoadout();          # void clear loadout of player
+player.changePrimary(           # void change primary item from player
+    0       # - Weapon id
+);        
+player.changeSecondary(         # void change secondary item from player
+    0       # - Weapon id
+);      
+player.giveWeapon(              # void give player weapon
+    0       # - Weapon id
+);           
+```
+
+```krunkscript
+player.removeMelee();          # void remove melee item from player
+player.removePrimary();        # void remove primary item from player
+player.removeSecondary();      # void remove secondary item from player
 ```
 
 ## AIs & NPCs <Badge type="tip" text="server-side" vertical="middle" />
@@ -528,6 +544,9 @@ public action update(num delta) {
 
 ## Mouse Position  <Badge type="tip" text="client-side" vertical="middle" />
 
+:::warning
+- GAME.INPUTS.mousePos() does not work currently
+:::
 ```krunkscript
 # Get mouse position
 obj mousePosition = GAME.INPUTS.mousePos();
@@ -562,14 +581,18 @@ public action onMouseClick(num button, num x, num y) {
     # num x         - x position of mouse
     # num y         - y position of mouse
 }
+```
 
+```krunkscript
 # After mouse click
 public action onMouseUp(num button, num x, num y) {
     # num button    - mouse click button id (1: left mouse, 2: middle mouse, 3: right mouse, 4+: mouse macro's)
     # num x         - x position of mouse
     # num y         - y position of mouse
 }
+```
 
+```krunkscript
 # When mouse scrolls
 public action onMouseScroll(num dir) {
 	# num dir       - 1: scroll up, scroll left 2: scroll down, scroll right
@@ -582,17 +605,51 @@ public action onKeyPress(str key, num code) {
     # str key        - key in text format. (space == " ")
     # num code       - code of key. (space == 32)
 }
+```
 
+```krunkscript
 # After key was pressed
 public action onKeyUp(str key, num code) {
     # str key        - key in text format. (space == " ")
     # num code       - code of key. (space == 32)
 }
+```
 
+```krunkscript
 # When key is held
 public action onKeyHeld(str key, num code) {
     # str key        - key in text format. (space == " ")
     # num code       - code of key. (space == 32)
+}
+```
+
+### Controller input listeners <Badge type="tip" text="client-side" vertical="middle" />
+
+:::warning
+Input hooks have a very inconsistent `code` parameter, its recommended to use the `key` parameter instead
+:::
+
+```krunkscript
+# Runs when a controller button gets pressed
+public action onControllerPress(str key, num code) {
+    #str key                - button in text format (dpad up == "dpad_up") 
+    #num code               - code of button (shoulder_bottom_left == 10003)
+}
+```
+
+```krunkscript
+# Runs when a controller button was pressed
+public action onControllerUp(str key, num code) {
+    #str key                - button in text format (dpad up == "dpad_up") 
+    #num code               - code of button (shoulder_bottom_left == 10003) 
+}
+```
+
+```krunkscript
+# Runs when a controller button is being held
+public action onControllerHeld(str key, num code) {
+    #str key                - button in text format (dpad up == "dpad_up") 
+    #num code               - code of button (shoulder_bottom_left == 10003) 
 }
 ```
 
@@ -902,6 +959,15 @@ GAME.changeGame(
 );
 ```
 
+## Getting host <Badge type="tip" text="server-side" vertical="middle" />
+
+:::warning
+You can only retrieve host player object if player is spawned in
+:::
+```krunkscript
+# Get player object of host
+obj player = GAME.CONFIG.getHost();
+```
 
 # Platforms
 
@@ -1063,6 +1129,80 @@ GAME.OVERLAY.drawImage(
 );
 ```
 
+### Arc
+:::tip
+An arc is essentially a circle, but with more controll on where it starts and ends
+:::
+
+```krunkscript
+# Draw half a circle
+OVERLAY.arc(
+    5,                  # num position x
+    10,                 # num position y
+    17,                 # num circle radius
+    0,                  # num angle the circle starts
+    Math.PI,            # num angle the circle ends
+    true                # bool is counter clockwise
+);
+```
+
+#### Arc clipping
+Using arcTo, you can set boundaries to how far a circle flows until it collides between lines. For a better description check out [CanvasRenderingContext2D](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arcTo) documentation.
+```krunkscript
+OVERLAY.arcTo(
+    180,    # num x start position
+    130,    # num y start position
+    110,    # num x end position
+    130,    # num y end position
+    130     # num radius
+);
+```
+
+### Ellipse
+```krunkscript
+GAME.OVERLAY.ellipse(
+    20,     # num x position
+    20,     # num y position
+    20,     # num x radius
+    20,     # num y radius
+    90,     # num rotation angle
+    20,     # num starting angle
+    80,     # num ending angle
+    false   # bool is counter clockwise
+);
+```
+
+### Curves
+Curves draw from cursor to a point, but are influenced by a control point
+
+![Preview](/images/krunker/renderingcontext2d/curve_control_point.png)
+
+#### Quadratic curve
+
+```krunkscript
+# Draw quadratic curve from cursor
+OVERLAY.quadraticCurveTo(
+    230         # num control point x position
+    230         # num control point y position
+    400         # num start point y position
+    20          # num end point y position
+);
+```
+
+#### Bezier curve
+
+```krunkscript
+# Draw bezier curve from cursor
+OVERLAY.bezierCurveTo(
+    230         # num control point 1 x position
+    230         # num control point 1 y position
+    300         # num control point 2 x position
+    400         # num control point 2 y position
+    400         # num start point y position
+    20          # num end point y position
+);
+```
+
 ## Direct canvas drawing <Badge type="tip" text="client-side" vertical="middle" />
 In javascript, you can draw on the canvas using the `CanvasRenderingContext2D` API. Krunkscript also allows you to do this, and works mostly the same.
 
@@ -1071,6 +1211,10 @@ To create one of these drawings, you first make a path by moving the cursor and 
 :::warning
 - These features are not officially documented, there might be mistakes
 - This part of the doc is not final
+:::
+
+:::tip
+It's recommended to check out the [CanvasRenderingContext2D](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D) documentation, as GAME.OVERLAY is a direct api for it.
 :::
 
 ### Creating a basic line
@@ -1147,8 +1291,24 @@ GAME.OVERLAY.strokeStyle(
 ```
 
 ```krunkscript
-# Stroke a path
+# Start stroking a path
 GAME.OVERLAY.stroke();
+
+# Stroke text
+OVERLAY.strokeText(
+    "SwatDoge",     # str text to stroke out
+    20,             # num x position
+    10,             # num y position
+    5               # num max width of stroke
+);
+
+# Stroke rectangle
+OVERLAY.strokeRect(
+    20,             # num x position 
+    10,             # num y position
+    15,             # num width
+    17              # num height
+);
 ```
 
 ### Transforming & translating paths
@@ -1197,6 +1357,18 @@ GAME.OVERLAY.save();
 GAME.OVERLAY.restore();
 ```
 
+### Global draw opacity 
+**Tags: alpha, transparency**
+
+```krunkscript
+# Set opacity of rendering context
+GAME.OVERLAY.globalAlpha(
+    1       # num (0-1) opacity
+);
+```
+
+
+
 # Scene
 
 ## Skydome <Badge type="tip" text="client-side" vertical="middle" />
@@ -1222,15 +1394,7 @@ GAME.SCENE.setSkyDome(
 ```
 
 ```krunkscript
-# Change fog settings
-GAME.SCENE.setFog(
-    "#fff",     # str color
-    100         # num distance
-);
-```
-
-```krunkscript
-# Additional data to change a cube
+# Additional data to change the skydome
 obj additional = {
     texture: "27997",            # str asset id
     emissive: "#ff0000",         # str hex color
@@ -1238,6 +1402,14 @@ obj additional = {
     textureMoveAxis: 0,          # str/num axis (0 - 1 OR "x" - "y")
     textureMoveSpeed: 0          # num speed (-20 - 20)
 };
+```
+
+```krunkscript
+# Change fog settings
+GAME.SCENE.setFog(
+    "#fff",     # str color
+    100         # num distance
+);
 ```
 
 ```krunkscript
@@ -1529,6 +1701,16 @@ obj custom = GAME.SCENE.addCustom(
     10,             # num length
     {}              # obj additional data
 );
+```
+
+## Listing 3D objects <Badge type="tip" text="client-side" vertical="middle" /> 
+:::tip
+GAME.SCENE.list() only returns rotation, position, scaling and an id right now
+:::
+
+```krunkscript
+# Get an obj[] of objects in a scene
+GAME.SCENE.list();
 ```
 
 ## Removing 3D objects <Badge type="tip" text="client-side" vertical="middle" /> 
@@ -2435,7 +2617,7 @@ GAME.NFT.ownedAssets(
 
 # Check if player  has a crypto wallet
 GAME.NFT.hasWallet(
-    player.id
+    player.id       #str player id
 );
 ```
 
@@ -2492,26 +2674,20 @@ GAME.RAYCAST.fromPlayer(
 );
 ```
 
-## Local rotation <Badge type="tip" text="???" vertical="middle" />
-:::details Developer statement on local rotation
-‟Added ability to set local rotation on object in script„ ~ Krunker development team, patchnotes.
-There is no information about this.
-:::
-
 ## Player LOD <Badge type="tip" text="???" vertical="middle" />
 A dead feature to change LOD of players, likely created for 7fi's & Ocotodools spacesim project.
 
+```krunkscript
 GAME.PLAYERS.toggleLOD(
     1       #num value
 );
+```
 
 ## Execute trigger <Badge type="tip" text="server-side" vertical="middle" />
 
 ```krunkscript
-GAME.TRIGGERS.execute(num ID, args){
-    # str playerID           - player id
-    # str customParam        - custom trigger parameter
-    # num value              - custom trigger value
+GAME.TRIGGERS.execute(num ID, ??? args){
+    #???
 }
 ```
 
@@ -2525,6 +2701,33 @@ You can interpolate between morphstates on a 3d model. Does not work.
         0.2             # num value (0 - 1)
     );
 ```
+
+## Fixed delta <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" />
+:::tip
+You can get fixed delta regularly by deviding the last GAME.TIME.now() by the current one.
+:::
+
+Suposed to give delta non dependent on game speed on the client side. Currently gives regular delta. Server side is not affected by game speed.
+```krunkscript
+GAME.TIME.fixedDelta();
+```
+
+## Payment <Badge type="tip" text="server-side" vertical="middle" />
+Suposed to allow scripters to give and charge players for KR. Unimplemented.
+
+```krunkscript
+    GAME.PAYMENTS.charge(
+        # ???
+    );
+
+    GAME.PAYMENTS.giveKR(
+        player.id,          # str player id
+        5                   # num kr value to give
+    );
+```
+
+## Libraries <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" />
+Allows for importing external tooling for krunkscript. Not enough is known about the implementation of this yet.
 
 # User interface
 
@@ -2601,6 +2804,27 @@ public action onDIVClicked(str id) {
         # do something
     };
 }
+```
+
+### Changing document title
+```krunkscript
+# Set document title to string
+GAME.setTitle(
+    "My krunker map"    #str document name
+);
+```
+
+## Image element <Badge type="tip" text="client-side" vertical="middle" />
+**Tags: img**
+```krunkscript
+# Add image element
+str id = GAME.UI.addImage(
+    "39190",                        # str image asset id
+    "image",                        # str element id
+    true,                           # bool is shown (display: none)
+    "width: 10px; height: 10px"     # str CSS styling as string
+    "gameUI"                        # str parent div id (default: "customGUIHolder")
+);
 ```
 
 ## Custom CSS & phone compatability <Badge type="tip" text="client-side" vertical="middle" />
