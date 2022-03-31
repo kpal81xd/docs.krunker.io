@@ -379,8 +379,8 @@ player.accountID;              # str profile id
 
 player.health = 10;            # num health
 player.score = 5;              # num score (server-side)
-player.team = 1;               # num team (server-side)
 player.visible = false;        # bool visible
+player.team;                   # num team (read-only)
 player.ammo                    # num ammo count (read-only)
 
 player.classIndex;             # num returns class ID
@@ -1705,7 +1705,7 @@ obj custom = GAME.SCENE.addCustom(
 
 ## Listing 3D objects <Badge type="tip" text="client-side" vertical="middle" /> 
 :::tip
-GAME.SCENE.list() only returns rotation, position, scaling and an id right now
+GAME.OBJECTS.list() only returns rotation, position, scaling and an id right now
 :::
 
 ```krunkscript

@@ -759,6 +759,10 @@ module.exports = {
 					{
 						text: "Change logs",
 						link: "/changelog.html"
+					},
+					{
+						text: "Ask KrunkScript questions",
+						link: "https://github.com/SwatDoge/SOTT-Quick-Krunkscript-Docs/discussions/categories/questions"
 					}
 				]
 			}
