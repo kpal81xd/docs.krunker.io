@@ -334,7 +334,7 @@ obj custom = GAME.SCENE.addCustom(
 
 ## Listing 3D objects <Badge type="tip" text="client-side" vertical="middle" /> 
 :::tip
-GAME.SCENE.list() only returns rotation, position, scaling and an id right now
+GAME.OBJECTS.list() only returns rotation, position, scaling and an id right now
 :::
 
 ```krunkscript
