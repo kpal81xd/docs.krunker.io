@@ -69,7 +69,7 @@ player.accountID and player.accountName suddenly became server side only. It is 
 
 ```krunkscript
 player.position.x = 10;        # num set x pos
-player.rotation.x;             # num XZ plane rotation in rad (read-only)
+player.rotation.x;             # num XZ plane rotation in radians (read-only)
 player.velocity.x = 0.1;       # num set x velocity
 
 player.sid;                    # num short id
@@ -213,7 +213,7 @@ player.disableDefault("jump");
 # Inputs get disabled within the "onPlayerUpdate" hook, which has the following controlls:
 inputs.mouseY;          #num mouse y direction
 inputs.mouseX;          #num mouse x direction
-inputs.movDir;          #num W, A, S, D inputs converted to direction in rad
+inputs.movDir;          #num W, A, S, D inputs converted to direction in radians
 
 inputs.lMouse;          #bool left mouse
 inputs.rMouse;          #bool right mouse
