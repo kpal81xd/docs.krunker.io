@@ -840,6 +840,7 @@ action onNetworkMessage(str id, obj data, str playerID) {
     #str id             - message name
     #obj data           - data as string
     #str playerID       - player id (server-side only)
+}
 ```
 
 ```krunkscript
@@ -1686,6 +1687,9 @@ GAME.SCENE.addAsset(
 
 ### Custom object
 Custom objects allow you to create any shape you want using verticies:
+:::warning
+Textures do not work on addCustom verts
+:::
 
 ```krunkscript
 # Add a 3d model to the scene.

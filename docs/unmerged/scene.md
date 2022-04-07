@@ -315,6 +315,9 @@ GAME.SCENE.addAsset(
 
 ### Custom object
 Custom objects allow you to create any shape you want using verticies:
+:::warning
+Textures do not work on addCustom verts
+:::
 
 ```krunkscript
 # Add a 3d model to the scene.
