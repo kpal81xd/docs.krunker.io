@@ -82,7 +82,7 @@ player.health = 10;            # num health
 player.score = 5;              # num score (server-side)
 player.visible = false;        # bool visible
 player.team;                   # num team (read-only)
-player.ammo;                    # num ammo count (read-only)
+player.ammo                    # num ammo count (read-only)
 
 player.classIndex;             # num returns class ID
 player.loadoutIndex;           # num weapon slot ID
