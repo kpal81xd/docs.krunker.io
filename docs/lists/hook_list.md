@@ -166,6 +166,7 @@ action onNetworkMessage(str id, obj data, str playerID) {
     #str id             - message name
     #obj data           - data as string
     #str playerID       - player id (server-side only)
+}
 ```
 
 ### onCustomTrigger() <Badge type="tip" text="server-side" vertical="middle" />
