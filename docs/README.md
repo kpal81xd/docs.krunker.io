@@ -2286,7 +2286,6 @@ Regex support has been confirmed by the developers, but it not yet available
 
 :::warning
 UTILS.truncateTxt randomly appends dots at the end of a string
-UTILS.truncateTxt has a 4th parameter called "startIndex", but currently it creates an error
 :::
 
 :::details Developer statement regarding UTILS.truncateTxt.
