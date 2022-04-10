@@ -8,13 +8,28 @@ module.exports = {
 		md.linkify.set({ fuzzyEmail: false });
 	  },
 	head: [
+		['link', { rel: 'manifest', href: '/manifest.webmanifest' }],
         ["link", {rel: "icon", href: "/images/meta/sott_krunker.png"}],
-		["link", {rel: "stylesheet", href:"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/base16/material-palenight.min.css"}],
+		["link", {rel: "preload stylesheet", as: "style", href:"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/base16/material-palenight.min.css"}],
 		["meta", {property: "og:image", content:"/images/meta/meta_logo.png"}],
 		["meta", {name: "keywords", content: "Krunker, documentation, krunkscript, wiki"}],
 		["meta", {name: "subject", content: "KrunkScript documentation"}],
 		["meta", {name: "language", content: "EN"}],
-		["meta", {name: "author", content: "SwatDoge, email@swatdo.ge"}]
+		["meta", {name: "author", content: "SwatDoge, email@swatdo.ge"}],
+
+		["link", {rel: "apple-touch-icon", 	sizes: "180x180", href: "https://krdocs.swatdo.ge/images/favicons/apple-touch-icon.png"}],
+		["link", {rel: "icon", type: "image/png", sizes: "32x32", href: "https://krdocs.swatdo.ge/images/favicons/favicon-32x32.png"}],
+		["link", {rel: "icon", type: "image/png", sizes: "194x194", href: "https://krdocs.swatdo.ge/images/favicons/favicon-194x194.png"}],
+		["link", {rel: "icon", type: "image/png", sizes: "192x192", href: "https://krdocs.swatdo.ge/images/favicons/android-chrome-192x192.png"}],
+		["link", {rel: "icon", type: "image/png", sizes: "16x16", href: "https://krdocs.swatdo.ge/images/favicons/favicon-16x16.png"}],
+		["link", {rel: "mask-icon", href:"https://krdocs.swatdo.ge/images/favicons/safari-pinned-tab.svg", color: "#3eaf7c"}],
+		["link", {rel: "shortcut icon", href: "https://krdocs.swatdo.ge/images/favicons/favicon.ico"}],
+		["meta", {name: "msapplication-TileColor", content: "#00a300"}],
+		["meta", {name: "msapplication-TileImage", content: "https://krdocs.swatdo.ge/images/favicons/mstile-144x144.png"}],
+		["meta", {name: "msapplication-config", content: "https://krdocs.swatdo.ge/images/favicons/browserconfig.xml"}],
+		["meta", {name: "theme-color", content: "#9bcdb6"}]
+
+
     ],
 	markdown: {
 		extractHeaders: {
@@ -32,7 +47,8 @@ module.exports = {
 		}],
 		["@vuepress/plugin-google-analytics", {
 			id: "G-DMRNGH8H2W"
-		}]
+		}],
+		["@vuepress/pwa", {skipWaiting: true}],
 	],
 	title: "SOTT Quick Krunker Docs",
 	locales: {
@@ -750,8 +766,8 @@ module.exports = {
 				text: "More",
 				children: [
 					{
-						text: "Get extension",
-						link: "https://docs.swatdo.ge/tools/sott_qkdi/#what-is-sottqkdi"
+						text: "Get TamperMonkey extension",
+						link: "https://github.com/SwatDoge/SOTT-Quick-Krunkscript-Docs/raw/main/tampermonkey/userscript.user.js"
 					}, {
 						text: "Github",
 						link: "https://github.com/SwatDoge/SOTT-Quick-Krunkscript-Docs"

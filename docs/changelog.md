@@ -10,6 +10,8 @@ tagline: Swat's over the top quick krunker documentation
 - Removed duplicate onCustomTrigger
 - "No data" error databases added as note
 - Added ability to copy code without comments
+- Made website significantly faster and PWA compatable
+
 
 # Update 5.5.4
 - documented mysterious 4th truncatetxt parameter
