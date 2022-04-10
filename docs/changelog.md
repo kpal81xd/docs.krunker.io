@@ -3,9 +3,25 @@ title: Changelog
 tagline: Swat's over the top quick krunker documentation
 ---
 
+# Update 5.5.6
+- Set example looping parameter on play2d to boolean
+- x per y second changed to x per y seconds on database notes
+- username changed to accountName on GAME.STORAGE methods
+- Removed duplicate onCustomTrigger
+- "No data" error databases added as note
+
 # Update 5.5.4
+- documented mysterious 4th truncatetxt parameter
+- added more read-only stuff (special ty to steak)
+- closed bracket on onNetworkMessage hooks
+- warning of no texture on custom verts
 - Added GAME.UI.addImage();
 - Updated website ssl
+- Added style guidelines and more clarity to the repo's readme for future contributers
+- Added discussion board on github: https://github.com/SwatDoge/SOTT-Quick-Krunkscript-Docs/discussions
+- Changed GAME.SCENE.list() to GAME.OBJECTS.list()
+- Added read-only to team (ty to steakfisher)
+- Added link to github "forum"
 
 # Update 5.5.3
 - Added warning for GAME.INPUTS.mousepos not working

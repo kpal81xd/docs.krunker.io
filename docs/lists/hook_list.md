@@ -179,16 +179,6 @@ public action onCustomTrigger(str playerID, str customParam, num value) {
 }
 ```
 
-### onCustomTrigger() <Badge type="tip" text="server-side" vertical="middle" />
-```krunkscript
-# Runs when trigger triggers "custom action" action
-public action onCustomTrigger(str playerID, str customParam, num value) {
-    # str playerID           - player id
-    # str customParam        - custom trigger parameter
-    # num value              - custom trigger value
-}
-```
-
 ### onDIVClicked() <Badge type="tip" text="client-side" vertical="middle" />
 ```krunkscript
 # Runs when div is clicked

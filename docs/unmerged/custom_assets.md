@@ -96,7 +96,7 @@ obj sound = GAME.SOUND.play2D(
     0,      # num sound asset id
     1,      # num volume (0 - 1)
     1,      # num rate (0 - 1)
-    1       # bool looping
+    true    # bool looping
 );
 ```
 
