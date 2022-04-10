@@ -239,6 +239,10 @@ GAME.STORAGE.transact(
 
 ### Loading Data <Badge type="tip" text="server-side" vertical="middle" />
 
+:::warning
+Loading from an empty database will result in an error message "No data" and not call the callback
+:::
+
 ```krunkscript
 # Load data you stored on your map
 GAME.STORAGE.load(
@@ -2287,6 +2291,7 @@ Regex support has been confirmed by the developers, but it not yet available
 
 :::warning
 UTILS.truncateTxt randomly appends dots at the end of a string
+UTILS.truncateTxt has a 4th parameter called "startIndex", but currently it creates an error
 :::
 
 :::details Developer statement regarding UTILS.truncateTxt.
@@ -2577,6 +2582,7 @@ public action onCustomTrigger(str playerID, str customParam, num value) {
     # num value              - custom trigger value
 }
 ```
+
 
 # Unimplemented features
 Krunker offers some features we do not yet know more about. These are up and coming or deprecated features.
