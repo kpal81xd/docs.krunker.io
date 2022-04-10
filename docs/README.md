@@ -1074,9 +1074,6 @@ num textWidth = GAME.OVERLAY.measureText(
 ```
 
 ### Rectangles
-:::warning
-Color is currently broken for drawRect
-:::
 
 ```krunkscript
 GAME.OVERLAY.drawRect(
