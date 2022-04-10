@@ -1,5 +1,18 @@
+diff --git a/node_modules/@snippetors/vuepress-plugin-code-copy/lib/clientAppSetup.js b/node_modules/@snippetors/vuepress-plugin-code-copy/lib/clientAppSetup.js
+index 5a41e73..478e9fc 100644
+--- a/node_modules/@snippetors/vuepress-plugin-code-copy/lib/clientAppSetup.js
++++ b/node_modules/@snippetors/vuepress-plugin-code-copy/lib/clientAppSetup.js
+@@ -25,7 +25,7 @@ export default defineClientAppSetup(() => {
+           };
+           let instance = createApp(CodeCopy, {
+             parent: el,
+-            code: el.querySelector("pre").innerText,
++            code: el.querySelector("pre"),
+             options: options,
+           });
+           let childEl = document.createElement("div");
 diff --git a/node_modules/@snippetors/vuepress-plugin-code-copy/lib/components/CodeCopy.vue b/node_modules/@snippetors/vuepress-plugin-code-copy/lib/components/CodeCopy.vue
-index 2506da8..9b8077f 100644
+index 2506da8..e6087ab 100644
 --- a/node_modules/@snippetors/vuepress-plugin-code-copy/lib/components/CodeCopy.vue
 +++ b/node_modules/@snippetors/vuepress-plugin-code-copy/lib/components/CodeCopy.vue
 @@ -1,5 +1,21 @@
@@ -24,20 +37,44 @@ index 2506da8..9b8077f 100644
      <svg
        @click="copyToClipboard"
        xmlns="http://www.w3.org/2000/svg"
-@@ -88,7 +104,8 @@ export default {
+@@ -25,6 +41,7 @@
+ </template>
+ 
+ <script>
++import { cloneVNode } from '@vue/runtime-core'
+ export default {
+   name: "CodeCopy",
+   props: {
+@@ -78,8 +95,11 @@ export default {
+         : null;
+     },
+     copyToClipboard(el) {
++      let stripped_code = this.code.cloneNode(true);
++      stripped_code.querySelectorAll(".hljs-comment").forEach(e => {e.remove()});
++      stripped_code = stripped_code.innerText.replace(/,\s*/gm, ", ").replace(/\(\n\s*/gm, "(").replace(/\s*\n\)/gm, ")").replace(/\n{3,}/gm, "\n\n");
+       if (navigator.clipboard) {
+-        navigator.clipboard.writeText(this.code).then(
++        navigator.clipboard.writeText(el?.srcElement?.attributes?.custom ? stripped_code : this.code.innerText).then(
+           () => {
+             this.setSuccessTransitions();
+           },
+@@ -88,7 +108,7 @@ export default {
        } else {
          let copyelement = document.createElement("textarea");
          document.body.appendChild(copyelement);
 -        copyelement.value = this.code;
-+        console.log(el?.originalTarget?.attributes?.custom);
-+        copyelement.value = el?.originalTarget?.attributes?.custom ? this.code.replace(/(^|\s|\b)#(.*)/gmi, "") : this.code;
++        copyelement.value = el?.srcElement?.attributes?.custom ? stripped_code : this.code.innerText;
          copyelement.select();
          document.execCommand("Copy");
          copyelement.remove();
-@@ -120,9 +137,16 @@ export default {
+@@ -120,9 +140,20 @@ export default {
  </script>
  
  <style scoped>
++path {
++  pointer-events: none;
++}
++
 +.code-copy > svg:first-child {
 +  right: 7.5px;
 +}
@@ -52,7 +89,7 @@ index 2506da8..9b8077f 100644
    opacity: 0.75;
    cursor: pointer;
    z-index: 9999;
-@@ -140,7 +164,7 @@ span {
+@@ -140,7 +171,7 @@ span {
    position: absolute;
    font-size: 0.85rem;
    line-height: 1.2rem;
