@@ -9,6 +9,7 @@ tagline: Swat's over the top quick krunker documentation
 - username changed to accountName on GAME.STORAGE methods
 - Removed duplicate onCustomTrigger
 - "No data" error databases added as note
+- Added ability to copy code without comments
 
 # Update 5.5.4
 - documented mysterious 4th truncatetxt parameter
