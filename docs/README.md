@@ -364,7 +364,7 @@ if (notEmpty player && !player) {
 You can change/access player values like with any other objects:
 
 :::tip
-You can find a full player object at [here](/lists/player_object.html)
+You can get the [full player object here](/lists/player_object.html)
 :::
 :::warning
 player.accountID and player.accountName suddenly became server side only. It is unclear if it will ever come back to client side
