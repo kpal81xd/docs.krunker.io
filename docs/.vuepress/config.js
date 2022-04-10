@@ -8,6 +8,8 @@ module.exports = {
 		md.linkify.set({ fuzzyEmail: false });
 	  },
 	head: [
+		['link', { rel: 'manifest', href: '/manifest.webmanifest' }],
+		['meta', { name: 'theme-color', content: '#3eaf7c' }],
         ["link", {rel: "icon", href: "/images/meta/sott_krunker.png"}],
 		["link", {rel: "stylesheet", href:"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/base16/material-palenight.min.css"}],
 		["meta", {property: "og:image", content:"/images/meta/meta_logo.png"}],
@@ -32,7 +34,8 @@ module.exports = {
 		}],
 		["@vuepress/plugin-google-analytics", {
 			id: "G-DMRNGH8H2W"
-		}]
+		}],
+		["@vuepress/pwa", {}],
 	],
 	title: "SOTT Quick Krunker Docs",
 	locales: {
@@ -750,8 +753,8 @@ module.exports = {
 				text: "More",
 				children: [
 					{
-						text: "Get extension",
-						link: "https://docs.swatdo.ge/tools/sott_qkdi/#what-is-sottqkdi"
+						text: "Get TamperMonkey extension",
+						link: "https://github.com/SwatDoge/SOTT-Quick-Krunkscript-Docs/raw/main/tampermonkey/userscript.user.js"
 					}, {
 						text: "Github",
 						link: "https://github.com/SwatDoge/SOTT-Quick-Krunkscript-Docs"

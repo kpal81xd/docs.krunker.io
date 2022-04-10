@@ -1,0 +1,21 @@
+{
+    "name": "SOTT Quick krunker docs",
+    "short_name": "SOTTQKD",
+    "description": "A quicker alternative documentation for more experienced krunkscripters ",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#22272e",
+    "theme_color": "#3eaf7c",
+    "icons": [
+      {
+        "src": ".vuepress/public/images/meta/meta_logo_x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/images/meta/meta_logo_x384.png",
+        "sizes": "384x384",
+        "type": "image/png"
+      }
+    ]
+  }
