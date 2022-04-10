@@ -49,6 +49,10 @@ GAME.STORAGE.transact(
 
 ### Loading Data <Badge type="tip" text="server-side" vertical="middle" />
 
+:::warning
+Loading from an empty database will result in an error message "No data" and not call the callback
+:::
+
 ```krunkscript
 # Load data you stored on your map
 GAME.STORAGE.load(

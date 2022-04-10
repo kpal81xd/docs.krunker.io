@@ -2581,7 +2581,6 @@ public action onCustomTrigger(str playerID, str customParam, num value) {
 }
 ```
 
-
 # Unimplemented features
 Krunker offers some features we do not yet know more about. These are up and coming or deprecated features.
 
