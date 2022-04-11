@@ -1,6 +1,6 @@
 ---
-title: Changelog
-tagline: Swat's over the top quick krunker documentation
+title: Changelogs
+tagline: Changelogs for SOTT Quick Krunker Docs
 ---
 
 # Update 5.5.6

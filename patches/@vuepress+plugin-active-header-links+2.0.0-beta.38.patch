@@ -1,0 +1,17 @@
+diff --git a/node_modules/@vuepress/plugin-active-header-links/lib/client/composables/useActiveHeaderLinks.js b/node_modules/@vuepress/plugin-active-header-links/lib/client/composables/useActiveHeaderLinks.js
+index 6f6a928..22d76de 100644
+--- a/node_modules/@vuepress/plugin-active-header-links/lib/client/composables/useActiveHeaderLinks.js
++++ b/node_modules/@vuepress/plugin-active-header-links/lib/client/composables/useActiveHeaderLinks.js
+@@ -64,7 +64,11 @@ export const useActiveHeaderLinks = ({ headerLinkSelector, headerAnchorSelector,
+     };
+     const onScroll = debounce(setActiveRouteHash, delay);
+     onMounted(() => {
+-        onScroll();
++        onScroll().then(() => {
++            let hash = window.location.hash;
++            window.location.hash = "";
++            window.location.hash = hash;
++        })
+         window.addEventListener('scroll', onScroll);
+     });
+     onBeforeUnmount(() => {

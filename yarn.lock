@@ -1407,6 +1407,18 @@
     vue "^3.2.24"
     vue-router "^4.0.12"
 
+"@vuepress/plugin-active-header-links@^2.0.0-beta.38":
+  version "2.0.0-beta.38"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-active-header-links/-/plugin-active-header-links-2.0.0-beta.38.tgz#c14c7f3cb9bf3689fb659b6d28855e4d3043d686"
+  integrity sha512-cQIglb/zRkd1Dyc2W69LHmKI5cbf1FaMpWwTxXrOKPY4/DFIV5bS0/8QbBBt/dEr+oydfJBpydFeyaDRZVm6Ng==
+  dependencies:
+    "@vuepress/client" "2.0.0-beta.38"
+    "@vuepress/core" "2.0.0-beta.38"
+    "@vuepress/utils" "2.0.0-beta.38"
+    ts-debounce "^4.0.0"
+    vue "^3.2.31"
+    vue-router "^4.0.14"
+
 "@vuepress/plugin-back-to-top@2.0.0-beta.32":
   version "2.0.0-beta.32"
   resolved "https://registry.npmjs.org/@vuepress/plugin-back-to-top/-/plugin-back-to-top-2.0.0-beta.32.tgz"
