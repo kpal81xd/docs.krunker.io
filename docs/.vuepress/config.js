@@ -27,7 +27,7 @@ module.exports = {
 		["meta", {name: "msapplication-TileColor", content: "#00a300"}],
 		["meta", {name: "msapplication-TileImage", content: "https://krdocs.swatdo.ge/images/favicons/mstile-144x144.png"}],
 		["meta", {name: "msapplication-config", content: "https://krdocs.swatdo.ge/images/favicons/browserconfig.xml"}],
-		["meta", {name: "theme-color", content: "#9bcdb6"}]
+		["meta", {name: "theme-color", content: "#3AA675"}]
 
 
     ],
@@ -50,6 +50,7 @@ module.exports = {
 		}],
 		["@snippetors/vuepress-plugin-tabs", {}],
 		["@vuepress/pwa", {skipWaiting: true}],
+		["@vuepress/plugin-active-header-links", {delay: 500}]
 	],
 	title: "SOTT Quick Krunker Docs",
 	locales: {
