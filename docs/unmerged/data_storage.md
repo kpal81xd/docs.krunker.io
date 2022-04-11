@@ -5,12 +5,17 @@
 
 Databases allow you to store variables permanently, without being able to be modified by others. Its useful for keeping track of currencies, personal best scores and what items a player owns. 
 
+
+:::tip
+To delete data storage values you can use `delete all` as a key
+:::
+
 :::warning
+- Make sure to use player.accountName (server-side only) instead of player.username
 - You can only store and access data from players who are active in game
 - set, update, transact every 10 seconds per connection/player
 - load every 5 seconds per connection/player
-- 30 Keys per game, keys length is 20 characters. (Object properties are treated as unique database keys)
-- To delete data storage values you can use `delete all` as a key
+- 30 Keys per map, keys length is 20 characters. (Object properties are treated as unique database keys)
 :::
 
 ### Set storage <Badge type="tip" text="server-side" vertical="middle" />

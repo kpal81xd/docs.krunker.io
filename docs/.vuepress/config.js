@@ -48,6 +48,7 @@ module.exports = {
 		["@vuepress/plugin-google-analytics", {
 			id: "G-DMRNGH8H2W"
 		}],
+		["@snippetors/vuepress-plugin-tabs", {}],
 		["@vuepress/pwa", {skipWaiting: true}],
 	],
 	title: "SOTT Quick Krunker Docs",
@@ -741,7 +742,7 @@ module.exports = {
 						link: "/lists/player_object.html"
 					},
 					{
-						text: "Editor objects",
+						text: "Scene objects",
 						link: "/lists/editor_object_object.html"
 					},
 					{

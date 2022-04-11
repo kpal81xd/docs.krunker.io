@@ -2,12 +2,16 @@
 ## Keyboard Inputs <Badge type="tip" text="client-side" vertical="middle" />
 
 :::tip
-- must be used inside update loop
-- uses javascript keycodes: https://keycode.info/
+- Must be used inside update loop
+- Uses javascript keycodes: https://keycode.info/
+:::
+
+:::warning
+GAME.INPUTS.keyDown seems to be broken currently
 :::
 
 ```krunkscript
-# Do something when "c", key code 67 is held down
+# Do something when "c" (key code 67) is held down
 public action update(num delta) {
     if (GAME.INPUTS.keyDown(67)) {
         # do something
@@ -18,7 +22,7 @@ public action update(num delta) {
 ## Mouse Position  <Badge type="tip" text="client-side" vertical="middle" />
 
 :::warning
-- GAME.INPUTS.mousePos() does not work currently
+GAME.INPUTS.mousePos() does not work currently
 :::
 ```krunkscript
 # Get mouse position
@@ -99,7 +103,7 @@ public action onKeyHeld(str key, num code) {
 ### Controller input listeners <Badge type="tip" text="client-side" vertical="middle" />
 
 :::warning
-Input hooks have a very inconsistent `code` parameter, its recommended to use the `key` parameter instead
+- Input hooks have a very inconsistent `code` parameter, its recommended to use the `key` parameter instead
 :::
 
 ```krunkscript

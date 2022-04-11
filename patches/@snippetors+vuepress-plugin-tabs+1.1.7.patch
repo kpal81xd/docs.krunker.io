@@ -1,0 +1,170 @@
+diff --git a/node_modules/@snippetors/vuepress-plugin-tabs/lib/theme/common/var.scss b/node_modules/@snippetors/vuepress-plugin-tabs/lib/theme/common/var.scss
+index 38b64ee..aca73ff 100644
+--- a/node_modules/@snippetors/vuepress-plugin-tabs/lib/theme/common/var.scss
++++ b/node_modules/@snippetors/vuepress-plugin-tabs/lib/theme/common/var.scss
+@@ -105,7 +105,7 @@ $--border-color-extra-light: #f2f6fc !default;
+ 
+ // Background
+ /// color|1|Background Color|4
+-$--background-color-base: #f5f7fa !default;
++$--background-color-base: none !default;
+ 
+ /* Link
+ -------------------------- */
+diff --git a/node_modules/@snippetors/vuepress-plugin-tabs/lib/theme/mixins/mixins.scss b/node_modules/@snippetors/vuepress-plugin-tabs/lib/theme/mixins/mixins.scss
+index dc48e97..d9c98b7 100644
+--- a/node_modules/@snippetors/vuepress-plugin-tabs/lib/theme/mixins/mixins.scss
++++ b/node_modules/@snippetors/vuepress-plugin-tabs/lib/theme/mixins/mixins.scss
+@@ -17,7 +17,7 @@
+ /* Scrollbar
+  -------------------------- */
+ @mixin scroll-bar {
+-  $--scrollbar-thumb-background: #b4bccc;
++  $--scrollbar-thumb-background: #b4bccc ;
+   $--scrollbar-track-background: #fff;
+ 
+   &::-webkit-scrollbar {
+diff --git a/node_modules/@snippetors/vuepress-plugin-tabs/lib/theme/tabs.scss b/node_modules/@snippetors/vuepress-plugin-tabs/lib/theme/tabs.scss
+index ac013e5..9e80074 100644
+--- a/node_modules/@snippetors/vuepress-plugin-tabs/lib/theme/tabs.scss
++++ b/node_modules/@snippetors/vuepress-plugin-tabs/lib/theme/tabs.scss
+@@ -19,7 +19,7 @@
+   }
+   @include e(new-tab) {
+     float: right;
+-    border: 1px solid #d3dce6;
++    border: 1px solid var(--c-bg-light);
+     height: 18px;
+     width: 18px;
+     line-height: 18px;
+@@ -151,14 +151,10 @@
+     position: relative;
+   }
+   @include m(card) {
+-    > .el-tabs__header {
+-      border-bottom: 1px solid $--border-color-light;
+-    }
+     > .el-tabs__header .el-tabs__nav-wrap::after {
+       content: none;
+     }
+     > .el-tabs__header .el-tabs__nav {
+-      border: 1px solid $--border-color-light;
+       border-bottom: none;
+       border-radius: 4px 4px 0 0;
+       box-sizing: border-box;
+@@ -180,12 +176,8 @@
+     }
+     > .el-tabs__header .el-tabs__item {
+       border-bottom: 1px solid transparent;
+-      border-left: 1px solid $--border-color-light;
+       transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+         padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+-      &:first-child {
+-        border-left: none;
+-      }
+       &.is-closable {
+         &:hover {
+           padding-left: 13px;
+@@ -211,8 +203,8 @@
+     }
+   }
+   @include m(border-card) {
+-    background: $--color-white;
+-    border: 1px solid $--border-color-base;
++    background: var(--c-bg);
++    border: 1.75px solid var(--c-bg-light);
+     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
+     margin-top: 15px;
+ 
+@@ -220,8 +212,7 @@
+       padding: 15px;
+     }
+     > .el-tabs__header {
+-      background-color: $--background-color-base;
+-      border-bottom: 1px solid $--border-color-light;
++      background-color: var(--c-bg-light);
+       margin: 0;
+     }
+     > .el-tabs__header .el-tabs__nav-wrap::after {
+@@ -243,9 +234,7 @@
+ 
+       &.is-active {
+         color: $--color-primary;
+-        background-color: $--color-white;
+-        border-right-color: $--border-color-base;
+-        border-left-color: $--border-color-base;
++        background-color: var(--c-bg);
+       }
+       &:not(.is-disabled):hover {
+         color: $--color-primary;
+@@ -394,19 +383,12 @@
+         display: none;
+       }
+       .el-tabs__item.is-left {
+-        border-left: none;
+-        border-right: 1px solid $--border-color-light;
+         border-bottom: none;
+-        border-top: 1px solid $--border-color-light;
+       }
+       .el-tabs__item.is-left:first-child {
+-        border-right: 1px solid $--border-color-light;
+         border-top: none;
+       }
+       .el-tabs__item.is-left.is-active {
+-        border: 1px solid $--border-color-light;
+-        border-right-color: #fff;
+-        border-left: none;
+         border-bottom: none;
+ 
+         &:first-child {
+@@ -419,8 +401,6 @@
+ 
+       .el-tabs__nav {
+         border-radius: 4px 0 0 4px;
+-        border-bottom: 1px solid $--border-color-light;
+-        border-right: none;
+       }
+ 
+       .el-tabs__new-tab {
+@@ -429,9 +409,6 @@
+     }
+ 
+     &.el-tabs--border-card {
+-      .el-tabs__header.is-left {
+-        border-right: 1px solid #dfe4ed;
+-      }
+       .el-tabs__item.is-left {
+         border: 1px solid transparent;
+         margin: -1px 0 -1px -1px;
+@@ -469,16 +446,11 @@
+       }
+       .el-tabs__item.is-right {
+         border-bottom: none;
+-        border-top: 1px solid $--border-color-light;
+       }
+       .el-tabs__item.is-right:first-child {
+-        border-left: 1px solid $--border-color-light;
+         border-top: none;
+       }
+       .el-tabs__item.is-right.is-active {
+-        border: 1px solid $--border-color-light;
+-        border-left-color: #fff;
+-        border-right: none;
+         border-bottom: none;
+ 
+         &:first-child {
+@@ -491,14 +463,9 @@
+ 
+       .el-tabs__nav {
+         border-radius: 0 4px 4px 0;
+-        border-bottom: 1px solid $--border-color-light;
+-        border-left: none;
+       }
+     }
+     &.el-tabs--border-card {
+-      .el-tabs__header.is-right {
+-        border-left: 1px solid #dfe4ed;
+-      }
+       .el-tabs__item.is-right {
+         border: 1px solid transparent;
+         margin: -1px -1px -1px 0;

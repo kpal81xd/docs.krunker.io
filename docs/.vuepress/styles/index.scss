@@ -6,6 +6,22 @@
     margin-left: 5px;
 }
 
+.el-tabs--border-card, .el-tabs--border-card > .el-tabs__header {
+    background-color: var(--c-bg);
+}
+
+.el-tabs--border-card {
+    border: var(--c-bg-light) 1px solid;
+}
+
+.el-tabs--border-card > .el-tabs__header .el-tabs__item.is-active {
+    background-color: var(--c-bg-light);
+}
+
+.el-tabs--border-card > .el-tabs__header .el-tabs__item {
+    border: none;
+}
+
 /*Reason: cleaner highlighting on script blocks*/
 ::-moz-selection, ::selection{
     background-color: rgba(62, 175, 124, 0.5);
