@@ -18,15 +18,9 @@ First off you have to send your variable to either the server or the client, the
 
 Sending is used for sending data to one specific user.
 
-```krunkscript
-# Sending data on the server
-GAME.NETWORK.send(
-    player.id   # player id
-    "test",     # str message name
-    {a: 1}      # obj data
-);
-```
 
+:::: tabs 
+::: tab Client
 ```krunkscript
 # Sending data on the client
 GAME.NETWORK.send(
@@ -34,6 +28,18 @@ GAME.NETWORK.send(
     {a: 1}      # obj data
 );
 ```
+:::
+::: tab Server
+```krunkscript
+# Sending data on the server
+GAME.NETWORK.send(
+    "test",     # str message name
+    {a: 1},     # obj data
+    player.id   # player id
+);
+```
+:::
+::::
 
 ## Broadcasting data <Badge type="tip" text="server-side" vertical="middle" />
 
@@ -51,15 +57,30 @@ GAME.NETWORK.broadcast(
 
 Once the message has been sent, we can listen for it and use its given object.
 
+:::: tabs
+::: tab Client
 ```krunkscript
-# Receive message from server or client
+# Receive message from client
+action onNetworkMessage(str id, obj data) {
+    #str id             - message name
+    #obj data           - data as string
+}
+```
+:::
+::: tab Server
+```krunkscript
+# Receive message from server
 action onNetworkMessage(str id, obj data, str playerID) {
     #str id             - message name
     #obj data           - data as string
-    #str playerID       - player id (server-side only)
+    #str playerID       - player id
 }
 ```
+:::
+::::
 
+:::: tabs
+::: tab Client
 ```krunkscript
 # Server
 action onNetworkMessage(str id, obj data, str playerID) {
@@ -68,7 +89,8 @@ action onNetworkMessage(str id, obj data, str playerID) {
     };
 }
 ```
-
+:::
+::: tab Server
 ```krunkscript
 # Client
 action onNetworkMessage(str id, obj data) {
@@ -77,6 +99,8 @@ action onNetworkMessage(str id, obj data) {
     };
 }
 ```
+:::
+::::
 
 
 ## Detect rate limiting <Badge type="tip" text="server-side" vertical="middle" /> <Badge type="tip" text="client-side" vertical="middle" />
@@ -142,7 +166,9 @@ player.registerSyncValues(
 
 ```krunkscript
 # Stop syncing player value
-player.unregisterSyncValues(str object key);
+player.unregisterSyncValues(
+    "hasDoubleJump"     #str object key
+);
 ```
 
 ## Open a window to a different game or platform  <Badge type="tip" text="client-side" vertical="middle" />

@@ -91,9 +91,9 @@ obj lamp = GAME.SCENE.addPointLight(
     0,      # num x position
     0,      # num y position
     0,      # num z position
-    50,     # num range
-    0.1,    # num falloff (0 - 1)
-    false   # bool shadowcasting
+    50,     # num decay
+    0.1,    # num intensity (0 - 1)
+    false   # bool cast shadows
 );
 ```
 
@@ -110,7 +110,10 @@ obj sun = GAME.SCENE.addDirLight(
     0,      # num x direction
     0,      # num y direction
     0,      # num z direction
-    false   # bool shadowcasting
+    10,     # num x target position
+    10,     # num y target position
+    10,     # num z target position
+    false   # bool cast shadows
 );
 ```
 
@@ -127,15 +130,15 @@ obj flashlight = GAME.SCENE.addSpotLight(
     0,      # num x position
     20,     # num y position
     0,      # num z position
-    0,      # num x target pos
-    0,      # num y target pos
-    0,      # num z target pos
+    10,     # num x target position
+    10,     # num y target position
+    10,     # num z target position
     50,     # num range
     0.1,    # num decay (0 - 1)
     0.9,    # num intensity (0 - 1)
     0,      # num angle (0 - 360)
     0,      # num penumbra
-    false   # bool shadowcasting
+    false   # bool cast shadows
 );
 ```
 
@@ -154,7 +157,7 @@ obj window = GAME.SCENE.addRectLight(
     0,       # num z position
     1,       # num width
     1,       # num height
-    1        # num length
+    1        # num intensity (0 - 1)
 );
 ```
 
@@ -163,7 +166,7 @@ obj window = GAME.SCENE.addRectLight(
 Krunker has a few default objects, like cubes, spheres and planes. These objects allow you to create maps or decorations, and can be managed with KrunkScript.
 
 :::tip
-Geometry is client side, which means it will not have any player collisions
+Geometry is client side, and it will thus not have any player collisions
 :::
 
 ### Krunker object data
@@ -288,7 +291,9 @@ obj sprite = GAME.SCENE.addSprite(
     5,          # num x position
     0,          # num y position
     5,          # num z position
-    1,          # num scale
+    8,          # num width
+    4,          # num height
+    10,         # num length
     {}          # obj additional data
 );
 ```

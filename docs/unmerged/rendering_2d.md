@@ -25,7 +25,8 @@ GAME.OVERLAY.scale(
 # Get text width (num) on overlay based on font size
 GAME.OVERLAY.measureText(
     10,     #num font size
-    "Test"  #str text
+    "Test", #str text
+    "serif" #str font family name
 );
 ```
 
@@ -81,8 +82,9 @@ GAME.OVERLAY.drawText(
 
 # Get canvas text width
 num textWidth = GAME.OVERLAY.measureText(
-    24, # num fontsize
-    "Testing" # string text
+    24,         # num fontsize
+    "Testing",  # str text
+    "serif"     # str font family name
 );
 ```
 

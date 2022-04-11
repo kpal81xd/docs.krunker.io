@@ -195,12 +195,17 @@ sound.fade(
 
 Databases allow you to store variables permanently, without being able to be modified by others. Its useful for keeping track of currencies, personal best scores and what items a player owns. 
 
+
+:::tip
+To delete data storage values you can use `delete all` as a key
+:::
+
 :::warning
+- Make sure to use player.accountName (server-side only) instead of player.username
 - You can only store and access data from players who are active in game
 - set, update, transact every 10 seconds per connection/player
 - load every 5 seconds per connection/player
-- 30 Keys per game, keys length is 20 characters. (Object properties are treated as unique database keys)
-- To delete data storage values you can use `delete all` as a key
+- 30 Keys per map, keys length is 20 characters. (Object properties are treated as unique database keys)
 :::
 
 ### Set storage <Badge type="tip" text="server-side" vertical="middle" />
@@ -349,7 +354,7 @@ obj self = GAME.PLAYERS.getSelf();
 
 # Get a player by their id
 obj player = GAME.PLAYERS.findByID(
-    id      # str player id
+    id # str player id
 );
 
 # Access player list
@@ -385,12 +390,12 @@ player.health = 10;            # num health
 player.score = 5;              # num score (server-side)
 player.visible = false;        # bool visible
 player.team;                   # num team (read-only)
-player.ammo                    # num ammo count (read-only)
+player.ammo;                   # num ammo count (read-only)
 
 player.classIndex;             # num returns class ID
 player.loadoutIndex;           # num weapon slot ID
 
-player.active;                 # bool spawned in (not when spectator/dead)
+player.active;                 # bool spawned in (false when spectator/dead)
 player.onWall;                 # bool touching a wall
 player.onGround;               # bool touching the ground
 player.onTerrain;              # bool touching terrain
@@ -400,28 +405,43 @@ player.assetID = "325253";     # update player model
 ```
 
 ### Modifying loadout slots
+:::tip
+You can use the [krunker weapon id's list](./lists/weapon_ids.html) to find the right ID for your weapon
+:::
 :::warning
 - Clearing the melee slot seems to not work at the moment
 - You can only give/change weapons to their designated slot (pistol = secondary only, ak = primary only)
 :::
 
 ```krunkscript
-player.clearLoadout();          # void clear loadout of player
-player.changePrimary(           # void change primary item from player
-    0       # - Weapon id
-);        
-player.changeSecondary(         # void change secondary item from player
-    0       # - Weapon id
-);      
-player.giveWeapon(              # void give player weapon
-    0       # - Weapon id
+# void clear loadout of player
+player.clearLoadout();
+
+# void change primary item from player
+player.changePrimary(           
+    0 # weapon id
+);
+
+# void change secondary item from player
+player.changeSecondary(         
+    0 # weapon id
+);  
+
+# void give player weapon
+player.giveWeapon(              
+    0 # weapon id
 );           
 ```
 
 ```krunkscript
-player.removeMelee();          # void remove melee item from player
-player.removePrimary();        # void remove primary item from player
-player.removeSecondary();      # void remove secondary item from player
+# void remove melee item from player
+player.removeMelee();
+
+# void remove primary item from player
+player.removePrimary();
+
+# void remove secondary item from player
+player.removeSecondary();
 ```
 
 ## AIs & NPCs <Badge type="tip" text="server-side" vertical="middle" />
@@ -478,9 +498,9 @@ obj data = {
 
     modelScale: 10,    # num model scale
     modelOffsetY: 0,   # num model y-offset
-    modelRotation: 0   # num model rotation offset
+    modelRotation: 0,  # num model rotation offset
     hitBotW: 1,        # num hitbox width
-    hitBoxH: 1,        # num hitbox height
+    hitBoxH: 1         # num hitbox height
 };
 ```
 
@@ -492,7 +512,7 @@ GAME.AI.remove(testBot.sid);
 # List AI
 obj[] AIs = GAME.AI.list();
 
-testBot.displayName;            # str name
+testBot.displayName = "test";   # str name
 testBot.health = 10;            # num health
 testBot.position.x = 10;        # num position x
 testBot.rotation.x = Math.PI;   # num rotation x
@@ -534,12 +554,16 @@ inputs.inter;           #bool interact key
 ## Keyboard Inputs <Badge type="tip" text="client-side" vertical="middle" />
 
 :::tip
-- must be used inside update loop
-- uses javascript keycodes: https://keycode.info/
+- Must be used inside update loop
+- Uses javascript keycodes: https://keycode.info/
+:::
+
+:::warning
+GAME.INPUTS.keyDown seems to be broken currently
 :::
 
 ```krunkscript
-# Do something when "c", key code 67 is held down
+# Do something when "c" (key code 67) is held down
 public action update(num delta) {
     if (GAME.INPUTS.keyDown(67)) {
         # do something
@@ -550,7 +574,7 @@ public action update(num delta) {
 ## Mouse Position  <Badge type="tip" text="client-side" vertical="middle" />
 
 :::warning
-- GAME.INPUTS.mousePos() does not work currently
+GAME.INPUTS.mousePos() does not work currently
 :::
 ```krunkscript
 # Get mouse position
@@ -631,7 +655,7 @@ public action onKeyHeld(str key, num code) {
 ### Controller input listeners <Badge type="tip" text="client-side" vertical="middle" />
 
 :::warning
-Input hooks have a very inconsistent `code` parameter, its recommended to use the `key` parameter instead
+- Input hooks have a very inconsistent `code` parameter, its recommended to use the `key` parameter instead
 :::
 
 ```krunkscript
@@ -667,6 +691,13 @@ public action onControllerHeld(str key, num code) {
 :::
 
 ## Loading/Unloading mods with KrunkScript <Badge type="tip" text="client-side" vertical="middle"/>
+
+:::tip
+GAME.MODS.Reset() foces a popup on your screen, which can be removed using: 
+```krunkscript:no-line-numbers
+GAME.UI.updateDIVText("popupHolder", "");
+```
+:::
 ```krunkscript
 # Load mod by URL
 GAME.MODS.load(
@@ -806,15 +837,9 @@ First off you have to send your variable to either the server or the client, the
 
 Sending is used for sending data to one specific user.
 
-```krunkscript
-# Sending data on the server
-GAME.NETWORK.send(
-    player.id   # player id
-    "test",     # str message name
-    {a: 1}      # obj data
-);
-```
 
+:::: tabs 
+::: tab Client
 ```krunkscript
 # Sending data on the client
 GAME.NETWORK.send(
@@ -822,6 +847,18 @@ GAME.NETWORK.send(
     {a: 1}      # obj data
 );
 ```
+:::
+::: tab Server
+```krunkscript
+# Sending data on the server
+GAME.NETWORK.send(
+    "test",     # str message name
+    {a: 1},     # obj data
+    player.id   # player id
+);
+```
+:::
+::::
 
 ## Broadcasting data <Badge type="tip" text="server-side" vertical="middle" />
 
@@ -839,15 +876,30 @@ GAME.NETWORK.broadcast(
 
 Once the message has been sent, we can listen for it and use its given object.
 
+:::: tabs
+::: tab Client
 ```krunkscript
-# Receive message from server or client
+# Receive message from client
+action onNetworkMessage(str id, obj data) {
+    #str id             - message name
+    #obj data           - data as string
+}
+```
+:::
+::: tab Server
+```krunkscript
+# Receive message from server
 action onNetworkMessage(str id, obj data, str playerID) {
     #str id             - message name
     #obj data           - data as string
-    #str playerID       - player id (server-side only)
+    #str playerID       - player id
 }
 ```
+:::
+::::
 
+:::: tabs
+::: tab Client
 ```krunkscript
 # Server
 action onNetworkMessage(str id, obj data, str playerID) {
@@ -856,7 +908,8 @@ action onNetworkMessage(str id, obj data, str playerID) {
     };
 }
 ```
-
+:::
+::: tab Server
 ```krunkscript
 # Client
 action onNetworkMessage(str id, obj data) {
@@ -865,6 +918,8 @@ action onNetworkMessage(str id, obj data) {
     };
 }
 ```
+:::
+::::
 
 
 ## Detect rate limiting <Badge type="tip" text="server-side" vertical="middle" /> <Badge type="tip" text="client-side" vertical="middle" />
@@ -930,7 +985,9 @@ player.registerSyncValues(
 
 ```krunkscript
 # Stop syncing player value
-player.unregisterSyncValues(str object key);
+player.unregisterSyncValues(
+    "hasDoubleJump"     #str object key
+);
 ```
 
 ## Open a window to a different game or platform  <Badge type="tip" text="client-side" vertical="middle" />
@@ -1016,7 +1073,8 @@ GAME.OVERLAY.scale(
 # Get text width (num) on overlay based on font size
 GAME.OVERLAY.measureText(
     10,     #num font size
-    "Test"  #str text
+    "Test", #str text
+    "serif" #str font family name
 );
 ```
 
@@ -1072,8 +1130,9 @@ GAME.OVERLAY.drawText(
 
 # Get canvas text width
 num textWidth = GAME.OVERLAY.measureText(
-    24, # num fontsize
-    "Testing" # string text
+    24,         # num fontsize
+    "Testing",  # str text
+    "serif"     # str font family name
 );
 ```
 
@@ -1468,9 +1527,9 @@ obj lamp = GAME.SCENE.addPointLight(
     0,      # num x position
     0,      # num y position
     0,      # num z position
-    50,     # num range
-    0.1,    # num falloff (0 - 1)
-    false   # bool shadowcasting
+    50,     # num decay
+    0.1,    # num intensity (0 - 1)
+    false   # bool cast shadows
 );
 ```
 
@@ -1487,7 +1546,10 @@ obj sun = GAME.SCENE.addDirLight(
     0,      # num x direction
     0,      # num y direction
     0,      # num z direction
-    false   # bool shadowcasting
+    10,     # num x target position
+    10,     # num y target position
+    10,     # num z target position
+    false   # bool cast shadows
 );
 ```
 
@@ -1504,15 +1566,15 @@ obj flashlight = GAME.SCENE.addSpotLight(
     0,      # num x position
     20,     # num y position
     0,      # num z position
-    0,      # num x target pos
-    0,      # num y target pos
-    0,      # num z target pos
+    10,     # num x target position
+    10,     # num y target position
+    10,     # num z target position
     50,     # num range
     0.1,    # num decay (0 - 1)
     0.9,    # num intensity (0 - 1)
     0,      # num angle (0 - 360)
     0,      # num penumbra
-    false   # bool shadowcasting
+    false   # bool cast shadows
 );
 ```
 
@@ -1531,7 +1593,7 @@ obj window = GAME.SCENE.addRectLight(
     0,       # num z position
     1,       # num width
     1,       # num height
-    1        # num length
+    1        # num intensity (0 - 1)
 );
 ```
 
@@ -1540,7 +1602,7 @@ obj window = GAME.SCENE.addRectLight(
 Krunker has a few default objects, like cubes, spheres and planes. These objects allow you to create maps or decorations, and can be managed with KrunkScript.
 
 :::tip
-Geometry is client side, which means it will not have any player collisions
+Geometry is client side, and it will thus not have any player collisions
 :::
 
 ### Krunker object data
@@ -1665,7 +1727,9 @@ obj sprite = GAME.SCENE.addSprite(
     5,          # num x position
     0,          # num y position
     5,          # num z position
-    1,          # num scale
+    8,          # num width
+    4,          # num height
+    10,         # num length
     {}          # obj additional data
 );
 ```
@@ -2290,8 +2354,8 @@ Regex support has been confirmed by the developers, but it not yet available
 :::
 
 :::warning
-UTILS.truncateTxt randomly appends dots at the end of a string
-UTILS.truncateTxt has a 4th parameter called "startIndex", but currently it creates an error
+- UTILS.truncateTxt randomly appends dots at the end of a string
+- UTILS.truncateTxt has a 4th parameter called "startIndex", but currently it creates an error
 :::
 
 :::details Developer statement regarding UTILS.truncateTxt.
@@ -2356,7 +2420,7 @@ while (test > 0) { # loop 10 times
 # Create object property loop
 obj test = {x: 1, y: 4, z: 2};
 for (obj prop in test) {
-        GAME.log(number.key, number.value);  # x 1, y 4, z 2
+    GAME.log(number.key, number.value);  # x 1, y 4, z 2
 }
 ```
 

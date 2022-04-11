@@ -1,4 +1,4 @@
-# Editor object data
+# Scene object data
 
 ```krunkscript
 {

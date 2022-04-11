@@ -7,6 +7,13 @@
 :::
 
 ## Loading/Unloading mods with KrunkScript <Badge type="tip" text="client-side" vertical="middle"/>
+
+:::tip
+GAME.MODS.Reset() foces a popup on your screen, which can be removed using: 
+```krunkscript:no-line-numbers
+GAME.UI.updateDIVText("popupHolder", "");
+```
+:::
 ```krunkscript
 # Load mod by URL
 GAME.MODS.load(

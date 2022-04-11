@@ -12,7 +12,6 @@ tagline: Swat's over the top quick krunker documentation
 - Added ability to copy code without comments
 - Made website significantly faster and PWA compatable
 
-
 # Update 5.5.4
 - documented mysterious 4th truncatetxt parameter
 - added more read-only stuff (special ty to steak)

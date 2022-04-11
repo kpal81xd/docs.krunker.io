@@ -46,7 +46,7 @@ obj self = GAME.PLAYERS.getSelf();
 
 # Get a player by their id
 obj player = GAME.PLAYERS.findByID(
-    id      # str player id
+    id # str player id
 );
 
 # Access player list
@@ -82,12 +82,12 @@ player.health = 10;            # num health
 player.score = 5;              # num score (server-side)
 player.visible = false;        # bool visible
 player.team;                   # num team (read-only)
-player.ammo                    # num ammo count (read-only)
+player.ammo;                   # num ammo count (read-only)
 
 player.classIndex;             # num returns class ID
 player.loadoutIndex;           # num weapon slot ID
 
-player.active;                 # bool spawned in (not when spectator/dead)
+player.active;                 # bool spawned in (false when spectator/dead)
 player.onWall;                 # bool touching a wall
 player.onGround;               # bool touching the ground
 player.onTerrain;              # bool touching terrain
@@ -97,28 +97,43 @@ player.assetID = "325253";     # update player model
 ```
 
 ### Modifying loadout slots
+:::tip
+You can use the [krunker weapon id's list](./lists/weapon_ids.html) to find the right ID for your weapon
+:::
 :::warning
 - Clearing the melee slot seems to not work at the moment
 - You can only give/change weapons to their designated slot (pistol = secondary only, ak = primary only)
 :::
 
 ```krunkscript
-player.clearLoadout();          # void clear loadout of player
-player.changePrimary(           # void change primary item from player
-    0       # - Weapon id
-);        
-player.changeSecondary(         # void change secondary item from player
-    0       # - Weapon id
-);      
-player.giveWeapon(              # void give player weapon
-    0       # - Weapon id
+# void clear loadout of player
+player.clearLoadout();
+
+# void change primary item from player
+player.changePrimary(           
+    0 # weapon id
+);
+
+# void change secondary item from player
+player.changeSecondary(         
+    0 # weapon id
+);  
+
+# void give player weapon
+player.giveWeapon(              
+    0 # weapon id
 );           
 ```
 
 ```krunkscript
-player.removeMelee();          # void remove melee item from player
-player.removePrimary();        # void remove primary item from player
-player.removeSecondary();      # void remove secondary item from player
+# void remove melee item from player
+player.removeMelee();
+
+# void remove primary item from player
+player.removePrimary();
+
+# void remove secondary item from player
+player.removeSecondary();
 ```
 
 ## AIs & NPCs <Badge type="tip" text="server-side" vertical="middle" />
@@ -175,9 +190,9 @@ obj data = {
 
     modelScale: 10,    # num model scale
     modelOffsetY: 0,   # num model y-offset
-    modelRotation: 0   # num model rotation offset
+    modelRotation: 0,  # num model rotation offset
     hitBotW: 1,        # num hitbox width
-    hitBoxH: 1,        # num hitbox height
+    hitBoxH: 1         # num hitbox height
 };
 ```
 
@@ -189,7 +204,7 @@ GAME.AI.remove(testBot.sid);
 # List AI
 obj[] AIs = GAME.AI.list();
 
-testBot.displayName;            # str name
+testBot.displayName = "test";   # str name
 testBot.health = 10;            # num health
 testBot.position.x = 10;        # num position x
 testBot.rotation.x = Math.PI;   # num rotation x
