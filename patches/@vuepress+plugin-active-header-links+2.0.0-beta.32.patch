@@ -1,0 +1,79 @@
+diff --git a/node_modules/@vuepress/plugin-active-header-links/lib/client/composables/useActiveHeaderLinks.js b/node_modules/@vuepress/plugin-active-header-links/lib/client/composables/useActiveHeaderLinks.js
+index 12fcd9e..b2e7325 100644
+--- a/node_modules/@vuepress/plugin-active-header-links/lib/client/composables/useActiveHeaderLinks.js
++++ b/node_modules/@vuepress/plugin-active-header-links/lib/client/composables/useActiveHeaderLinks.js
+@@ -2,17 +2,32 @@ import { usePageData } from '@vuepress/client';
+ import { debounce } from 'ts-debounce';
+ import { onBeforeUnmount, onMounted, watch } from 'vue';
+ import { useRouter } from 'vue-router';
++
++/**
++ * Call `router.replace()` and do not trigger `scrollBehavior`
++ */
++ export const replaceWithoutScrollBehavior = async (router, ...args) => {
++    // temporarily disable `scrollBehavior`
++    // restore it after navigation
++    const { scrollBehavior } = router.options;
++    router.options.scrollBehavior = undefined;
++    await router
++        .replace(...args)
++        .finally(() => (router.options.scrollBehavior = scrollBehavior));
++};
++
+ export const useActiveHeaderLinks = ({ headerLinkSelector, headerAnchorSelector, delay, offset = 5, }) => {
++    console.log("a");
+     const router = useRouter();
+     const page = usePageData();
+-    const setActiveRouteHash = () => {
++    const setActiveRouteHash = async () => {
+         var _a, _b, _c, _d;
+         // get all header links
+         const headerLinks = Array.from(document.querySelectorAll(headerLinkSelector));
+         // get all header anchors
+         const headerAnchors = Array.from(document.querySelectorAll(headerAnchorSelector));
+         // filter anchors that do not have corresponding links
+-        const existedHeaderAnchors = headerAnchors.filter((anchor) => headerLinks.some((link) => link.hash === anchor.hash));
++        const existedHeaderAnchors = headerAnchors//headerAnchors.filter((anchor) => headerLinks.some((link) => link.hash === anchor.hash));
+         // get current scrollTop
+         const scrollTop = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
+         // get current scrollBottom
+@@ -55,7 +70,7 @@ export const useActiveHeaderLinks = ({ headerLinkSelector, headerAnchorSelector,
+                 }
+             }
+             // replace current route hash with the active anchor hash
+-            replaceWithoutScrollBehavior(router, {
++            await replaceWithoutScrollBehavior(router, {
+                 hash: anchorHash,
+                 force: true,
+             });
+@@ -64,23 +79,15 @@ export const useActiveHeaderLinks = ({ headerLinkSelector, headerAnchorSelector,
+     };
+     const onScroll = debounce(() => setActiveRouteHash(), delay);
+     onMounted(() => {
+-        onScroll();
+-        window.addEventListener('scroll', () => onScroll());
++        let sott_hash = window.location.hash;
++        onScroll().then((e) => {
++            window.location.hash = "";
++            window.location.hash = sott_hash;
++            window.addEventListener('scroll', () => onScroll());
++        });
+     });
+     onBeforeUnmount(() => {
+         window.removeEventListener('scroll', () => onScroll());
+     });
+     watch(() => page.value.path, () => onScroll());
+ };
+\ No newline at end of file
+-/**
+- * Call `router.replace()` and do not trigger `scrollBehavior`
+- */
+-export const replaceWithoutScrollBehavior = async (router, ...args) => {
+-    // temporarily disable `scrollBehavior`
+-    // restore it after navigation
+-    const { scrollBehavior } = router.options;
+-    router.options.scrollBehavior = undefined;
+-    await router
+-        .replace(...args)
+-        .finally(() => (router.options.scrollBehavior = scrollBehavior));
+-};

@@ -49,8 +49,7 @@ module.exports = {
 			id: "G-DMRNGH8H2W"
 		}],
 		["@snippetors/vuepress-plugin-tabs", {}],
-		["@vuepress/pwa", {skipWaiting: true}],
-		["@vuepress/plugin-active-header-links", {delay: 500}]
+		["@vuepress/pwa", {skipWaiting: true}]
 	],
 	title: "SOTT Quick Krunker Docs",
 	locales: {
