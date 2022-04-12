@@ -3,6 +3,10 @@ title: Changelogs
 tagline: Changelogs for SOTT Quick Krunker Docs
 ---
 
+# Update 5.5.7
+- added player.respawn();
+- updated documentaiton truncateTxt();
+
 # Update 5.5.6
 - Set example looping parameter on play2d to boolean
 - x per y second changed to x per y seconds on database notes

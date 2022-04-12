@@ -16,6 +16,8 @@ For player class loadout modifications, you can use the [quick weapon id list](/
         3       # z rotation
     );    
 
+    player.respawn();              # void force respawn of player
+
     player.disableDefault("jump"); # str disables input behaviours (client & server)
 
     player.registerSyncValues("hasDoubleJump")     # str register player attributes to sync with server prediction
