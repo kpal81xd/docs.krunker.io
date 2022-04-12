@@ -14,7 +14,7 @@ For player class loadout modifications, you can use the [quick weapon id list](/
         3,      # x rotation
         0,      # y rotation
         3       # z rotation
-    );    
+    );
 
     player.respawn();              # void force respawn of player
 

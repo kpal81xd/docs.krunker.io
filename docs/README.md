@@ -2353,13 +2353,8 @@ You can use KrunkScript to manipulate strings in several ways.
 Regex support has been confirmed by the developers, but it not yet available
 :::
 
-:::warning
-- UTILS.truncateTxt randomly appends dots at the end of a string
-- UTILS.truncateTxt has a 4th parameter called "startIndex", but currently it creates an error
-:::
-
-:::details Developer statement regarding UTILS.truncateTxt.
-‟Docs are wrong„ ~ KPal, discord
+:::details Developer statement regarding UTILS.truncateTxt's random dots.
+‟I think its for aesthetic purposes when text overflows, but could also be a bug„ ~ KPal, discord
 :::
 
 ```krunkscript
@@ -2369,6 +2364,14 @@ str testString = "Test";
 str string2 = testString + "Me";                            # Combine strings
 str string3 = UTILS.toUpper(testString);                    # Makes text uppercase (returns "TEST")
 str string4 = UTILS.toLower(testString);                    # Makes text lowercase (returns "test")
+
+UTILS.truncateTxt(
+    "test",  #str input
+    4,       #num point to start truncating from
+    true,    #bool hide dots after string (?)
+    1        #num index to start truncating backwards from
+);
+
 str string5 = UTILS.truncateTxt("123456", 2, true);         # Reduce text to first 2 characters (returns "12")
 str string6 = UTILS.truncateTxt("123456", 2, false);        # results in: "12..."
 str string7 = UTILS.replaceText("hello there", "the", "");  # results in: "hello re"
