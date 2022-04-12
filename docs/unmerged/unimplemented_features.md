@@ -115,7 +115,7 @@ GAME.TRIGGERS.execute(num ID, ??? args){
 }
 ```
 
-### Object morphing <Badge type="tip" text="client-side" vertical="middle" />
+## Object morphing <Badge type="tip" text="client-side" vertical="middle" />
 **Tags: Morph targets, Shape keys**
 
 You can interpolate between morphstates on a 3d model. Does not work.
