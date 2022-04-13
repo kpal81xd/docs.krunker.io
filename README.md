@@ -2,12 +2,12 @@
 
 https://krdocs.swatdo.ge/
 
-A Krunker documentation website that purely focusses on KrunkScript (no editor/monitization).
+A Krunker documentation website that purely focuses on KrunkScript (no editor/monetization).
 
 - Unmerging/Merging docs so you can use CTRL + F, like the old documentation.
 - More up to date.
 - Removes flaws from the original documentation.
-- Important notes for developers, that quickly show important .information, like rate limits or deprecation.
+- Important notes for developers, that quickly show important information, like rate limits or deprecation.
 - Clearer & less text, removed bloaty examples.
 - Cosistent formatting across the website.
 - Prefilled action parameters, allowing you to instantly paste and test code.
@@ -22,7 +22,7 @@ https://youtu.be/HVjUv2oDxxA
 1. First pull this project, and create a new branch based on master to work on.
 2. Make your changes, use `yarn dev` to serve the site. On windows, you'll have to re-serve the website for it to update (vuepress issue sadly :/).
 3. When happy with your changes, make sure they match our **style guidelines**.
-4. Then push them in a branch so it can be merged with master.
+4. Then push them onto a branch so it can be merged with master.
 
 
 # Style guide
@@ -48,7 +48,7 @@ Skydomes are a group of settings that allow you to change the atmosphere of your
 ```
 
 ### Code
-Lastly, a code sample. Every "action/command" in a codeblock is desired to be commented, unless stating something obvious or making documentation hard to read. There should be a space between a bracket and the comment, comments should start with a captical letter and end without a period. **Easy wording is more important than technical/official terminology. This documentation is practicality first, its even more important then these styling guidelines.**
+Lastly, a code sample. Every "action/command" in a codeblock is desired to be commented, unless stating something obvious or making documentation hard to read. There should be a space between a bracket and the comment, comments should start with a captical letter and end without a period. **Easy wording is more important than technical/official terminology. This documentation is practicality first, it's even more important then these styling guidelines.**
 
 ```md
 ```krunkscript
