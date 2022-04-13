@@ -968,6 +968,8 @@ Check out [this example](/examples/double_jump.html) to add basic double jumping
 :::warning
 - To sync a player property, the property must exist first (currently it gives a wrong error)
 - Syncing objects is not yet possible
+- Sync values can be up to 16 characters long
+- You can have up to 20 sync variables at once per player
 :::
 
 ```krunkscript
@@ -2768,7 +2770,7 @@ GAME.TRIGGERS.execute(num ID, ??? args){
 }
 ```
 
-### Object morphing <Badge type="tip" text="client-side" vertical="middle" />
+## Object morphing <Badge type="tip" text="client-side" vertical="middle" />
 **Tags: Morph targets, Shape keys**
 
 You can interpolate between morphstates on a 3d model. Does not work.
@@ -2805,6 +2807,7 @@ Suposed to allow scripters to give and charge players for KR. Unimplemented.
 
 ## Libraries <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" />
 Allows for importing external tooling for krunkscript. Not enough is known about the implementation of this yet.
+
 
 # User interface
 

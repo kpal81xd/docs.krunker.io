@@ -6,6 +6,7 @@ tagline: Changelogs for SOTT Quick Krunker Docs
 # Update 5.5.7
 - added player.respawn();
 - updated documentaiton truncateTxt();
+- added notes to registerSyncValue
 
 # Update 5.5.6
 - Set example looping parameter on play2d to boolean
