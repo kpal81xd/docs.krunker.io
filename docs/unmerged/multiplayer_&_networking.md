@@ -149,6 +149,8 @@ Check out [this example](/examples/double_jump.html) to add basic double jumping
 :::warning
 - To sync a player property, the property must exist first (currently it gives a wrong error)
 - Syncing objects is not yet possible
+- Sync values can be up to 16 characters long
+- You can have up to 20 sync variables at once per player
 :::
 
 ```krunkscript
