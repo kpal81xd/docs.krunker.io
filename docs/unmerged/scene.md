@@ -340,6 +340,20 @@ obj custom = GAME.SCENE.addCustom(
 );
 ```
 
+## Locally rotating 3D Objects
+:::warning
+Rotating objects locally seems to have some weird center offset issue
+:::
+
+```krunkscript
+# Rotate object locally
+object.rotateLocal(
+    3,      # x rotation
+    0,      # y rotation
+    3       # z rotation
+);
+```
+
 ## Listing 3D objects <Badge type="tip" text="client-side" vertical="middle" /> 
 :::tip
 GAME.OBJECTS.list() only returns rotation, position, scaling and an id right now

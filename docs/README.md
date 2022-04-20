@@ -372,12 +372,12 @@ You can change/access player values like with any other objects:
 You can get the [full player object here](/lists/player_object.html)
 :::
 :::warning
-player.accountID and player.accountName suddenly became server side only. It is unclear if it will ever come back to client side
+- player.assetID requires `player type` in `class config > player asset` to be set to `model`
 :::
 
 ```krunkscript
 player.position.x = 10;        # num set x pos
-player.rotation.x;             # num XZ plane rotation in radians (read-only)
+player.rotation.x = 0.3;       # num set x direction
 player.velocity.x = 0.1;       # num set x velocity
 
 player.sid;                    # num short id
@@ -395,7 +395,13 @@ player.ammo;                   # num ammo count (read-only)
 player.classIndex;             # num returns class ID
 player.loadoutIndex;           # num weapon slot ID
 
-player.active;                 # bool spawned in (false when spectator/dead)
+player.defaultMovement = false;     # bool disables player movement
+player.defaultVelocity = false;     # bool disables player velocity (client & server)
+player.defaultRotation = false;     # bool disables player rotations (client & server)
+player.disableShooting = true;      # bool disables shooting & reloading (client & server)
+player.disableMelee = true;         # bool disables melee (client & server)
+
+player.active;                 # bool spawned in (not when spectator/dead)
 player.onWall;                 # bool touching a wall
 player.onGround;               # bool touching the ground
 player.onTerrain;              # bool touching terrain
@@ -1778,6 +1784,20 @@ obj custom = GAME.SCENE.addCustom(
 );
 ```
 
+## Locally rotating 3D Objects
+:::warning
+Rotating objects locally seems to have some weird center offset issue
+:::
+
+```krunkscript
+# Rotate object locally
+object.rotateLocal(
+    3,      # x rotation
+    0,      # y rotation
+    3       # z rotation
+);
+```
+
 ## Listing 3D objects <Badge type="tip" text="client-side" vertical="middle" /> 
 :::tip
 GAME.OBJECTS.list() only returns rotation, position, scaling and an id right now
@@ -2156,8 +2176,8 @@ if (notEmpty other) {
 }
 
 # Check if property exists
-(hasProp car "name");   # returns true
-(hasProp car "wing");   # returns false
+hasProp car.name;   # returns true
+hasProp car.wing;   # returns false
 ```
 
 ## Arrays <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" /> 
@@ -2319,6 +2339,20 @@ Math.toRad(num);                    # Converts degrees to radians
 Math.toDeg(num);                    # Converts radians to degrees
 ```
 
+## Color conversions <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" /> 
+```krunkscript
+# Convert Hue decimal to HEX color
+UTILS.hexFromHue(
+    0.2     # value between red and purple Hue (0 - 1)
+);
+
+# Convert RGB color to HEX
+UTILS.RGBtoHEX(
+    4,      # red value
+    220,    # green value
+    100     # blue value
+);
+```
 
 ## Random number generation <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" /> 
 ```krunkscript
