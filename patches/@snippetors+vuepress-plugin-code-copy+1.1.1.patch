@@ -12,7 +12,7 @@ index 5a41e73..478e9fc 100644
            });
            let childEl = document.createElement("div");
 diff --git a/node_modules/@snippetors/vuepress-plugin-code-copy/lib/components/CodeCopy.vue b/node_modules/@snippetors/vuepress-plugin-code-copy/lib/components/CodeCopy.vue
-index 2506da8..e6087ab 100644
+index 2506da8..c96eb4f 100644
 --- a/node_modules/@snippetors/vuepress-plugin-code-copy/lib/components/CodeCopy.vue
 +++ b/node_modules/@snippetors/vuepress-plugin-code-copy/lib/components/CodeCopy.vue
 @@ -1,5 +1,21 @@
@@ -51,7 +51,7 @@ index 2506da8..e6087ab 100644
      copyToClipboard(el) {
 +      let stripped_code = this.code.cloneNode(true);
 +      stripped_code.querySelectorAll(".hljs-comment").forEach(e => {e.remove()});
-+      stripped_code = stripped_code.innerText.replace(/,\s*/gm, ", ").replace(/\(\n\s*/gm, "(").replace(/\s*\n\)/gm, ")").replace(/\n{3,}/gm, "\n\n");
++      stripped_code = stripped_code.innerText.replace(/,\s*/gm, ", ").replace(/\(\n\s*/gm, "(").replace(/\s*\n\)/gm, ")").replace(/\n{2,}/gm, "\n\n");
        if (navigator.clipboard) {
 -        navigator.clipboard.writeText(this.code).then(
 +        navigator.clipboard.writeText(el?.srcElement?.attributes?.custom ? stripped_code : this.code.innerText).then(
