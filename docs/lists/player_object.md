@@ -4,17 +4,15 @@
 For player class loadout modifications, you can use the [quick weapon id list](/lists/weapon_ids.html)
 :::
 
+:::warning
+- player.assetID requires `player type` in  `class config > player asset` to be set to `model`
+- The player object gets reset every respawn, attributes will have to be reapplied
+:::
+
 ```krunkscript
 {
     # Methods
     player.playAnim("Jump");       # str play animation on player
-
-    # Rotate player relative to itself, not relative to the world.
-    player.rotateLocal(
-        3,      # x rotation
-        0,      # y rotation
-        3       # z rotation
-    );
 
     player.respawn();              # void force respawn of player
 
@@ -47,12 +45,12 @@ For player class loadout modifications, you can use the [quick weapon id list](/
     player.score = 5;              # num score (server-side)
     player.visible = false;        # bool visible
     player.team;                   # num team (read-only)
-    player.ammo                    # num ammo count (read-only)
+    player.ammo;                   # num ammo count (read-only)
 
     player.classIndex;             # num returns class ID
     player.loadoutIndex;           # num weapon slot ID
 
-    player.defaultMovement              # bool disables player movement
+    player.defaultMovement = false;     # bool disables player movement
     player.defaultVelocity = false;     # bool disables player velocity (client & server)
     player.defaultRotation = false;     # bool disables player rotations (client & server)
     player.disableShooting = true;      # bool disables shooting & reloading (client & server)

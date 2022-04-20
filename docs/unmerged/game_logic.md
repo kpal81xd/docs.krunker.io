@@ -64,12 +64,12 @@ You can change/access player values like with any other objects:
 You can get the [full player object here](/lists/player_object.html)
 :::
 :::warning
-player.accountID and player.accountName suddenly became server side only. It is unclear if it will ever come back to client side
+- player.assetID requires `player type` in `class config > player asset` to be set to `model`
 :::
 
 ```krunkscript
 player.position.x = 10;        # num set x pos
-player.rotation.x;             # num XZ plane rotation in radians (read-only)
+player.rotation.x = 0.3;       # num set x direction
 player.velocity.x = 0.1;       # num set x velocity
 
 player.sid;                    # num short id
@@ -87,7 +87,13 @@ player.ammo;                   # num ammo count (read-only)
 player.classIndex;             # num returns class ID
 player.loadoutIndex;           # num weapon slot ID
 
-player.active;                 # bool spawned in (false when spectator/dead)
+player.defaultMovement = false;     # bool disables player movement
+player.defaultVelocity = false;     # bool disables player velocity (client & server)
+player.defaultRotation = false;     # bool disables player rotations (client & server)
+player.disableShooting = true;      # bool disables shooting & reloading (client & server)
+player.disableMelee = true;         # bool disables melee (client & server)
+
+player.active;                 # bool spawned in (not when spectator/dead)
 player.onWall;                 # bool touching a wall
 player.onGround;               # bool touching the ground
 player.onTerrain;              # bool touching terrain
