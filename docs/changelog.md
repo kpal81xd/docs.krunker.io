@@ -3,6 +3,9 @@ title: Changelogs
 tagline: Changelogs for SOTT Quick Krunker Docs
 ---
 
+# Update 5.6.3
+- added warning to getBone for punctiontion bug
+
 # Update 5.6.1
 - removed rotateLocal from player object
 - cleaned up player objects
