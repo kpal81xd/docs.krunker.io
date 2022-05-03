@@ -61,7 +61,7 @@ Once the message has been sent, we can listen for it and use its given object.
 ::: tab Client
 ```krunkscript
 # Receive message from client
-action onNetworkMessage(str id, obj data) {
+public action onNetworkMessage(str id, obj data) {
     #str id             - message name
     #obj data           - data as string
 }
@@ -70,7 +70,7 @@ action onNetworkMessage(str id, obj data) {
 ::: tab Server
 ```krunkscript
 # Receive message from server
-action onNetworkMessage(str id, obj data, str playerID) {
+public action onNetworkMessage(str id, obj data, str playerID) {
     #str id             - message name
     #obj data           - data as string
     #str playerID       - player id
@@ -83,7 +83,7 @@ action onNetworkMessage(str id, obj data, str playerID) {
 ::: tab Client
 ```krunkscript
 # Server
-action onNetworkMessage(str id, obj data, str playerID) {
+public action onNetworkMessage(str id, obj data, str playerID) {
     if (id == "test") {
         GAME.log(data);
     };
@@ -93,7 +93,7 @@ action onNetworkMessage(str id, obj data, str playerID) {
 ::: tab Server
 ```krunkscript
 # Client
-action onNetworkMessage(str id, obj data) {
+public action onNetworkMessage(str id, obj data) {
     if (id == "test") {
         GAME.log(data);
     };
