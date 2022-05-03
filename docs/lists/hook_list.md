@@ -162,7 +162,7 @@ public action onKeyHeld(str key, num code) {
 ### onNetworkMessage() <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" />
 ```krunkscript
 # Receive message from server or client
-action onNetworkMessage(str id, obj data, str playerID) {
+public action onNetworkMessage(str id, obj data, str playerID) {
     #str id             - message name
     #obj data           - data as string
     #str playerID       - player id (server-side only)
