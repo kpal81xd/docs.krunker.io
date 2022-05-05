@@ -5,6 +5,7 @@ tagline: Changelogs for SOTT Quick Krunker Docs
 
 # Update 5.6.4
 - added `public` keyword behind onNetworkMessage
+- added getDIVText method to UI
 
 # Update 5.6.3
 - added warning to getBone for punctiontion bug

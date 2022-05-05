@@ -43,6 +43,14 @@ GAME.UI.updateDIVText(
 );
 ```
 
+### Get div text
+```krunkscript
+# Get div text
+GAME.UI.getDIVText(
+    "book"      # str id of div
+);
+```
+
 ### Moving the div
 **Tags: clone**
 ```krunkscript
