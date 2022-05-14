@@ -124,6 +124,13 @@ GAME.SETTINGS.set(
 ```
 
 ```krunkscript
+# Get setting value of player
+GAME.SETTINGS.get(
+    "resolution",   # str setting name
+);
+```
+
+```krunkscript
 # Get str[] of all available settings
 GAME.SETTINGS.list();
 ```
