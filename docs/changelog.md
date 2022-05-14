@@ -3,6 +3,10 @@ title: Changelogs
 tagline: Changelogs for SOTT Quick Krunker Docs
 ---
 
+# Update 5.6.8
+- added game.settings.get
+- added class id's to weapon id quick list
+
 # Update 5.6.4
 - added `public` keyword behind onNetworkMessage
 - added getDIVText method to UI
