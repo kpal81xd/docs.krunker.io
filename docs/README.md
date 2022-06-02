@@ -372,7 +372,9 @@ You can change/access player values like with any other objects:
 You can get the [full player object here](/lists/player_object.html)
 :::
 :::warning
-- player.assetID requires `player type` in `class config > player asset` to be set to `model`
+- player.assetID requires `player type` in  `class config > player asset` to be set to `model`
+- The player object gets reset every respawn, attributes will have to be reapplied
+- inView always returns false
 :::
 
 ```krunkscript
@@ -402,6 +404,7 @@ player.disableShooting = true;      # bool disables shooting & reloading (client
 player.disableMelee = true;         # bool disables melee (client & server)
 
 player.active;                 # bool spawned in (not when spectator/dead)
+player.inView;                 # bool player is in view of self
 player.onWall;                 # bool touching a wall
 player.onGround;               # bool touching the ground
 player.onTerrain;              # bool touching terrain
@@ -1596,6 +1599,55 @@ obj flashlight = GAME.SCENE.addSpotLight(
 ### Rectangular area light (windows, screens etc.)
 
 Simular to a spotlight, but square.
+
+![Preview](/images/krunker/scene/lights_3.png)
+
+```krunkscript
+# Add a rectangular light
+obj window = GAME.SCENE.addRectLight(
+    "#fff",  # str color
+    0,       # num x position
+    0,       # num y position
+    0,       # num z position
+    1,       # num width
+    1,       # num height
+    1        # num intensity (0 - 1)
+);
+```
+
+### (Static) Light cone (lamp, flashlight, etc.)
+
+A static lightsource, in shape of a cone.
+
+```krunkscript
+GAME.SCENE.addLightCone(
+    "#fff",  # str color
+    0,       # num x position
+    0,       # num y position
+    0,       # num z position
+    1,       # num width
+    1,       # num height
+    1,       # num intensity (0 - 1)
+    {}       # obj object data
+);
+```
+
+### (Static) Light bar (fluencent lamp, neon signs, etc.)
+
+```krunkscript
+GAME.SCENE.addLightBar(
+    "#fff",  # str color
+    0,       # num x position
+    0,       # num y position
+    0,       # num z position
+    1,       # num width
+    1,       # num height
+    1,       # num intensity (0 - 1)
+    {}       # obj object data
+);
+```
+
+A static lightsource, in shape of a bar.
 
 ![Preview](/images/krunker/scene/lights_3.png)
 
