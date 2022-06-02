@@ -3,6 +3,10 @@ title: Changelogs
 tagline: Changelogs for SOTT Quick Krunker Docs
 ---
 
+# Update 5.6.9
+- added player.inView
+- added GAME.SCENE.addLightCone and GAME.SCENE.addLightBar
+
 # Update 5.6.8
 - added game.settings.get
 - added class id's to weapon id quick list

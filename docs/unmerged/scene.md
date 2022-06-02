@@ -161,6 +161,55 @@ obj window = GAME.SCENE.addRectLight(
 );
 ```
 
+### (Static) Light cone (lamp, flashlight, etc.)
+
+A static lightsource, in shape of a cone.
+
+```krunkscript
+GAME.SCENE.addLightCone(
+    "#fff",  # str color
+    0,       # num x position
+    0,       # num y position
+    0,       # num z position
+    1,       # num width
+    1,       # num height
+    1,       # num intensity (0 - 1)
+    {}       # obj object data
+);
+```
+
+### (Static) Light bar (fluencent lamp, neon signs, etc.)
+
+```krunkscript
+GAME.SCENE.addLightBar(
+    "#fff",  # str color
+    0,       # num x position
+    0,       # num y position
+    0,       # num z position
+    1,       # num width
+    1,       # num height
+    1,       # num intensity (0 - 1)
+    {}       # obj object data
+);
+```
+
+A static lightsource, in shape of a bar.
+
+![Preview](/images/krunker/scene/lights_3.png)
+
+```krunkscript
+# Add a rectangular light
+obj window = GAME.SCENE.addRectLight(
+    "#fff",  # str color
+    0,       # num x position
+    0,       # num y position
+    0,       # num z position
+    1,       # num width
+    1,       # num height
+    1        # num intensity (0 - 1)
+);
+```
+
 ## Geometry <Badge type="tip" text="client-side" vertical="middle" /> 
 **Tags: objects, primitives, shapes**
 Krunker has a few default objects, like cubes, spheres and planes. These objects allow you to create maps or decorations, and can be managed with KrunkScript.

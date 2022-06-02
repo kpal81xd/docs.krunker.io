@@ -64,7 +64,9 @@ You can change/access player values like with any other objects:
 You can get the [full player object here](/lists/player_object.html)
 :::
 :::warning
-- player.assetID requires `player type` in `class config > player asset` to be set to `model`
+- player.assetID requires `player type` in  `class config > player asset` to be set to `model`
+- The player object gets reset every respawn, attributes will have to be reapplied
+- inView always returns false
 :::
 
 ```krunkscript
@@ -94,6 +96,7 @@ player.disableShooting = true;      # bool disables shooting & reloading (client
 player.disableMelee = true;         # bool disables melee (client & server)
 
 player.active;                 # bool spawned in (not when spectator/dead)
+player.inView;                 # bool player is in view of self
 player.onWall;                 # bool touching a wall
 player.onGround;               # bool touching the ground
 player.onTerrain;              # bool touching terrain
