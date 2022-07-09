@@ -15,6 +15,9 @@ A Krunker documentation website that purely focuses on KrunkScript (no editor/mo
 - [An extension to directly integrate the documentation into the editor.](https://github.com/SwatDoge/SOTT-Quick-Krunkscript-Docs/raw/main/tampermonkey/userscript.user.js)
 
 
+Contribution tutorial:
+https://youtu.be/8gDw0qeV78Y
+
 Showcase video:
 https://youtu.be/HVjUv2oDxxA 
 
