@@ -166,7 +166,7 @@ OVERLAY.arc(
 #### Arc clipping
 Using arcTo, you can set boundaries to how far a circle flows until it collides between lines. For a better description check out [CanvasRenderingContext2D](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arcTo) documentation.
 ```krunkscript
-OVERLAY.arcTo(
+GAME.OVERLAY.arcTo(
     180,    # num x start position
     130,    # num y start position
     110,    # num x end position

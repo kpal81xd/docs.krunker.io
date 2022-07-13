@@ -57,7 +57,7 @@ GAME.CONFIG.getWeapons();           # Get objects with weapon information
 ## Delay <Badge type="tip" text="???" vertical="middle" />
 
 :::warning
-This feature was removed from autocorrect
+This feature was removed from autocomplete
 :::
 
 ```krunkscript

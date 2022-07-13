@@ -120,6 +120,11 @@ else {
 ## Sending & broadcasting chat messages <Badge type="tip" text="server-side" vertical="middle" />
 You can send chat messages from the server.
 
+:::warning
+- Send: 2 msg per second
+- Broadcast: 2 msg per second
+:::
+
 ```krunkscript
 # Send message to specific player
 GAME.CHAT.send(
