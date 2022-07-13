@@ -408,6 +408,11 @@ UTILS.RGBtoHEX(
     220,    # green value
     100     # blue value
 );
+
+# Convert HEX color to RGB
+UTILS.HEXtoRGB(
+    "#fff"  # str hex color
+);
 ```
 
 ## Random number generation <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" /> 
