@@ -1,0 +1,17 @@
+name: Sott KRDocs CI
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: mskelton/setup-yarn@v1
+      - name: Test if project can be built
+      - run: yarn
+      - run: yarn build

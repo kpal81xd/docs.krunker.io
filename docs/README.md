@@ -952,6 +952,11 @@ else {
 ## Sending & broadcasting chat messages <Badge type="tip" text="server-side" vertical="middle" />
 You can send chat messages from the server.
 
+:::warning
+- Send: 2 msg per second
+- Broadcast: 2 msg per second
+:::
+
 ```krunkscript
 # Send message to specific player
 GAME.CHAT.send(
@@ -1229,7 +1234,7 @@ OVERLAY.arc(
 #### Arc clipping
 Using arcTo, you can set boundaries to how far a circle flows until it collides between lines. For a better description check out [CanvasRenderingContext2D](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arcTo) documentation.
 ```krunkscript
-OVERLAY.arcTo(
+GAME.OVERLAY.arcTo(
     180,    # num x start position
     130,    # num y start position
     110,    # num x end position
@@ -2362,6 +2367,11 @@ UTILS.RGBtoHEX(
     220,    # green value
     100     # blue value
 );
+
+# Convert HEX color to RGB
+UTILS.HEXtoRGB(
+    "#fff,  # str hex color
+);
 ```
 
 ## Random number generation <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" /> 
@@ -2756,7 +2766,7 @@ GAME.CONFIG.getWeapons();           # Get objects with weapon information
 ## Delay <Badge type="tip" text="???" vertical="middle" />
 
 :::warning
-This feature was removed from autocorrect
+This feature was removed from autocomplete
 :::
 
 ```krunkscript
