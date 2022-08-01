@@ -80,7 +80,7 @@ You can not use links in KrunkScript for security reasons, but you can use a pre
 :::warning
 - **Protected elements** are non-modifyable elements, and will break your mod if modified with css. These elements could be KR count, ads, canvas elements and like/dislike buttons, etc
 - Images only support png, every fonttype is supported
-- You can not import any other resource then png's and fonts
+- You can not import any other resource than png's and fonts
 :::
 
 ```css
