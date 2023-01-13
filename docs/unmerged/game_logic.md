@@ -107,6 +107,7 @@ player.assetID = "325253";     # update player model
 You can use the [krunker weapon id's list](./lists/weapon_ids.html) to find the right ID for your weapon
 :::
 :::warning
+- You can only change on server side
 - Clearing the melee slot seems to not work at the moment
 - You can only give/change weapons to their designated slot (pistol = secondary only, ak = primary only)
 :::
