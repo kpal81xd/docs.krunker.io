@@ -2479,7 +2479,7 @@ while (test > 0) { # loop 10 times
 # Create object property loop
 obj test = {x: 1, y: 4, z: 2};
 for (obj prop in test) {
-    GAME.log(number.key, number.value);  # x 1, y 4, z 2
+    GAME.log(prop.key, prop.value);  # x 1, y 4, z 2
 }
 ```
 
