@@ -2,6 +2,13 @@
 title: Changelogs
 tagline: Changelogs for SOTT Quick Krunker Docs
 ---
+# Update 6.0.8
+- Fixed spelling misstakes
+- Fixed examples
+- Many other fixes by bublap7 :)
+
+# Update 6.0.6
+- Made changePrimary serverside
 
 # Update 5.7.4
 - added UTILS.HEXtoRGB
@@ -81,7 +88,7 @@ tagline: Changelogs for SOTT Quick Krunker Docs
 - added library stump to unimplemented.
 
 # Update 5.4.7
-- removed visual lists menu. 
-- added weapon id quick list. 
-- added new controller hooks. 
+- removed visual lists menu.
+- added weapon id quick list.
+- added new controller hooks.
 - added new player methods & properties.

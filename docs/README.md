@@ -361,7 +361,7 @@ obj player = GAME.PLAYERS.findByID(
 obj[] players = GAME.PLAYERS.list();
 
 # If player does not exist.
-if (!player || !notEmpty player) {
+if (notEmpty player && !player) {
     GAME.log("Player does not exist.");
 }
 ```
@@ -415,6 +415,7 @@ player.assetID = "325253";     # update player model
 You can use the [krunker weapon id's list](./lists/weapon_ids.html) to find the right ID for your weapon
 :::
 :::warning
+- You can only change on server side
 - Clearing the melee slot seems to not work at the moment
 - You can only give/change weapons to their designated slot (pistol = secondary only, ak = primary only)
 :::
@@ -1861,7 +1862,7 @@ cube.detach();
 
 ### Attach bones
 :::warning
-Punctuation such as `.` and `,` get stripped from bone names. This is an issue with Three.js, not with krunker, for more see this [github discussion](https://github.com/KhronosGroup/glTF-Blender-Exporter/issues/295#issuecomment-418138071)
+Punctionation such as `.` and `,` get stripped from bone names. This is an issue with Three.js, not with krunker, for more see this [github discussion](https://github.com/KhronosGroup/glTF-Blender-Exporter/issues/295#issuecomment-418138071)
 :::
 
 ```krunkscript
@@ -2479,7 +2480,7 @@ while (test > 0) { # loop 10 times
 # Create object property loop
 obj test = {x: 1, y: 4, z: 2};
 for (obj prop in test) {
-    GAME.log(prop.key, prop.value);  # x 1, y 4, z 2
+    GAME.log(number.key, number.value);  # x 1, y 4, z 2
 }
 ```
 
@@ -2553,12 +2554,7 @@ if (("a"+"b") == test && (1+1) == 2) {
 }
 
 # Ternary operations
-
-# Returns "isTrue"
-str result = true ? "isTrue" : "isFalse";
-
-# Returns 0
-num result = false ? 1 : 0;
+num = (true ? 1 : 0);
 ```
 
 # Trigger logic
@@ -2813,7 +2809,7 @@ GAME.RAYCAST.fromPlayer(
 ```
 
 ## Player LOD <Badge type="tip" text="???" vertical="middle" />
-A dead feature to change LOD of players, likely created for 7fi's & Octodoodle's Spacesim project.
+A dead feature to change LOD of players, likely created for 7fi's & Ocotodools spacesim project.
 
 ```krunkscript
 GAME.PLAYERS.toggleLOD(
@@ -2842,16 +2838,16 @@ You can interpolate between morphstates on a 3d model. Does not work.
 
 ## Fixed delta <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" />
 :::tip
-You can get fixed delta regularly by dividing the last GAME.TIME.now() by the current one.
+You can get fixed delta regularly by deviding the last GAME.TIME.now() by the current one.
 :::
 
-Supposed to give delta non dependent on game speed on the client side. Currently gives regular delta. Server side is not affected by game speed.
+Suposed to give delta non dependent on game speed on the client side. Currently gives regular delta. Server side is not affected by game speed.
 ```krunkscript
 GAME.TIME.fixedDelta();
 ```
 
 ## Payment <Badge type="tip" text="server-side" vertical="middle" />
-Supposed to allow scripters to give and charge players for KR. Unimplemented.
+Suposed to allow scripters to give and charge players for KR. Unimplemented.
 
 ```krunkscript
     GAME.PAYMENTS.charge(
