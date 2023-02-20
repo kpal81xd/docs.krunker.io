@@ -2808,7 +2808,7 @@ GAME.RAYCAST.fromPlayer(
 ```
 
 ## Player LOD <Badge type="tip" text="???" vertical="middle" />
-A dead feature to change LOD of players, likely created for 7fi's & Ocotodools spacesim project.
+A dead feature to change LOD of players, likely created for 7fi's & Octodoodle's Spacesim project.
 
 ```krunkscript
 GAME.PLAYERS.toggleLOD(
@@ -2837,16 +2837,16 @@ You can interpolate between morphstates on a 3d model. Does not work.
 
 ## Fixed delta <Badge type="tip" text="client-side" vertical="middle" /> <Badge type="tip" text="server-side" vertical="middle" />
 :::tip
-You can get fixed delta regularly by deviding the last GAME.TIME.now() by the current one.
+You can get fixed delta regularly by dividing the last GAME.TIME.now() by the current one.
 :::
 
-Suposed to give delta non dependent on game speed on the client side. Currently gives regular delta. Server side is not affected by game speed.
+Supposed to give delta non dependent on game speed on the client side. Currently gives regular delta. Server side is not affected by game speed.
 ```krunkscript
 GAME.TIME.fixedDelta();
 ```
 
 ## Payment <Badge type="tip" text="server-side" vertical="middle" />
-Suposed to allow scripters to give and charge players for KR. Unimplemented.
+Supposed to allow scripters to give and charge players for KR. Unimplemented.
 
 ```krunkscript
     GAME.PAYMENTS.charge(
