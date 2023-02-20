@@ -1861,7 +1861,7 @@ cube.detach();
 
 ### Attach bones
 :::warning
-Punctionation such as `.` and `,` get stripped from bone names. This is an issue with Three.js, not with krunker, for more see this [github discussion](https://github.com/KhronosGroup/glTF-Blender-Exporter/issues/295#issuecomment-418138071)
+Punctuation such as `.` and `,` get stripped from bone names. This is an issue with Three.js, not with krunker, for more see this [github discussion](https://github.com/KhronosGroup/glTF-Blender-Exporter/issues/295#issuecomment-418138071)
 :::
 
 ```krunkscript
