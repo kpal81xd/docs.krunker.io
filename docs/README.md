@@ -361,7 +361,7 @@ obj player = GAME.PLAYERS.findByID(
 obj[] players = GAME.PLAYERS.list();
 
 # If player does not exist.
-if (notEmpty player && !player) {
+if (!player || !notEmpty player) {
     GAME.log("Player does not exist.");
 }
 ```
