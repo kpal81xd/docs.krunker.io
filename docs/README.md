@@ -2553,7 +2553,12 @@ if (("a"+"b") == test && (1+1) == 2) {
 }
 
 # Ternary operations
-num = (true ? 1 : 0);
+
+# Returns "isTrue"
+str result = true ? "isTrue" : "isFalse";
+
+# Returns 0
+num result = false ? 1 : 0;
 ```
 
 # Trigger logic
