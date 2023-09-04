@@ -220,11 +220,44 @@ ___
 
 ![Preview](./img/scene/lights_4.png)
 
+**Add using KrunkScript:**
+
+<p class="hidep"><strong class="client-side">client-side</strong></p>
+
+```krunkscript
+obj lightCone = GAME.SCENE.addLightCone(
+    "#fff", # str color
+    0,      # num x position
+    0,      # num y position
+    0,      # num z position
+    10,     # num width
+    10,     # num length
+    20,     # num height
+    data    # obj additional data
+);
+```
+
 ___
 
 **Light Bar:** Gradient plane object with emissive texture
 
 ![Preview](./img/scene/lights_5.png)
+
+**Add using KrunkScript:**
+
+<p class="hidep"><strong class="client-side">client-side</strong></p>
+
+```krunkscript
+obj lightBar = GAME.SCENE.addLightBar(
+    "#fff", # str color
+    0,      # num x position
+    0,      # num y position
+    0,      # num z position
+    10,     # num width
+    10,     # num length
+    data    # obj additional data
+);
+```
 
 ___
 Depending on your desired effect and performance requirements, you may choose to bake your lighting in an external software and to import the finished scene as an asset.
