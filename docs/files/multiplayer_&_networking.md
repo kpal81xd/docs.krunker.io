@@ -65,7 +65,7 @@ Use the id to distinguish between different event types.
 <p class="hidep"><strong class="server-side">server-side</strong></p>
 
 ```krunkscript
-action onNetworkMessage(str id, obj data, str playerID) {
+public action onNetworkMessage(str id, obj data, str playerID) {
     # id is the the unique id of the network message
     # data contains custom data from the client
     # playerID is the unique ID of the player that the message came from
@@ -84,7 +84,7 @@ Use the id to distinguish between different event types.
 <p class="hidep"><strong class="client-side">client-side</strong></p>
 
 ```krunkscript
-action onNetworkMessage(str id, obj data) {
+public action onNetworkMessage(str id, obj data) {
     # id is the the unique id of the network message
     # data contains custom data from the server
     if (id == "test") {
